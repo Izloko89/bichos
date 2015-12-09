@@ -185,12 +185,12 @@ $html='
 		<TABLE align="right" >
 			<TR>
 			<TD>
-			Blvd. De Los Caminos N.135
+			Blvd. De Los Caminos N.135 Esto es una prueba mucho mayor para ver si jala
 			</TD>
 			</TR>
 			<TR>
 			<TD>
-			Tel. (871)2044445
+			Tel. (871)2044450
 			</TD>
 			</TR>
 			<TR>
