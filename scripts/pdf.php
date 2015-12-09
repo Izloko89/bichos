@@ -260,7 +260,7 @@ h1{
 	<strong>NOMBRE DE PAPA O MAMA: </strong>'. $cliente.' <BR>  
 	<strong>TELEFONO: </strong>'. $telCliente.'   <strong>  CELULAR: </strong>'. $celular.'<BR>
 	<strong>DIRECCION: </strong>'. $domicilio.' <BR>  
-	<strong>FECHA DE CONTRATACION: </strong>'. $fecha.' <BR>
+	<strong>FECHA DE CONTRATACION: </strong>'. varFechaAbr($fecha).' <BR>
 	<strong>EMAIL: </strong>'. $email.' <BR>
 	<strong>MEDIO DE PUBLICIDAD: </strong>'. $medio.' <BR>
 	
