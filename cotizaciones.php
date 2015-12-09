@@ -363,6 +363,7 @@ table{
         ?>
         </select>
         </div>
+      </div>
         <div class="campo_form">
             <label class="">Anticipo:</label>
             <input type="text" class="anticipo numerico" />

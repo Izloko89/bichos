@@ -190,7 +190,7 @@ $html='
 			</TR>
 			<TR>
 			<TD>
-			Tel. (871)2044450
+			Tel. (871)2044445
 			</TD>
 			</TR>
 			<TR>
@@ -289,15 +289,15 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 
-<TD>   NIÑOS: '. $personaje.'</TD><TD>     ADULTOS: '. $personaje.'</TD>
+<TD>   NIÑOS: '. $no_ninos.'</TD><TD>     ADULTOS: '. $no_adultos.'</TD>
 </TR>
 <TR>
 <TD>
-   GUARNICION: '. $personaje.'</TD>
+   GUARNICION: '. $guarnicion.'</TD>
 </TR>
 <TR>
 <TD>
-   BOTANA: '. $personaje.'</TD>
+   BOTANA: '. $botana.'</TD>
 </TR>
 <TR>
 <TD>
