@@ -39,7 +39,7 @@ try{
 		tipo_evento.id_tipo,
 		fechaevento,
 		fechamontaje,
-		fechadesmont
+		cotizaciones.fechadesmont
 	FROM cotizaciones
 	INNER JOIN tipo_evento ON tipo_evento.id_tipo=cotizaciones.id_tipo
 	INNER JOIN clientes ON cotizaciones.id_cliente=clientes.id_cliente 
