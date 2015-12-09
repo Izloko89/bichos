@@ -81,6 +81,9 @@ try{
 		t1.fechamontaje,
 		t1.fechadesmont,
 		t1.id_cliente,
+		t1.guarnicion,
+		t1.botana,
+		ti.hora_cena,
 		t2.nombre,
 		t3.direccion,
 		t3.colonia,
@@ -260,7 +263,7 @@ h1{
 	<strong>NOMBRE DE PAPA O MAMA: </strong>'. $cliente.' <BR>  
 	<strong>TELEFONO: </strong>'. $telCliente.'   <strong>  CELULAR: </strong>'. $celular.'<BR>
 	<strong>DIRECCION: </strong>'. $domicilio.' <BR>  
-	<strong>FECHA DE CONTRATACION: </strong>'. $fecha.' <BR>
+	<strong>FECHA DE CONTRATACION: </strong>'. varFechaAbr($fecha).' <BR>
 	<strong>EMAIL: </strong>'. $email.' <BR>
 	<strong>MEDIO DE PUBLICIDAD: </strong>'. $medio.' <BR>
 	
@@ -280,8 +283,7 @@ NUM. DE PERSONAS: '. $no_invitados.' </TD><TD>   NIÑOS: '. $no_ninos.'</TD><TD>
 FECHA DE EVENTO: '. $fechaEve.' </TD>
 </TR>
 <TR>
-<TD>
-PAQUETE: '. $cliente.' </TD>
+<TD></TD>
 </TR>
 <TR>
 <TD>
@@ -305,7 +307,7 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 <TD>
-   HORA DEL EVENTO:</TD>
+   HORA DEL EVENTO:'. $.'</TD>
 </TR>
 <TR>
 <TD>
