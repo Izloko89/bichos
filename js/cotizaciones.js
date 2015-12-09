@@ -354,6 +354,7 @@ function pasarevento(){
 		anticipo=$(".anticipo").val();
 		metodo=$(".metodo").val();
 		plazos=$(".plazos").val();
+		banco=$(".bancos").val();
 		$.ajax({
 			url:'scripts/s_pasaraevento.php',
 			cache:false,
@@ -362,7 +363,8 @@ function pasarevento(){
 			data:{
 				id_cotizacion:id,
 				'total':total,
-				'anticipo':anticipo
+				'anticipo':anticipo,
+				'banco':banco
 			},
 			success: function(r){
 				if(r.continuar){

@@ -8,6 +8,7 @@ $id_cot=$_POST["id_cotizacion"];
 $total=$_POST["total"];
 $anticipo=$_POST["anticipo"];
 $id_usuario=$_SESSION["id_usuario"];
+$banco=$_POST["banco"];
 
 if($id_cot!=""){
 	try{
@@ -146,7 +147,7 @@ if($id_cot!=""){
 		 # 1.- Crear el identificador de empresa_evento para que sea unico
 		 # 2.- añadir el total
 		 ##################################*/
-		 $sqlPago="INSERT INTO eventos_pagos (id_evento,id_cliente,plazo,cantidad) VALUES ('$id_emp_eve',$id_cliente,'anticipo','$anticipo');";
+		 $sqlPago="INSERT INTO eventos_pagos (id_evento,id_cliente,plazo,cantidad,id_banco) VALUES ('$id_emp_eve',$id_cliente,'anticipo','$anticipo', $banco);";
 		 $bd->query($sqlPago);
 		 
 		 /* ################################
