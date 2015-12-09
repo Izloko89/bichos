@@ -185,7 +185,7 @@ $html='
 		<TABLE align="right" >
 			<TR>
 			<TD>
-			Blvd. De Los Caminos N.135
+			Blvd. De Los Caminos N.135 Esto es una prueba mucho mayor para ver si jala
 			</TD>
 			</TR>
 			<TR>
@@ -289,15 +289,15 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 
-<TD>   NIÑOS: '. $personaje.'</TD><TD>     ADULTOS: '. $personaje.'</TD>
+<TD>   NIÑOS: '. $no_ninos.'</TD><TD>     ADULTOS: '. $no_adultos.'</TD>
 </TR>
 <TR>
 <TD>
-   GUARNICION: '. $personaje.'</TD>
+   GUARNICION: '. $guarnicion.'</TD>
 </TR>
 <TR>
 <TD>
-   BOTANA: '. $personaje.'</TD>
+   BOTANA: '. $botana.'</TD>
 </TR>
 <TR>
 <TD>
