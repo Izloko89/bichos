@@ -22,7 +22,7 @@ $(document).ready(function(e) {
 	$(".agregar_articulo").click(function(){
 		id_evento=$(".id_evento").get(0).value;
 		id=$(".lista_articulos").length+1;
-		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<span class="precio"></span></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
+		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
 		$.each($(".lista_articulos"),function(i,v){
 			$(this).find(".id_evento").val(id_evento);
 		});
@@ -43,28 +43,45 @@ $(document).ready(function(e) {
 		monto=$(".importe").val();
 		fecha=$(".fechapago").val();
 		cliente=$(".id_cliente").val();
-		$.ajax({
-			url:'scripts/s_pagar.php',
-			cache:false,
-			type:'POST',
-			data:{
-				'eve':eve,
-				'monto':monto,
-				'fecha':fecha,
-				'cliente':cliente
-			},
-			success: function(r){
-				if(r.continuar){
-					alerta("info","Pago añadido exitosamente");
-					checarTotalEve(eve);
-					historial(evento);
-					$("#nuevopago input[type=text]").val('');
-				}else{
-					alerta("error",r.info);
+		metodo=$(".metodo").val();
+		//var banco=document.getElementById("bancos");
+		banco = $(".bancos").val();
+		idbanco = 0;
+		if(monto != ""){
+			$.ajax({
+				url:'scripts/s_pagar.php',
+				cache:false,
+				type:'POST',
+				data:{
+					'eve':eve,
+					'monto':monto,
+					'fecha':fecha,
+					'cliente':cliente,
+					'metodo':metodo,
+					'banco':banco
+				},
+				success: function(r){
+					if(r.continuar){
+						alerta("info","Pago añadido exitosamente");
+						checarTotalEve(eve);
+						historial(evento);
+						$("#nuevopago input[type=text]").val('');
+					}else{
+						alerta("error",r.info);
+					}
 				}
-			}
-		});
+			});
+		}
 	});
+	$(".metodo").change(function(e) {
+		$(".divplazos").hide();
+		$(".divbancos").hide();
+        if($(this).find("option:selected").val()=="A crédito"){
+			$(".divplazos").show();
+		}else if($(this).find("option:selected").val()=="Transferencia" || $(this).find("option:selected").val()=="Cheque" || $(this).find("option:selected").val()=="Tarjeta de credito" || $(this).find("option:selected").val()=="Tarjeta de débito"){
+			$(".divbancos").show();
+		}
+    });
 });
 function historial(eve){
 	$.ajax({
@@ -80,9 +97,15 @@ function historial(eve){
 	});
 	//funcion para ver el historial de pagos del evento
 }
-function buscarClaveGet(){
+function cToT(e)
+{
+ precio = $(e).val();
+ $(e).parent().find(".precio").val(precio);
+ darprecio($(e).parent().find(".precio"));
+}
+function buscarClaveGet(id){
 	evento="";
-	dato=$(".clave_evento").val();
+	dato=$(".clave").val();
 	input=$(".clave_evento");
 	input.addClass("ui-autocomplete-loading-left");
 	$.ajax({
@@ -116,20 +139,38 @@ function buscarClaveGet(){
 			
 			//asigna el id de cotización
 			evento=r.id_evento;
+			$(".id_evento").val(evento);
+			$(".clave").val(evento);
 			get_items_eve(evento);
 			checarTotalEve(evento);
 			historial(evento);
+			getObservaciones(evento);
 			//le da el nombre al boton
 			$(".guardar").hide();
 			$(".modificar").show();
 		}else{
-			$.each($("#hacer form"),function(i,v){
-				$(this).get(i).reset();
-			});
+			$("#reset").click();
 			alerta("info","Este evento no se ha generado o no existe");
 		}
 		input.removeClass("ui-autocomplete-loading-left");
 	  }
+	});
+}
+
+function getObservaciones(evento){
+	$.ajax({
+		url:'scripts/get_observaciones_eve.php',
+		cache:false,
+		async:false,
+		data:{
+			'id_evento':evento
+		},
+		success: function(r){
+			$('#encargado').val(r.encargado);
+			$('#unidad').val(r.unidad);
+			$('#monta').val(r.monta);
+			$('#observaciones').val(r.obs);
+		}
 	});
 }
 function get_items_eve(id){
@@ -159,17 +200,17 @@ function checarTotalEve(id){
 		success: function(r){
 			if(r.continuar){
 				$(".totalevento").val(r.total);
-				$(".restante").val(r.restante);
+				$(".restante").val(r.total - r.pagado);
 			}else{
 				alerta("error",r.info);
 			}
 		}
 	});
 }
-function editar(e){
+function editar(e, id){
 	s=$(e);
 	$(".clave").val(s.attr("data-cve"));
-	buscarClaveGet();
+	buscarClaveGet(id);
 	$(".hacer a")[0].click();
 }
 function quitar_verde(e){
@@ -180,17 +221,25 @@ function guardar_art(elemento){
 	row=$("#"+elemento);
 	padre=$("#"+elemento).parent();
 	
+	//mostrar que se esta procesando
+	//procesando("mostrar",0);
+	
+	//checa si se modificó el total
+	actTotal=true;
+	if(row.hasClass("verde_ok")){
+		actTotal=false;
+	}
+	
 	id_item=$("#"+elemento+" .id_item").val();
 	id_articulo=$("#"+elemento+" .id_articulo").val();
 	id_paquete=$("#"+elemento+" .id_paquete").val();
 	id_evento=$(".id_evento").first().val();
 	cantidad=$("#"+elemento+" .cantidad").val();
-	precio=$("#"+elemento+" .precio").html();
+	precio=$("#"+elemento+" .precio").val();
 	total=$("#"+elemento+" .total").html();
 	$.ajax({
 		url:'scripts/guarda_art_eve.php',
 		cache:false,
-		type:'POST',
 		data:{
 			'id_item':id_item,
 			'id_paquete':id_paquete,
@@ -198,13 +247,15 @@ function guardar_art(elemento){
 			'id_evento':id_evento,
 			'cantidad':cantidad,
 			'precio':precio,
-			'total':total
+			'total':total,
+			boolTotal:actTotal
 		},
 		success: function(r){
+			//procesando("ocultar",0); //0 lo dispara automaticamente
 			if(r.continuar){
 				$("#"+elemento+" .id_item").val(r.id_item);
 				padre.find(".id_evento").val(id_evento);
-				alerta("info",r.info);
+				alerta("info","Fue agregado exitosamente");
 				row.addClass("verde_ok");
 				setTimeout(function(){checarTotal('eventos',id_evento);},500);
 			  }else{
@@ -252,16 +303,33 @@ function art_autocompletar(id){
 		  total.parent().parent().removeClass("verde_ok");
 		  id_articulo.val(ui.item.id_articulo);
 		  id_paquete.val(ui.item.id_paquete);
+			art = ui.item.id_articulo;
+			cot = $(".clave").val();
 		  precio.html(ui.item.precio);
 		  totalca=cantidad*ui.item.precio;
-		  total.html(totalca);
+		  total.html(totalca);			
+		  $.ajax({
+				url:'scripts/busca_existenciaEve.php',
+				cache:false,
+				async:false,
+				data:{
+					'art':art,
+					'cot':cot,
+					'cant':cantidad
+				},
+				success: function(r){
+					if(r){
+						alerta("info", r);
+					}
+				}
+			});
 	  }
 	});
 }
 function cambiar_cant(id){
 	padre=$("#"+id);
 	cantidad=padre.find(".cantidad").val()*1;
-	precio=padre.find(".precio").html()*1;
+	precio=padre.find(".precio").val()*1;
 	total=cantidad*precio;
 	padre.find(".total").html(total);
 	padre.removeClass("verde_ok");
@@ -270,7 +338,7 @@ function darprecio(e){
 	precio=$(e).val();
 	$(e).parent().parent().removeClass("verde_ok");
 	cant=$(e).parent().parent().find(".cantidad").val();
-	$(e).siblings(".precio").html(precio);
+	$(e).siblings(".precio").val(precio);
 	total=(precio*1)*(cant*1);
 	$(e).parent().parent().find(".total").html(total);
 }
@@ -278,17 +346,38 @@ function autorizarEve(id,clave){
 	$.ajax({
 		url:'scripts/s_autorizar_evento.php',
 		cache:false,
-		type:'POST',
 		data:{
 			id_evento:id
 		},
 		success: function(r){
+			if(r.estatus)
+			{
+								alerta("info","Este evento ya ha sido autorizado con anterioridad");
+				
+			}
+		else{
+			
+			
 			if(r.continuar){
 				alerta('info','El evento '+clave+' ha sido autorizado');
 				$("tr.cot"+clave).find(".bestatus").html('Evento');
 			}else{
 				alerta('error',r.info);
 			}
+		}}
+	});
+}
+function eliminar_eve(id, row){
+	$.ajax({
+		url:'scripts/deleteEve.php',
+		cache:false,
+		type:'POST',
+		data:{
+			id_evento:id
+		},
+		success: function(r){
+				alerta('info','El evento '+row+' ha sido eliminado');
+				document.getElementById("tablaEve").deleteRow(row);
 		}
 	});
 }
@@ -306,6 +395,26 @@ function revocarEve(id,clave){
 				$("tr.cot"+clave).find(".bestatus").html('Sin autorizar');
 			}else{
 				alerta('error',r.info);
+			}
+		}
+	});
+}
+function checarTotalEve(id){
+	var total;
+	$.ajax({
+		url:'scripts/s_check_total_eve.php',
+		cache:false,
+		async:false,
+		type:'POST',
+		data:{
+			'id':id
+		},
+		success: function(r){
+			if(r.continuar){
+				$(".totalevento").val(r.total);
+				$(".restante").val(r.restante);
+			}else{
+				alerta("error",r.info);
 			}
 		}
 	});

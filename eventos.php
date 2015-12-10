@@ -316,31 +316,63 @@ table{
     <h3 class='titulo_form'>Cuenta</h3>
         <div class="campo_form">
             <label class="">Total del evento</label>
-            <input type="text" class="totalevento numerico" readonly="readonly" />
+            <input type="text" class="totalevento numerico" id="totalEve" readonly="readonly" />
         </div>
         <div class="campo_form">
             <label class="">Restante:</label>
-            <input type="text" class="restante numerico" readonly="readonly" />
+            <input type="text" class="restante numerico" id="restEve" readonly="readonly" />
         </div>
         <div align="right">
             <input type="button" class="historial" value="Ver historial de pagos" />
             <input type="button" class="agregarpago" value="Agregar Pago" />
         </div>
         <div id="historial" class="formularios" style="display:none;">
-        	<h3 class='titulo_form'>Historial de pagos</h3>
+          <h3 class='titulo_form'>Historial de pagos</h3>
             <div class="mostrar"></div>
         </div>
         <div id="nuevopago" class="formularios" style="display:none;">
-        	<h3 class='titulo_form'>Nuevo Pago</h3>
+          <h3 class='titulo_form'>Nuevo Pago</h3>
             <input type="hidden" class="id_emp_eve" value="" />
              <div class="campo_form">
                 <label class="">Importe:</label>
                 <input type="text" class="importe numerico" />
-            </div>
+            </div>      
             <div class="campo_form">
                 <label class="">Fecha del pago:</label>
                 <input type="text" class="fechasql fechapago numerico" />
             </div>
+      <div class="campo_form">
+            <label class="">Metodo de pago</label>
+            <select class="metodo">
+              <option value="Efectivo">Efectivo</option>
+                <option value="Cheque">Cheque</option>
+                <option value="Transferencia">Transferencia</option>
+            <option value="Tarjeta de credito">Tarjeta de credito</option>
+            <option value="Tarjeta de débito">Tarjeta de débito</option>
+            </select>
+            <div class="divplazos" style="display:none;">
+                <label class="">Plazos:</label>
+                <input type="text" class="plazos numerico" size="4" value="1" />
+            </div>
+            <div class="divbancos" style="display:none;">
+                <label class="">Bancos:</label>
+        <?php 
+          $bd=new PDO($dsnw,$userw,$passw,$optPDO);
+          $sql = "select nombre, id_banco from bancos";
+          $res = $bd->query($sql);
+        ?>
+                <select class="bancos">
+        <?php 
+          foreach($res->fetchAll(PDO::FETCH_ASSOC) as $datos)
+          {
+            $id = $datos["id_banco"];
+            $nombre = $datos["nombre"];
+            echo "<option value=$id>$nombre</option>";
+          }
+        ?>
+        </select>
+            </div>
+        </div>
             <div align="right">
                 <input type="button" class="anadir" value="Añadir pago" />
             </div>
@@ -348,67 +380,69 @@ table{
     </div>
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form action="scripts/nota_venta_pdf.php" target="_blank" id="forma" method="get">
+      <form action="scripts/nota_venta_pdf.php" target="_blank">
+    <table class="">
+      <tr>
+        <td>
+          <label class="">Encargado:</label>
+        </td>
+        <td>
+
+          <input type="text" name="encargado" id="encargado" value=""/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="">Unidad:</label>
+        </td>
+        <td>
+          <input type="text" name="unidad" id="unidad"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="">Montan:</label>
+        </td>
+        <td>
+          <input type="text" name="monta" id="monta"/>
+        </td>
+      </tr>
+    </table>
+    
         <input type="hidden" name="id_evento" class="id_evento" value="" />
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
-        	<div align="right">
-     <!--   <input type="submit" value="Vista de impresión"  />
-          <input type="submit" onclick="this.form.action='scripts/nota_venta_pdf.php'" value="Hoja de bulto"/>-->
-		  <input type="button" onclick="tomavalor();" value="Contrato"  />
-		  </div>
+    <div align="right">
+        <input type="submit" onclick="this.form.action='scripts/nota_venta_pdf.php'" value="Imprimir/Guardar Hoja de Bulto"/>
+      <input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato"  />
+      <input type="submit" onclick="this.form.action='scripts/pdf_contrato_m.php'" value="Contrato m"  /></div>
       </form>
-      
-      <script>
-      function tomavalor()
-      {
-      var salon= document.getElementById("salon").value;
-      var id= document.getElementById("clave").value;
-       var obs= document.getElementById("observaciones").value;
-   
-       
-      if(salon=="CARACOL")
-      {
-      window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"",'_blank');
-      // document.getElementById("forma").action="scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs;
-      
-      }
-      if(salon=="HORMIGA")
-      {
-      window.open("scripts/pdf_contrato_hormigas.php?id_evento="+id+"&obs="+obs+"",'_blank');
-    //  document.getElementById("forma").action="scripts/pdf_contrato_hormigas.php?id_evento="+id+"&obs="+obs;
-   
-      }
-    
-      }
-      
-      </script>
     </div>
   </div>
 <!-- //sección de las eventos por empresa y or usuario --> 
   <div id="mias">
   <style>
-  	#mias table{
-		font-size:0.85em;
-	}
-	#mias th{
-		font-size:1.05em;
-		margin:2px;
-	}
-	#mias td{
-		margin:2px;
-		padding:5px 2px;
-	}
-	#mias .filtro{
-		width:100%;
-	}
-	.accion{
-		margin:0 5px;
-		cursor:pointer;
-	}
+    #mias table{
+    font-size:0.85em;
+  }
+  #mias th{
+    font-size:1.05em;
+    margin:2px;
+  }
+  #mias td{
+    margin:2px;
+    padding:5px 2px;
+  }
+  #mias .filtro{
+    width:100%;
+  }
+  .accion{
+    margin:0 5px;
+    cursor:pointer;
+  }
   </style>
-  <table cellpadding="0" cellspacing="2" border="0" width="100%" class="listado">
+  <table cellpadding="0" cellspacing="2" border="0" width="100%" class="listado" id="tablaEve">
   <tr>
-  	<th>Clave<br />Folio</th>
+    <th>Clave<br />Folio</th>
     <th style="width:200px;">Nombre del evento</th>
     <th>Tipo de evento</th>
     <th style="width:200px;">Cliente</th>
@@ -429,72 +463,71 @@ table{
     <td><input class="filtro filtrofecha" data-c="bfechadesmont" /></td>
     <td><a href="#" class="pdf" onclick="return false;" data-nombre="evento" data-orientar="L">generar pdf</a></td>
   </tr>
-  	<?php 
-	try{
-		$bd=new PDO($dsnw,$userw, $passw, $optPDO);
-		$sqlCot="SELECT
-			id_evento,
-			eventos.clave,
-			eventos.nombre,
-			tipo_evento.nombre as tipo_evento,
-			estatus,
-			fechaevento,
-			fechamontaje,
-			fechadesmont
-		FROM eventos
-		INNER JOIN tipo_evento ON eventos.id_tipo=tipo_evento.id_tipo
-		WHERE eventos.id_empresa=$empresaid";
-		$sqlClie="SELECT
-			id_evento,
-			clientes.id_cliente,
-			clientes.nombre,
-			clientes.limitecredito
-		FROM clientes
-		INNER JOIN eventos ON clientes.id_cliente = eventos.id_cliente
-		WHERE clientes.id_empresa=$empresaid;";
-		
-		$cot=array();
-		$res=$bd->query($sqlCot);
-		foreach($res->fetchAll(PDO::FETCH_ASSOC) as $v){
-			$ind=$v["id_evento"];
-			unset($v["id_evento"]);
-			$cot[$ind]=$v;
-		}
-		
-		$cli=array();
-		$res=$bd->query($sqlClie);
-		foreach($res->fetchAll(PDO::FETCH_ASSOC) as $v){
-			$ind=$v["id_evento"];
-			unset($v["id_evento"]);
-			$cli[$ind]=$v;
-		}
-		
-		
-		//correlacionar los subarrays al array principal de evento
-		foreach($cot as $ind=>$val){
-			$cot[$ind]["cliente"]=$cli[$ind]["nombre"];
-		}
-		
-		//escribimos la tabla
-		foreach($cot as $folio=>$d){
-			echo '<tr class="cot'.$d["clave"].'">';
-			echo '<td class="bfolio">'.$d["clave"].'</td>';
-			echo '<td class="bnombre">'.$d["nombre"].'</td>';
-			echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
-			echo '<td class="bcliente">'.$d["cliente"].'</td>';
-			echo '<td class="bestatus">'.$d["estatus"].'</td>';
-			echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fechaevento"]).'</td>';
-			echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fechamontaje"]).'</td>';
-			echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fechadesmont"]).'</td>';
-			echo '<td><img src="img/check.png" data-cve="'.$folio.'" height="20" onclick="autorizarEve('.$folio.','.$d["clave"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["clave"].'" onclick="editar(this);" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$folio.'" height="20" /></td>';
-			echo '</tr>';
-		}
-		$bd=NULL;
-	}catch(PDOException $err){
-		echo "Error encontrado: ".$err->getMessage();
-	}
-	?>
-  	</table>
+    <?php 
+  try{
+    $bd=new PDO($dsnw,$userw, $passw, $optPDO);
+    $sqlCot="SELECT
+      id_evento,
+      eventos.clave,
+      eventos.nombre,
+      tipo_evento.nombre as tipo_evento,
+      estatus,
+      fechaevento,
+      fechamontaje,
+      fechadesmont
+    FROM eventos
+    INNER JOIN tipo_evento ON eventos.id_tipo=tipo_evento.id_tipo
+    WHERE eventos.id_empresa=$empresaid";
+    $sqlClie="SELECT
+      id_evento,
+      clientes.id_cliente,
+      clientes.nombre,
+      clientes.limitecredito
+    FROM clientes
+    INNER JOIN eventos ON clientes.id_cliente = eventos.id_cliente
+    WHERE clientes.id_empresa=$empresaid;";
+    
+    $cot=array();
+    $res=$bd->query($sqlCot);
+    foreach($res->fetchAll(PDO::FETCH_ASSOC) as $v){
+      $ind=$v["id_evento"];
+      $cot[$ind]=$v;
+    }
+    
+    $cli=array();
+    $res=$bd->query($sqlClie);
+    foreach($res->fetchAll(PDO::FETCH_ASSOC) as $v){
+      $ind=$v["id_evento"];
+      $cli[$ind]=$v;
+    }
+    
+    
+    //correlacionar los subarrays al array principal de evento
+    foreach($cot as $ind=>$val){
+      $cot[$ind]["cliente"]=$cli[$ind]["nombre"];
+    }
+    $cont = 2;
+    //escribimos la tabla
+    foreach($cot as $folio=>$d){
+      echo '<tr class="cot'.$d["id_evento"].'">';
+      echo '<td class="bfolio">'.$d["id_evento"]. '</td>';
+      echo '<td class="bnombre">'.$d["nombre"].'</td>';
+      echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
+      echo '<td class="bcliente">'.$d["cliente"].'</td>';
+      echo '<td class="bestatus">'.$d["estatus"].'</td>';
+      echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fechaevento"]).'</td>';
+      echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fechamontaje"]).'</td>';
+      echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fechadesmont"]).'</td>';
+      echo '<td><img src="img/check.png" data-cve="'.$d["id_evento"].'" height="20" onclick="autorizarEve('.$folio.','.$d["clave"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_evento"].'" onclick="editar(this, ' . $d["id_evento"] . ');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_evento"].'" height="20" onclick="eliminar_eve(' . $d["id_evento"] . ',' . $cont . ')"/></td>';
+      echo '</tr>';
+      $cont++;
+    }
+    $bd=NULL;
+  }catch(PDOException $err){
+    echo "Error encontrado: ".$err->getMessage();
+  }
+  ?>
+    </table>
   </div>
 </div>
 </div>

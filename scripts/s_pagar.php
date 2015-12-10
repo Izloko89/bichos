@@ -5,10 +5,11 @@ $eve=$_SESSION["id_empresa"]."_".$_POST["eve"];
 $monto=$_POST["monto"];
 $fecha=$_POST["fecha"];
 $cliente=$_POST["cliente"];
+$banco = $_POST['banco'];
 
 try{
-	$sql="INSERT INTO eventos_pagos (id_evento,id_cliente,plazo,fecha,cantidad)
-	VALUES ('$eve',$cliente,'%consec%','$fecha','$monto');";
+	$sql="INSERT INTO eventos_pagos (id_evento,id_cliente,plazo,fecha,cantidad,id_banco)
+	VALUES ('$eve',$cliente,'%consec%','$fecha','$monto', $banco);";
 	$bd=new PDO($dsnw,$userw,$passw,$optPDO);
 	
 	$bd->query($sql);
