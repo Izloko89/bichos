@@ -333,26 +333,34 @@ table{
             <label class="">Total del evento</label>
             <input type="text" class="totalevento numerico" />
         </div>
-        <div class="campo_form">
+      <div class="campo_form">
             <label class="">Metodo de pago</label>
             <select class="metodo">
-            	<option value="contado">De contado</option>
-                <option value="credito">A crédito</option>
+              <option value="Efectivo">Efectivo</option>
                 <option value="cheque">Cheque</option>
                 <option value="transferencia">Transferencia</option>
+            <option value="Tarjeta de credito">Tarjeta de credito</option>
+            <option value="Tarjeta de débito">Tarjeta de débito</option>
             </select>
             <div class="divplazos" style="display:none;">
                 <label class="">Plazos:</label>
                 <input type="text" class="plazos numerico" size="4" value="1" />
             </div>
             <div class="divbancos" style="display:none;">
+            
+        <?php 
+          $bd=new PDO($dsnw,$userw,$passw,$optPDO);
+          $sql = "select nombre, id_banco from bancos";
+          $res = $bd->query($sql);
+        ?>
+      <div class="divbancos">
                 <label class="">Bancos:</label>
         <?php 
           $bd=new PDO($dsnw,$userw,$passw,$optPDO);
           $sql = "select nombre, id_banco from bancos";
           $res = $bd->query($sql);
         ?>
-                <select class="bancos"><option value="0">Elige un banco</option>
+                <select class="bancos">
         <?php 
           foreach($res->fetchAll(PDO::FETCH_ASSOC) as $datos)
           {
@@ -362,6 +370,7 @@ table{
           }
         ?>
         </select>
+            </div>
         </div>
       </div>
         <div class="campo_form">
