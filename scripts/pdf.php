@@ -337,7 +337,7 @@ PAQUETE:  </TD>
 </TR>
 <TR>
 <TD>
-   HORA DE CENA:'. varHoraAbr($hora_cena).'</TD> <td><table><tr><td>
+   HORA DE CENA: '. varHoraAbr($hora_cena).'</TD> <td><table><tr><td>
    
    PASTEL: '. $pastel.'
    </td></tr>
