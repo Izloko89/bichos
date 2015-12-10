@@ -135,13 +135,9 @@ $(document).ready(function(e) {
 		$(".divbancos").hide();
         if($(this).find("option:selected").val()=="credito"){
 			$(".divplazos").show();
-		}else
-		 if($(this).find("option:selected").val()=="transferencia"){
+		}else if($(this).find("option:selected").val()=="transferencia" || $(this).find("option:selected").val()=="cheque" || $(this).find("option:selected").val()=="Tarjeta de credito" || $(this).find("option:selected").val()=="Tarjeta de débito"){
 			$(".divbancos").show();
-		}else
-		 if($(this).find("option:selected").val()=="cheque"){
-		 	$(".divbancos").show();
-		 }
+		}
     });
 	$(".anticipo").keyup(function(e) {
 		anticipo=$(this).val();
