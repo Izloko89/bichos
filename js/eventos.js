@@ -82,6 +82,21 @@ $(document).ready(function(e) {
 			$(".divbancos").show();
 		}
     });
+
+	$(".filtro").keyup(function(e) {
+		if(e.keyCode!=9){
+			if($(this).val()!=""){
+				buscar=$(this).val();
+				criterio=$(this).attr("data-c");
+				$("."+criterio+":not(:contains("+buscar+")):visible").parent().hide();
+				$("."+criterio+":contains("+buscar+"):visible").parent().show();
+			}else{
+				$(".listado *").show();
+			}
+		}
+    });
+
+
 });
 function historial(eve){
 	$.ajax({
@@ -343,8 +358,6 @@ function darprecio(e){
 	$(e).parent().parent().find(".total").html(total);
 }
 function autorizarEve(id,clave){
-	console.log(id);
-	console.log(clave);
 	$.ajax({
 		url:'scripts/s_autorizar_evento.php',
 		cache:false,
@@ -416,4 +429,6 @@ function checarTotalEve(id){
 			}
 		}
 	});
+
+
 }
