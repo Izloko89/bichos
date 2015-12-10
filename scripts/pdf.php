@@ -81,6 +81,7 @@ try{
 		t1.fechamontaje,
 		t1.fechadesmont,
 		t1.id_cliente,
+		t1.guarnicion,
 		t2.nombre,
 		t3.direccion,
 		t3.colonia,
@@ -112,6 +113,7 @@ try{
 	$fecha=$evento["fecha"];
 	$fechaEve=$evento["fechaevento"];
 	$dirEve = $evento["dirEvento"];
+	$guarnicion = $evento["guarnicion"];
 	
 	$medio= $evento["medio"];
 	
