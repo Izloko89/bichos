@@ -265,8 +265,9 @@ function buscarClave(){
 		resetform();
 		$(".clave").val(clave);
 		$.each(r,function(i,v){
-			$("."+i).text(v);
-			$("."+i).val(v);
+			$("."+i).empty().text(v);
+			$("."+i).empty().val(v);
+
 		});
 		buscaArtPaq(r.id_paquete);
 		//asigna el id de cotización
@@ -306,7 +307,7 @@ function buscaArtPaq(paq){
 		},
 		success: function(r){
 			//$("tr:not(.noborrar)").remove();
-			$("#articulos_tabla").append(r);
+			$("#articulos_tabla").empty().append(r);
 		}
 	});
 }
