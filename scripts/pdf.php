@@ -81,6 +81,7 @@ try{
 		t1.fechamontaje,
 		t1.fechadesmont,
 		t1.id_cliente,
+		t1.guarnicion,
 		t2.nombre,
 		t3.direccion,
 		t3.colonia,
@@ -112,6 +113,7 @@ try{
 	$fecha=$evento["fecha"];
 	$fechaEve=$evento["fechaevento"];
 	$dirEve = $evento["dirEvento"];
+	$guarnicion = $evento["guarnicion"];
 	
 	$medio= $evento["medio"];
 	
@@ -185,7 +187,7 @@ $html='
 		<TABLE align="right" >
 			<TR>
 			<TD>
-			Blvd. De Los Caminos N.135 Esto es una prueba mucho mayor para ver si jala
+			Blvd. De Los Caminos N.135
 			</TD>
 			</TR>
 			<TR>
@@ -260,7 +262,7 @@ h1{
 	<strong>NOMBRE DE PAPA O MAMA: </strong>'. $cliente.' <BR>  
 	<strong>TELEFONO: </strong>'. $telCliente.'   <strong>  CELULAR: </strong>'. $celular.'<BR>
 	<strong>DIRECCION: </strong>'. $domicilio.' <BR>  
-	<strong>FECHA DE CONTRATACION: </strong>'. $fecha.' <BR>
+	<strong>FECHA DE CONTRATACION: </strong>'. varFechaAbr($fecha).' <BR>
 	<strong>EMAIL: </strong>'. $email.' <BR>
 	<strong>MEDIO DE PUBLICIDAD: </strong>'. $medio.' <BR>
 	

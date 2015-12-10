@@ -24,6 +24,7 @@ try{
 		cotizaciones.personaje,
 		cotizaciones.promocion,
 		cotizaciones.color_mantel,
+		cotizaciones.pastel,
 		cotizaciones.pinata,
 		cotizaciones.centro_mesa,
 		cotizaciones.invitaciones,
