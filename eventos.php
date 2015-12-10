@@ -102,6 +102,10 @@ table{
 	width:50%;
 	height:100px;
 }
+
+.clear {
+  clear: both;
+}
 </style>
 <div id="contenido">
 <div id="tabs">
@@ -380,9 +384,15 @@ table{
         </div>
     </div>
     <div align="left" class="formularios">
+    <h3 class='titulo_form'>Empleados</h3>
+      
+      <!-- Aqui va lo que quieres hacer de empleados -->
+
+    </div>
+    <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
       <form action="scripts/nota_venta_pdf.php" target="_blank">
-    <table class="">
+    <table align="left" class="">
       <tr>
         <td>
           <label class="">Encargado:</label>
@@ -409,7 +419,7 @@ table{
         </td>
       </tr>
     </table>
-    
+    <div class="clear"></div>
         <input type="hidden" name="id_evento" class="id_evento" value="" />
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
