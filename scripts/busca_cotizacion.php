@@ -4,6 +4,29 @@ header("Content-type: application/json");
 $term=$_GET["term"];
 $id_user=$_SESSION["id_usuario"];
 try{
+
+	$bd=new PDO($dsnw, $userw, $passw, $optPDO);
+	
+		
+		//trae la id del evento si es que la cotizacion es evento
+	$sql="select id_cotizacion from cotizaciones where clave='$term'";
+	$res=$bd->query($sql);
+	$res=$res->fetchAll(PDO::FETCH_ASSOC);
+	$id = $res[0]["id_cotizacion"];
+	
+	$sql="select id_evento from eventos where id_cotizacion='$id'";
+	$res=$bd->query($sql);
+	$filas=$res->rowCount();
+	$res=$res->fetchAll(PDO::FETCH_ASSOC);
+
+	if($filas>0)
+	{
+		$r["id_evento"] = $res[0]["id_evento"];
+		echo json_encode($r);
+		exit;
+	}
+
+	
 	$bd=new PDO($dsnw, $userw, $passw, $optPDO);
 	$sql="SELECT 
 		cotizaciones.nombre as label,

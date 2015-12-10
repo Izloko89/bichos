@@ -286,6 +286,15 @@ function buscarClaveGet(){
 	  },
 	  success: function(r){
 		form="cotizaciones";
+		
+		if(r.id_evento>0)
+		 {
+			 alerta("info","Esta cotizacion ya es un evento<br>Se Redireccionara al evento automaticamente");
+			 var func = function () { window.location = "eventos.php?cve="+r.id_evento;}
+			 setTimeout(func, 5000);
+			 
+		 }else{
+
 		if(r.bool){
 			//graba los datos en los campos correspondientes
 			value=r.id_tipo;
@@ -322,6 +331,7 @@ function buscarClaveGet(){
 		}
 		input.removeClass("ui-autocomplete-loading-left");
 	  }
+	}
 	});
 }
 function darprecio(e){
