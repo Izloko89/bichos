@@ -419,7 +419,8 @@ table{
   </style>
   <table cellpadding="0" cellspacing="2" border="0" width="100%" class="listado">
   <tr>
-  	<th>Clave<br />Folio</th>
+  	<th>#</th>
+    <!-- <th>Clave<br />Folio</th> -->
     <th style="width:200px;">Nombre del evento</th>
     <th>Tipo de evento</th>
     <th style="width:200px;">Cliente</th>
@@ -430,7 +431,8 @@ table{
     <th>acciones</th>
   </tr>
   <tr class="barra_accion">
-    <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td>
+    <td></td>
+    <!-- <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td> -->
     <td><input class="filtro" data-c="bnombre" /></td>
     <td><input class="filtro" data-c="btipo_evento" /></td>
     <td><input class="filtro" data-c="bcliente" /></td>
@@ -487,18 +489,20 @@ table{
 		}
 		
 		//escribimos la tabla
+    $num=1;
 		foreach($cot as $folio=>$d){
-			echo '<tr class="cot'.$d["clave"].'">';
-			echo '<td class="bfolio">'.$d["clave"].'</td>';
-			echo '<td class="bnombre">'.$d["nombre"].'</td>';
-			echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
-			echo '<td class="bcliente">'.$d["cliente"].'</td>';
-			echo '<td class="bestatus">'.$d["estatus"].'</td>';
-			echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fechaevento"]).'</td>';
-			echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fechamontaje"]).'</td>';
-			echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fechadesmont"]).'</td>';
-			echo '<td><img class="accion" src="img/edit.png" data-cve="'.$d["clave"].'" onclick="editar(this);" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$folio.'" height="20" /></td>';
-			echo '</tr>';
+      echo '<tr class="cot'.$d["clave"].'">';
+      echo '<td >'.$num.' </td>';
+     // echo '<td class="bfolio">'.$d["clave"].'</td>';
+      echo '<td class="bnombre">'.$d["nombre"].'</td>';
+      echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
+      echo '<td class="bcliente">'.$d["cliente"].'</td>';
+      echo '<td class="bestatus">'.$d["estatus"].'</td>';
+      echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fechaevento"]).'</td>';
+      echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fechamontaje"]).'</td>';
+      echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fechadesmont"]).'</td>';
+      echo '<td><img class="accion" src="img/edit.png" data-cve="'.$d["clave"].'" data-id="'.$folio.'" onclick="editar(this);" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$folio.'" height="20" /></td>';
+      $num++;
 		}
 		$bd=NULL;
 	}catch(PDOException $err){
