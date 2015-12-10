@@ -355,7 +355,7 @@ table{
                 <label class="">Plazos:</label>
                 <input type="text" class="plazos numerico" size="4" value="1" />
             </div>
-            <div class="divbancos" style="" id="bancos">
+            <div class="divbancos" style="display:none">
                 <label class="">Bancos:</label>
         <?php 
           $bd=new PDO($dsnw,$userw,$passw,$optPDO);
