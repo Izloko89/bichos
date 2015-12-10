@@ -443,7 +443,7 @@ table{
   </style>
   <table cellpadding="0" cellspacing="2" border="0" width="100%" class="listado" id="tablaEve">
   <tr>
-    <th>Clave<br />Folio</th>
+    <th>#</th>
     <th style="width:200px;">Nombre del evento</th>
     <th>Tipo de evento</th>
     <th style="width:200px;">Cliente</th>
@@ -454,7 +454,7 @@ table{
     <th>acciones</th>
   </tr>
   <tr class="barra_accion">
-    <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td>
+    <td style="width:34px;"></td>
     <td><input class="filtro" data-c="bnombre" /></td>
     <td><input class="filtro" data-c="btipo_evento" /></td>
     <td><input class="filtro" data-c="bcliente" /></td>
@@ -509,9 +509,10 @@ table{
     }
     $cont = 2;
     //escribimos la tabla
+    $num = 1;
     foreach($cot as $folio=>$d){
       echo '<tr class="cot'.$d["id_evento"].'">';
-      echo '<td class="bfolio">'.$d["id_evento"]. '</td>';
+      echo '<td class="bfolio">'.$num. '</td>';
       echo '<td class="bnombre">'.$d["nombre"].'</td>';
       echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
       echo '<td class="bcliente">'.$d["cliente"].'</td>';
@@ -522,6 +523,7 @@ table{
       echo '<td><img src="img/check.png" data-cve="'.$d["id_evento"].'" height="20" onclick="autorizarEve('.$folio.','.$d["clave"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_evento"].'" onclick="editar(this, ' . $d["id_evento"] . ');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_evento"].'" height="20" onclick="eliminar_eve(' . $d["id_evento"] . ',' . $cont . ')"/></td>';
       echo '</tr>';
       $cont++;
+      $num++;
     }
     $bd=NULL;
   }catch(PDOException $err){

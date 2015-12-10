@@ -13,6 +13,8 @@ try{
 	$estatus = $res2[0]["estatus"];	
 	if($estatus==2){
 		$r["estatus"]=true;
+		$bd=NULL;
+		echo json_encode($r);
 		exit;
 	}
 	$bd=new PDO($dsnw,$userw,$passw,$optPDO);

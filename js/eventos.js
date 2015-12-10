@@ -355,10 +355,7 @@ function autorizarEve(id,clave){
 			if(r.estatus)
 			{
 				alerta("info","Este evento ya ha sido autorizado con anterioridad");
-			}
-		else{
-			
-			
+			}else{
 			if(r.continuar){
 				alerta('info','El evento '+clave+' ha sido autorizado');
 				$("tr.cot"+clave).find(".bestatus").html('Evento');
