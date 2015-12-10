@@ -305,7 +305,7 @@ NUM. DE PERSONAS: '. $no_invitados.' </TD><TD>   NIÑOS: '. $no_ninos.'</TD><TD>
 </TR>
 <TR>
 <TD>
-FECHA DE EVENTO: '. $fechaEve.' </TD>
+FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
@@ -399,40 +399,36 @@ PAQUETE: '. $cliente.' </TD>
 
 
 <div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
-<table border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
-	<tr align="center">
-    	<th style="width:15%;">ANTICIPO</th>
-        <th style="width:55%;">CANTIDAD</th>
-        <th style="width:15%;">FECHA</th>
-        
-    </tr>';
-	$total=0;
-	$cont=0;
-	foreach($articulos as $id=>$d){ 
-	$cont++;
-	$total+=$d["total"];
-		$html.='
-    <tr>
-        <td style="width:15%;text-align:center;">ANTICIPO '. $cont.'</td>
-        <td style="width:55%;">'. $d["nombre"].'</td>
-        <td style="width:15%;text-align:center;"></td>
-        
-    </tr>
-    
-    
-    
-    
-    ';
-	} 
-$html.='
-	<tr>
-        <td style="width:15%;text-align:center;">DESCUENTOS O PROM. </td>
-        <td style="width:55%;"> </td>
-		<td style="width:15%;text-align:right;"></td>
-		
-    </tr>
-  
-</table>
+<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
+                <tr align="center">
+                    <th style="width:15%;">CANT.</th>
+                    <th style="width:55%;">CONCEPTO</th>
+                    <th style="width:15%;">P.U.</th>
+                    <th style="width:15%;">IMPORTE</th>
+                </tr>';
+            $total=0;
+            foreach($articulos as $id=>$d){ 
+            $total+=$d["total"];
+            $html.='
+                <tr>
+                    <td style="width:15%;text-align:center;">'.$d["cantidad"].'</td>
+                    <td style="width:55%;">'. $d["nombre"].'</td>
+                    <td style="width:15%;text-align:center;">'. number_format($d["precio"],2).'</td>
+                    <td style="width:15%;text-align:right;">'. number_format($d["total"],2).'</td>
+                </tr>';
+            } 
+            $html.='
+                <tr>
+                    <td style="width:15%;text-align:center;"></td>
+                    <td style="width:55%;"></td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>Total:</strong>
+                    </td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>'. number_format($total,2).'</strong>
+                    </td>
+                </tr>
+            </table>
 </div>
 <div style="width:95%; padding 20px; font-size:12px; ">
 <P STYLE="margin-left: 1cm;"> RESTANTE:</P>
