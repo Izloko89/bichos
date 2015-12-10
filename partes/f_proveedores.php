@@ -160,7 +160,7 @@ $(document).ready(function(e) {
     </div>
 </div>
 <div class="formularios">
-<h3 class="titulo_form">Listado de clientes registrados</h3>
+<h3 class="titulo_form">Listado de proveedores registrados</h3>
 	<table style="width:100%;">
     	<tr>
         	<th>CLAVE<br /><font style="font-size:0.4em; color:#999;">Doble Clic<br />para modificar</font></th>

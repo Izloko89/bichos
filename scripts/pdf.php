@@ -305,7 +305,7 @@ NUM. DE PERSONAS: '. $no_invitados.' </TD><TD>   NIÑOS: '. $no_ninos.'</TD><TD>
 </TR>
 <TR>
 <TD>
-FECHA DE EVENTO: '. $fechaEve.' </TD>
+FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
