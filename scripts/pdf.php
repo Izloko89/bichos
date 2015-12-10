@@ -309,7 +309,7 @@ FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
-PAQUETE: '. $cliente.' </TD>
+PAQUETE:  </TD>
 </TR>
 <TR>
 <TD>
@@ -333,7 +333,7 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 <TD>
-   HORA DEL EVENTO:</TD>
+   HORA DEL EVENTO: '. varHoraAbr($fechaEve).'</TD>
 </TR>
 <TR>
 <TD>

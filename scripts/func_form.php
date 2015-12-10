@@ -301,6 +301,9 @@ function varFechaAbrNorm($fecha){
 function varFechaAbr($fecha){
 	return date("d/m/Y",strtotime($fecha));
 }
+function varHoraAbr($fecha){
+	return date("h:i a",strtotime($fecha));
+}
 function fechaAbreviada($fecha){
 	echo ucfirst(utf8_encode(strftime("%d / %B / %Y %I:%M %p",strtotime($fecha))));
 }
