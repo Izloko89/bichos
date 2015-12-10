@@ -13,7 +13,7 @@ if(isset($_SESSION["id_usuario"])){
 <link rel="stylesheet" media="all" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<title>Login - Administraci¨®n de eventos</title>
+<title>Login - Eventos bichos to go</title>
 </head>
 
 <body>

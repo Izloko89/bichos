@@ -81,7 +81,20 @@ try{
 		t1.fechamontaje,
 		t1.fechadesmont,
 		t1.id_cliente,
+		t1.no_ninos_menu,
+		t1.no_adultos_menu,
 		t1.guarnicion,
+		t1.botana,
+		t1.hora_cena,
+		t1.pastel,
+		t1.pinata,
+		t1.centro_mesa,
+		t1.invitaciones,
+		t1.refrescos,
+		t1.aguas,
+		t1.promocion,
+		t1.color_mantel,
+		t1.servicios_extra,
 		t2.nombre,
 		t3.direccion,
 		t3.colonia,
@@ -113,7 +126,20 @@ try{
 	$fecha=$evento["fecha"];
 	$fechaEve=$evento["fechaevento"];
 	$dirEve = $evento["dirEvento"];
+	$no_ninos_menu = $evento["no_ninos_menu"];
+	$no_adultos_menu = $evento["no_adultos_menu"];
 	$guarnicion = $evento["guarnicion"];
+	$botana = $evento["botana"];
+	$hora_cena = $evento["hora_cena"];
+	$pastel = $evento["pastel"];
+	$pinata = $evento["pinata"];
+	$centro_mesa = $evento["centro_mesa"];
+	$invitaciones = $evento["invitaciones"];
+	$refrescos = $evento["refrescos"];
+	$aguas = $evento["aguas"];
+	$promocion = $evento["promocion"];
+	$color_mantel = $evento["color_mantel"];
+	$servicios_extra = $evento["servicios_extra"];
 	
 	$medio= $evento["medio"];
 	
@@ -291,7 +317,7 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 
-<TD>   NIÑOS: '. $no_ninos.'</TD><TD>     ADULTOS: '. $no_adultos.'</TD>
+<TD>   NIÑOS: '. $no_ninos_menu.'</TD><TD>     ADULTOS: '. $no_adultos_menu.'</TD>
 </TR>
 <TR>
 <TD>
@@ -311,19 +337,19 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 <TD>
-   HORA DE CENA:</TD> <td><table><tr><td>
+   HORA DE CENA:'. $hora_cena.'</TD> <td><table><tr><td>
    
-   PASTEL:
+   PASTEL: '. $pastel.'
    </td></tr>
    <tr><td>
    
-   PIÑATA:
+   PIÑATA: '. $pinata.'
    </td></tr><tr><td>
    
-   CENTRO DE MESA:
+   CENTRO DE MESA: '. $centro_mesa.'
    </td></tr><tr><td>
    
-   INVITACIONES:
+   INVITACIONES: '. $invitaciones.'
    </td></tr>
    
    
@@ -335,19 +361,19 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 <TD>
-   REFRESCOS:</TD>
+   REFRESCOS: '. $refrescos.'</TD>
 </TR>
 <TR>
 <TD>
-   AGUAS FRESCAS:</TD>
+   AGUAS FRESCAS: '. $aguas.'</TD>
 </TR>
 <TR>
 <TD>
-   PROMOCION:</TD>
+   PROMOCION: '. $promocion.'</TD>
 </TR>
 <TR>
 <TD>
-   COLOR DE MANTEL:</TD>
+   COLOR DE MANTEL: '. $color_mantel.'</TD>
 </TR>
 <TR>
 <TD>
@@ -355,7 +381,7 @@ PAQUETE: '. $cliente.' </TD>
 </TR>
 <TR>
 <TD>
-  SERVICIOS EXTRA:</TD>
+  SERVICIOS EXTRA: '. $servicios_extra.'</TD>
 </TR>
 <TR>
 <TD>
