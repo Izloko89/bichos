@@ -17,7 +17,7 @@ if(isset($_SESSION["id_usuario"])){
 </head>
 
 <body>
-<div class="app_name">Administraci¨®n de eventos</div>
+<div class="app_name">Eventos bichos to go</div>
 <div class="vendor_name">S21 Sistemas</div>
 
 <table cellpadding="0" cellspacing="0" border="0">

@@ -10,7 +10,7 @@
             <span class="link" data-url="home.php">Inicio</span>/
             <span class="link" data-url="cotizaciones.php">Cotizaciones</span>/
             <span class="link" data-url="eventos.php">Eventos</span>/
-            <span class="link" data-url="almacén.php">Almacén</span>/
+            <span class="link" data-url="almacen.php">Almacén</span>/
             <span class="link" data-url="compras.php">Compras</span>/
             <span class="link" data-url="bancos.php">Bancos</span>/
             <span class="link" data-url="modulos.php">Módulos</span>/
