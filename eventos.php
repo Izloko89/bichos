@@ -295,15 +295,16 @@ table{
           
     </div>
       </div>
-        <div align="right">
+         <div align="right">
             <input type="button" class="modificar" value="MODIFICAR" data-wrap="#hacer" />
+      <input type="reset" style="display:none;" id="reset"/>
         </div>
-	</form>
+  </form>
     <div class='formularios'>
-	<h3 class='titulo_form'>Artículos y Paquetes</h3>
-    <table id="articulos">
+  <h3 class='titulo_form'>Artículos y Paquetes</h3>
+    <table id="articulos" class="table">
       <tr>
-      	<th class="agregar_articulo"><img src="img/mas.png" height="25" /></th>
+        <th class="agregar_articulo"><img src="img/mas.png" height="25" /></th>
         <th width="100">Cant.</th>
         <th width="250">Concepto</th>
         <th width="100">precio unitario</th>
@@ -354,7 +355,7 @@ table{
                 <label class="">Plazos:</label>
                 <input type="text" class="plazos numerico" size="4" value="1" />
             </div>
-            <div class="divbancos" style="display:none;">
+            <div class="divbancos" style="" id="bancos">
                 <label class="">Bancos:</label>
         <?php 
           $bd=new PDO($dsnw,$userw,$passw,$optPDO);

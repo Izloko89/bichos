@@ -144,7 +144,7 @@ function buscarClaveGet(id){
 			get_items_eve(evento);
 			checarTotalEve(evento);
 			historial(evento);
-			getObservaciones(evento);
+			//getObservaciones(evento);
 			//le da el nombre al boton
 			$(".guardar").hide();
 			$(".modificar").show();
@@ -157,22 +157,22 @@ function buscarClaveGet(id){
 	});
 }
 
-function getObservaciones(evento){
-	$.ajax({
-		url:'scripts/get_observaciones_eve.php',
-		cache:false,
-		async:false,
-		data:{
-			'id_evento':evento
-		},
-		success: function(r){
-			$('#encargado').val(r.encargado);
-			$('#unidad').val(r.unidad);
-			$('#monta').val(r.monta);
-			$('#observaciones').val(r.obs);
-		}
-	});
-}
+// function getObservaciones(evento){
+// 	$.ajax({
+// 		url:'scripts/get_observaciones_eve.php',
+// 		cache:false,
+// 		async:false,
+// 		data:{
+// 			'id_evento':evento
+// 		},
+// 		success: function(r){
+// 			$('#encargado').val(r.encargado);
+// 			$('#unidad').val(r.unidad);
+// 			$('#monta').val(r.monta);
+// 			$('#observaciones').val(r.obs);
+// 		}
+// 	});
+// }
 function get_items_eve(id){
 	$(".lista_articulos").remove();
 	$.ajax({
@@ -343,6 +343,8 @@ function darprecio(e){
 	$(e).parent().parent().find(".total").html(total);
 }
 function autorizarEve(id,clave){
+	console.log(id);
+	console.log(clave);
 	$.ajax({
 		url:'scripts/s_autorizar_evento.php',
 		cache:false,
@@ -352,8 +354,7 @@ function autorizarEve(id,clave){
 		success: function(r){
 			if(r.estatus)
 			{
-								alerta("info","Este evento ya ha sido autorizado con anterioridad");
-				
+				alerta("info","Este evento ya ha sido autorizado con anterioridad");
 			}
 		else{
 			

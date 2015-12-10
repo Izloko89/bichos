@@ -1,9 +1,20 @@
 <?php session_start();
 header("content-type: application/json");
 include("datos.php");
-$id_eve=$_POST["id_evento"];
+$id_eve=$_GET["id_evento"];
 
 try{
+
+	$bd=new PDO($dsnw,$userw,$passw,$optPDO);
+
+	$sql = "select estatus from eventos  where id_evento= '$id_eve'";
+	$res2 = $bd->query($sql);
+	$res2 = $res2->fetchAll(PDO::FETCH_ASSOC);
+	$estatus = $res2[0]["estatus"];	
+	if($estatus==2){
+		$r["estatus"]=true;
+		exit;
+	}
 	$bd=new PDO($dsnw,$userw,$passw,$optPDO);
 	$sql="UPDATE eventos SET estatus=2 WHERE id_evento=$id_eve;";
 	$bd->query($sql);
