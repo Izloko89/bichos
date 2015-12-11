@@ -261,12 +261,12 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:93px;">
+			<td style="padding-bottom:10px; width:193px;">
 				<strong>Num. de personas:</strong> <?php echo $no_invitados ?>
 			</td>
-			<td style="padding-bottom:10px; width:93px;">
+			<td style="padding-bottom:10px; width:193px;">
 				<strong>Niños:</strong> <?php echo $no_ninos ?>
-			</td style="padding-bottom:10px; width:93px;">
+			</td style="padding-bottom:10px; width:193px;">
 			<td>
 				<strong>Adultos:</strong> <?php echo $no_adultos ?>
 			</td>
