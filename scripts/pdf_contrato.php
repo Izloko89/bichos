@@ -213,10 +213,9 @@ p {
 <div style="width:100%; padding:5 20px; font-size:12px;">
 	<table cellspacing="0" cellpadding="0" border="1">
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
 			</td>
-			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
@@ -227,10 +226,9 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Nombre de papa o mama:</strong> <?php echo $cliente ?>
 			</td>
-			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
@@ -241,22 +239,19 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Direcci&oacute;n:</strong> <?php echo $direccion ?>
 			</td>
-			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>E-mail:</strong> <?php echo $email ?>
 			</td>
-			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
 			</td>
-			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:20px; padding-top:10px;" colspan="2" align="center">
