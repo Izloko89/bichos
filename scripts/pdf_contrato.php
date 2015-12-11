@@ -312,22 +312,22 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:5px; width:280px;">
 				<strong>Pastel:</strong> <?php echo $pastel ?>
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:5px; width:280px;">
 				<strong>Piñanta:</strong> <?php echo $pinata ?>
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:5px; width:280px;">
 				<strong>Centro de mesa:</strong> <?php echo $centro_mesa ?>
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;">
+			<td style="padding-bottom:5px; width:280px;">
 				<strong>Invitaciones:</strong> <?php echo $invitaciones ?>
 			</td>
 		</tr>
