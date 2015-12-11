@@ -65,7 +65,7 @@ if(isset($_GET["id_evento"])){
 		FROM eventos t1
 		LEFT JOIN clientes t2 ON t1.id_cliente=t2.id_cliente
 		LEFT JOIN clientes_contacto t3 ON t1.id_cliente=t3.id_cliente
-		WHERE t1.clave=$eve;";
+		WHERE t1.id_evento=$eve;";
 		$res=$bd->query($sql);
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
 		$evento=$res[0];
