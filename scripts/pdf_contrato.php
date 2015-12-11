@@ -127,6 +127,21 @@ if(isset($_GET["id_evento"])){
 		$personaje=$evento["personaje"];
 		$medio=$evento["medio"];
 		$no_invitados=$evento["no_personas"];
+		$no_ninos=$evento["no_ninos"];
+		$no_adultos=$evento["no_adultos"];
+		$no_ninos_menu=$evento["no_ninos_menu"];
+		$no_adultos_menu=$evento["no_adultos_menu"];
+		$guarnicion=$evento["guarnicion"];
+		$botana=$evento["botana"];
+		$pastel=$evento["pastel"];
+		$pinata=$evento["pinata"];
+		$centro_mesa=$evento["centro_mesa"];
+		$invitaciones=$evento["invitaciones"];
+		$refrescos=$evento["refrescos"];
+		$aguas=$evento["aguas"];
+		$promocion=$evento["promocion"];
+		$color_mantel=$evento["color_mantel"];
+		$servicios_extra=$evento["servicios_extra"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
