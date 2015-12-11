@@ -5,29 +5,6 @@ include_once("datos.php");
 require_once('../clases/html2pdf.class.php');
 include_once("func_form.php");
 $emp=$_SESSION["id_empresa"];
-if(isset($_GET["id_evento"])){
-	$id=$_GET["id_evento"];
-	$salon=$_GET["salon"];
-	
-	
-	$varpath = "../img/logo.png";
-	
-	
-	 if($salon=="CARACOL")
-		{ 
-		$varpath = "../img/caracol.png";
-		} 
-		 if($salon=="HORMIGA") { 
-		$varpath = "../img/hormiga.png";
-		}
-		
-	
-	
-	
-}else
-{
-echo "no trae datos" . $id;
-}
 
 //funciones para usarse dentro de los pdfs
 function mmtopx($d){
@@ -54,7 +31,29 @@ function folio($digitos,$folio){
 	$salida.=$folio;
 	return $salida;
 }
-
+if(isset($_GET["id_evento"])){
+	$id=$_GET["id_evento"];
+	$salon=$_GET["salon"];
+	
+	
+	$varpath = "../img/logo.png";
+	
+	
+	 if($salon=="CARACOL")
+		{ 
+		$varpath = "../img/caracol.png";
+		} 
+		 if($salon=="HORMIGA") { 
+		$varpath = "../img/hormiga.png";
+		}
+		
+	
+	
+	
+}else
+{
+echo "no trae datos" . $id;
+}
 
 //tamaño carta alto:279.4 ancho:215.9
 $heightCarta=960;
@@ -80,7 +79,6 @@ if(isset($_GET["id_evento"])){
 			t1.fechadesmont,
 			t1.id_cliente,
 			t1.nombre As nombreEvento,
-			t1.edad,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -102,7 +100,6 @@ if(isset($_GET["id_evento"])){
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
 		$nombreEve=$evento["nombreEvento"];
-		$edad=$evento["edad"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -203,7 +200,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img src="<?php echo $varpath; ?>" style="width:65%;" /> 
+      <td valign="top"><img src="../img/salon_caracol.png" s> 
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
