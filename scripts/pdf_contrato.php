@@ -213,13 +213,13 @@ p {
 <div style="width:100%; padding:5 20px; font-size:12px;">
 	<table cellspacing="0" cellpadding="0">
 		<tr>
-			<td style="padding:100px;">
+			<td style="padding:10px;">
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
 			</td>
-			<td style="padding:100px;">
+			<td style="padding:10px;">
 				<strong>Edad que cumple:</strong> <?php echo $edad ?>
 			</td>
-			<td style="padding:100px;">
+			<td style="padding:10px;">
 				<strong>Personaje de la fiesta:</strong> <?php echo $personaje ?>
 			</td>
 		</tr>
