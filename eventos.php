@@ -386,8 +386,23 @@ table{
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Empleados</h3>
       
-      <!-- Aqui va lo que quieres hacer de empleados -->
-
+      Puesto: 
+      <?php 
+          $bd=new PDO($dsnw,$userw,$passw,$optPDO);
+          $sql = "select DISTINCT puesto from empleados";
+          $res = $bd->query($sql);
+        ?>
+                <select class="bancos">
+        <?php 
+          foreach($res->fetchAll(PDO::FETCH_ASSOC) as $datos)
+          {
+            $puesto = $datos["puesto"];
+            echo "<option value=$puesto>$puesto</option>";
+          }
+        ?>
+        </select>
+            </div>
+    </div>
     </div>
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>

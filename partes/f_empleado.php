@@ -121,9 +121,8 @@ $(document).ready(function(e) {
 		}
     }); //termina buscador de cotizacion
 	$(".dbc").dblclick(function(e) {
-      
-		dato=$(this).text();
-		 $(".guardar").css({ "display": 'none'});
+		dato=$(this).attr('id');
+		$(".guardar").css({ "display": 'none'});
 		$(".modificar").css({ "display": 'inline'});
 		$.ajax({
 	  url:"scripts/busca_empleado1.php",
@@ -274,16 +273,6 @@ $(document).ready(function(e) {
    
   }
 		
-		
-		
-		
-	//	rfcf = document.getElementById("rfcf").value;
-	//	direccionf = document.getElementById("direccionf").value;
-	//	coloniaf = document.getElementById("coloniaf").value;
-	//	ciudadf = document.getElementById("ciudadf").value;
-	//	estadof = document.getElementById("estadof").value;
-	//	cpf= document.getElementById("cpf").value;
-		//procesamiento de datos
 		$.ajax({
 			url:'scripts/s_guardar_empleado.php',
 			cache:false,
@@ -317,15 +306,12 @@ $(document).ready(function(e) {
 		//		'estadof':estadof,
 		//		'cpf':cpf
 			},
-			success: function(r){
-				
+			success: function(r){		
 				if(r.continuar){
-					$(".volover").click(function(e) {
-						ingresar=true;
-    					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
-						$("#botones_modulo").fadeIn(rapidez);
-					});
-    			});
+					ingresar=true;
+					alerta("info","Se modifico correctamente");
+					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
+					$("#botones_modulo").fadeIn(rapidez); });			
 				}else{
 					alerta("error",r.info);
 				}
@@ -462,8 +448,10 @@ $(document).ready(function(e) {
 			success: function(r){
 				
 				if(r.continuar){
-					alerta("info","Informacion modificada correctamene");
-					$(".volover").click();
+					ingresar=true;
+					alerta("info","Se modifico correctamente");
+					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
+					$("#botones_modulo").fadeIn(rapidez); });			
 				}else{
 					alerta("error",r.info);
 				}
@@ -487,8 +475,7 @@ $sql="SELECT
   <h3 class="titulo_form">EMPLEADO</h3>
   	<input type="hidden" name="id_cliente" id="id_cliente" class="id_cliente" value="1"/>
     <div class="campo_form">
-    <label class="label_width">CLAVE</label>
-    <input type="text" name="clave" id="clave" class="clave cliente_clave text_corto requerido mayuscula"
+    <input type="hidden" name="clave" id="clave" class="clave cliente_clave text_corto requerido mayuscula"
 	value="<?php echo isset($aidi) ?  $aidi :  '1'  ?>"
     </div>
     <div class="campo_form">
@@ -606,12 +593,15 @@ $sql="SELECT
             <th>NOMBRE</th>
         </tr>
         
-    <?php if(count($clientes)>0){foreach($clientes as $art=>$d){
+    <?php 
+    $num=1;
+    if(count($clientes)>0){foreach($clientes as $art=>$d){
 		echo '<tr id='.$d["id_empleado"].'>';
-		echo '<td class="dbc" data-action="clave">'.$d["id_empleado"].'</td>';
+		echo '<td id="'.$d["id_empleado"].'" class="dbc" data-action="clave">'.$num.'</td>';
 		echo '<td>'.$d["nombre"].'</td>';
 		echo '<td><img src="../img/cruz.png" height="20" onclick="eliminar('.$d["id_empleado"].');" /></td>';
 		echo '</tr>';
+		$num++;
 	
 	}} ?>
     </table>
@@ -670,7 +660,6 @@ $.ajax({
 				if(r.continuar){
 					alerta("info","Empleado eliminado exitosamente");
 					document.getElementById(aidi).remove();
-					$(".volover").click();
 				}else{
 					alerta("info","Empleado eliminado exitosamente");
 					document.getElementById(aidi).remove();
