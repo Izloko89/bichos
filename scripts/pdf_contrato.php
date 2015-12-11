@@ -307,7 +307,7 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;" rowspan="5">
+			<td style="padding-top:15px; width:280px;" rowspan="5">
 				<strong>Hora de cena:</strong> <?php echo varHoraAbr($hora_cena) ?>
 			</td>
 		</tr>
@@ -327,7 +327,7 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:5px; width:280px;">
+			<td style="padding-bottom:10px; width:280px;">
 				<strong>Invitaciones:</strong> <?php echo $invitaciones ?>
 			</td>
 		</tr>
@@ -365,10 +365,10 @@ p {
 	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
 <table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
                 <tr align="center">
-                    <th style="width:15%;">CANT.</th>
-                    <th style="width:55%;">CONCEPTO</th>
-                    <th style="width:15%;">P.U.</th>
-                    <th style="width:15%;">IMPORTE</th>
+                    <td style="width:15%;">CANT.</td>
+                    <td style="width:55%;">CONCEPTO</td>
+                    <td style="width:15%;">P.U.</td>
+                    <td style="width:15%;">IMPORTE</td>
                 </tr><?php //;
             $total=0;
             foreach($articulos as $id=>$d){ 
