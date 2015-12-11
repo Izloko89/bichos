@@ -309,7 +309,7 @@ $(document).ready(function(e) {
 			success: function(r){		
 				if(r.continuar){
 					ingresar=true;
-					alerta("info","Se modifico correctamente");
+					alerta("info","Se agrego correctamente");
 					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
 					$("#botones_modulo").fadeIn(rapidez); });			
 				}else{
