@@ -80,7 +80,7 @@ if(isset($_GET["id_evento"])){
 			t1.id_cliente,
 			t1.nombre As nombreEvento,
 			t1.edad,
-			t1.personaje
+			t1.personaje,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
