@@ -79,6 +79,8 @@ if(isset($_GET["id_evento"])){
 			t1.fechadesmont,
 			t1.id_cliente,
 			t1.nombre As nombreEvento,
+			t1.edad,
+			t1.personaje
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -100,6 +102,8 @@ if(isset($_GET["id_evento"])){
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
 		$nombreEve=$evento["nombreEvento"];
+		$edad=$evento["edad"];
+		$personaje=$evento["personaje"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -207,9 +211,22 @@ p {
     </tr>
 </table>
 <div style="width:100%; padding:5 20px; font-size:12px;">
-	<p>Nombre del festejado: <?php echo $nombreEve ?></p>
-	<p>Edad que cumple: <?php echo $edad ?></p>
-	<p>Personaje de la fiesta: <?php echo $personaje ?></p>
+	<table>
+		<tr>
+			<td>
+				Nombre del festejado: <?php echo $nombreEve ?>
+			</td>
+			<td>
+				Edad que cumple: <?php echo $edad ?>
+			</td>
+			<td>
+				Personaje de la fiesta: <?php echo $personaje ?>
+			</td>
+		</tr>
+	</table>
+	<p></p>
+	<p></p>
+	<p></p>
 	<div style="clear:both;"></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
