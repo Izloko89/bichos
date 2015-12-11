@@ -259,7 +259,7 @@ p {
 			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:20px; padding-top:10px; text-aling:center;" colspan="2">
+			<td style="padding-bottom:20px; padding-top:10px;" colspan="2" align="center">
 				<strong>Datos del Evento</strong>
 			</td>
 		</tr>
