@@ -81,6 +81,23 @@ if(isset($_GET["id_evento"])){
 			t1.nombre As nombreEvento,
 			t1.edad,
 			t1.personaje,
+			t1.medio,
+			t1.no_personas,
+			t1.no_ninos,
+			t1.no_adultos,
+			t1.no_ninos_menu,
+			t1.no_adultos_menu,
+			t1.guarnicion,
+			t1.botana,
+			t1.pastel,
+			t1.pinata,
+			t1.centro_mesa,
+			t1.invitaciones,
+			t1.refrescos,
+			t1.aguas,
+			t1.promocion,
+			t1.color_mantel,
+			t1.servicios_extra,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -108,6 +125,8 @@ if(isset($_GET["id_evento"])){
 		$nombreEve=$evento["nombreEvento"];
 		$edad=$evento["edad"];
 		$personaje=$evento["personaje"];
+		$medio=$evento["medio"];
+		$no_invitados=$evento["no_personas"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
