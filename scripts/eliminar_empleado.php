@@ -10,9 +10,7 @@ include("datos.php");
 		
 		$sqlAfs="DELETE FROM empleados_contacto WHERE id_empleado = $id";
 		$res=$bd->query($sqlAfs);
-		echo true;
-		
-	
+
 		$r["continuar"] = true;
 		}
 		catch(PDOException $err)
