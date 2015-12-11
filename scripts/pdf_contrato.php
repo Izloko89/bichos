@@ -385,7 +385,7 @@ equipo y/o al inmueble en su mención.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
-<strong>3.- </strong>El término del presente contrato será de 4 (cuatro) horas, a partir de : <strong><?php echo  $fechaEve?></strong> a <strong><?php echo  $fechaDesmont ?></strong> mismas que si se prorrogan
+<strong>3.- </strong>El término del presente contrato será de 4 (cuatro) horas, a partir de : <strong><?php echo varHoraAbr($fechaEve) ?></strong> a <strong><?php echo varHoraAbr($fechaDesmont) ?></strong> mismas que si se prorrogan
 tendrán un costo de ________ cada hora o fracción.
 </div>
 <br/>
@@ -431,6 +431,7 @@ ________________________________________________________________________________
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify; align:center;">
 <strong>9.-</strong>El evento debe de estar cubierto en su totalidad 15 dias antes del evento.
 </div>
+<br><br>
 <div style="width:95%; padding 20px; font-size:12px; ">
 	<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
 	</DIV>
