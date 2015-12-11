@@ -225,6 +225,11 @@ p {
 				<strong>Personaje de la fiesta:</strong> <?php echo $personaje ?>
 			</td>
 		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Nombre de papa o mama:</strong> <?php echo $cliente ?>
+			</td>
+		</tr>
 	</table>
 	<p></p>
 	<p></p>
