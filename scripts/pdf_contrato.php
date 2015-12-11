@@ -362,9 +362,38 @@ p {
 			</td>
 		</tr>
 	</table>
-	<p></p>
-	<p></p>
-	<p></p>
+	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
+<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
+                <tr align="center">
+                    <th style="width:15%;">CANT.</th>
+                    <th style="width:55%;">CONCEPTO</th>
+                    <th style="width:15%;">P.U.</th>
+                    <th style="width:15%;">IMPORTE</th>
+                </tr>';
+            $total=0;
+            foreach($articulos as $id=>$d){ 
+            $total+=$d["total"];
+            $html.='
+                <tr>
+                    <td style="width:15%;text-align:center;">'.$d["cantidad"].'</td>
+                    <td style="width:55%;">'. $d["nombre"].'</td>
+                    <td style="width:15%;text-align:center;">'. number_format($d["precio"],2).'</td>
+                    <td style="width:15%;text-align:right;">'. number_format($d["total"],2).'</td>
+                </tr>';
+            } 
+            $html.='
+                <tr>
+                    <td style="width:15%;text-align:center;"></td>
+                    <td style="width:55%;"></td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>Total:</strong>
+                    </td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>'. number_format($total,2).'</strong>
+                    </td>
+                </tr>
+            </table>
+</div>
 	<div style="clear:both;"></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
