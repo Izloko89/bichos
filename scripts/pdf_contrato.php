@@ -370,9 +370,9 @@ p {
                     <th style="width:15%;">P.U.</th>
                     <th style="width:15%;">IMPORTE</th>
                 </tr><?php //;
-            //$total=0;
-            //foreach($articulos as $id=>$d){ 
-            //$total+=$d["total"];
+            $total=0;
+            foreach($articulos as $id=>$d){ 
+            $total+=$d["total"];
             //$html.= ?>
                 <tr>
                     <td style="width:15%;text-align:center;"><?php echo $d["cantidad"] ?></td>
@@ -380,7 +380,7 @@ p {
                     <td style="width:15%;text-align:center;"><?php echo number_format($d["precio"],2) ?></td>
                     <td style="width:15%;text-align:right;"><?php echo number_format($d["total"],2) ?></td>
                 </tr><?php //;
-            //} 
+            } 
             //$html.= ?>
                 <tr>
                     <td style="width:15%;text-align:center;"></td>
@@ -389,7 +389,7 @@ p {
                         <strong>Total:</strong>
                     </td>
                     <td style="width:15%;text-align:right;">
-                        <strong><? //echo number_format($total,2) ?></strong>
+                        <strong><? echo number_format($total,2) ?></strong>
                     </td>
                 </tr>
             </table>
