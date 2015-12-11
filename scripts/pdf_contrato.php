@@ -428,7 +428,7 @@ tendrán un costo de ________ cada hora o fracción.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
-<strong>4.- </strong>La fecha de realización del evento es para el día ___ del mes ___ del ___.
+<strong>4.- </strong>La fecha de realización del evento es para el <?php echo varFechaAbr($fechaEve) ?>.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
