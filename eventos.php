@@ -402,8 +402,8 @@ table{
         ?>
         </select>
             </div>
-    </div>
-    </div>
+    
+
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
       <form action="scripts/nota_venta_pdf.php" target="_blank">
