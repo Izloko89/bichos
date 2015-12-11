@@ -211,17 +211,17 @@ p {
     </tr>
 </table>
 <div style="width:100%; padding:5 20px; font-size:12px;">
-	<table cellspacing="0" cellpadding="0">
+	<table cellspacing="0" cellpadding="0" border="1">
 		<tr>
-			<td style="width:100px;">
+			<td style="width:500px;">
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
 			</td>
-			<td style="width:100px;">
+			<td style="width:500px;">
 				<strong>Edad que cumple:</strong> <?php echo $edad ?>
 			</td>
 		</tr>
 		<tr>
-			<td style="width:100px;">
+			<td style="width:500px;">
 				<strong>Personaje de la fiesta:</strong> <?php echo $personaje ?>
 			</td>
 		</tr>
