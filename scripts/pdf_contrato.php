@@ -216,6 +216,7 @@ p {
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
 			</td>
+			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
@@ -229,6 +230,7 @@ p {
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>Nombre de papa o mama:</strong> <?php echo $cliente ?>
 			</td>
+			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
@@ -242,16 +244,19 @@ p {
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>Direcci&oacute;n:</strong> <?php echo $direccion ?>
 			</td>
+			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>E-mail:</strong> <?php echo $email ?>
 			</td>
+			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
 			</td>
+			<td style="padding-bottom:10px; width:280px;"></td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:20px; padding-top:10px; text-aling:center;" colspan="2">
