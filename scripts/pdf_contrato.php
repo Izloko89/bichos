@@ -400,7 +400,42 @@ p {
 			</td>
 		</tr>
 	</table>
-	<div><br><br><br><br><br><br></div>
+	<br>
+<div style="width:95%; padding 20px; font-size:12px; ">
+	<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
+	</DIV>
+	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
+			<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
+                <tr align="center">
+                    <td style="width:15%;"><strong>CANT.</strong></td>
+                    <td style="width:55%;"><strong>CONCEPTO</strong></td>
+                    <td style="width:15%;"><strong>P.U.</strong></td>
+                    <td style="width:15%;"><strong>IMPORTE</strong></td>
+                </tr><?php //;
+            $total=0;
+            foreach($articulos as $id=>$d){ 
+            $total+=$d["total"];
+            //$html.= ?>
+                <tr>
+                    <td style="width:15%;text-align:center;"><?php echo $d["cantidad"] ?></td>
+                    <td style="width:55%;"><?php echo $d["nombre"] ?></td>
+                    <td style="width:15%;text-align:center;"><?php echo number_format($d["precio"],2) ?></td>
+                    <td style="width:15%;text-align:right;"><?php echo number_format($d["total"],2) ?></td>
+                </tr><?php //;
+            } 
+            //$html.= ?>
+                <tr>
+                    <td style="width:15%;text-align:center;"></td>
+                    <td style="width:55%;"></td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>Total:</strong>
+                    </td>
+                    <td style="width:15%;text-align:right;">
+                        <strong><? echo number_format($total,2) ?></strong>
+                    </td>
+                </tr>
+            </table>
+	</div><br><br><br><br>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
@@ -469,42 +504,7 @@ ________________________________________________________________________________
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify; align:center;">
 <strong>9.-</strong>El evento debe de estar cubierto en su totalidad 15 dias antes del evento.
 </div>
-<br><br>
-<div style="width:95%; padding 20px; font-size:12px; ">
-	<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
-	</DIV>
-	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
-			<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
-                <tr align="center">
-                    <td style="width:15%;"><strong>CANT.</strong></td>
-                    <td style="width:55%;"><strong>CONCEPTO</strong></td>
-                    <td style="width:15%;"><strong>P.U.</strong></td>
-                    <td style="width:15%;"><strong>IMPORTE</strong></td>
-                </tr><?php //;
-            $total=0;
-            foreach($articulos as $id=>$d){ 
-            $total+=$d["total"];
-            //$html.= ?>
-                <tr>
-                    <td style="width:15%;text-align:center;"><?php echo $d["cantidad"] ?></td>
-                    <td style="width:55%;"><?php echo $d["nombre"] ?></td>
-                    <td style="width:15%;text-align:center;"><?php echo number_format($d["precio"],2) ?></td>
-                    <td style="width:15%;text-align:right;"><?php echo number_format($d["total"],2) ?></td>
-                </tr><?php //;
-            } 
-            //$html.= ?>
-                <tr>
-                    <td style="width:15%;text-align:center;"></td>
-                    <td style="width:55%;"></td>
-                    <td style="width:15%;text-align:right;">
-                        <strong>Total:</strong>
-                    </td>
-                    <td style="width:15%;text-align:right;">
-                        <strong><? echo number_format($total,2) ?></strong>
-                    </td>
-                </tr>
-            </table>
-	</div>
+<br>
 <?php }else{
 	echo $error;
 }?>
