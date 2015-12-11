@@ -244,7 +244,7 @@ p {
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Direcci&oacute;n:</strong> <?php echo $direccion ?>
+				<strong>Direcci&oacute;n:</strong> <?php echo $domicilio ?>
 			</td>
 		</tr>
 		<tr>
