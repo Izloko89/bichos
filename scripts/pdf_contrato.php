@@ -274,7 +274,7 @@ p {
 	</table>
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
-			<td style="padding-bottom:20px; padding-top:10px;" colspan="2" align="center">
+			<td style="padding-bottom:10px;" colspan="2" align="center">
 				<strong>Men&uacute;</strong>
 			</td>
 		</tr>
