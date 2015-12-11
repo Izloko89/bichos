@@ -456,7 +456,7 @@ table{
 			fechadesmont
 		FROM cotizaciones
 		INNER JOIN tipo_evento ON cotizaciones.id_tipo=tipo_evento.id_tipo
-		WHERE cotizaciones.id_empresa=$empresaid AND id_usuario=$userid;";
+		WHERE cotizaciones.id_empresa=$empresaid AND id_usuario=$userid Order By id_cotizacion;";
 		$sqlClie="SELECT
 			id_cotizacion,
 			clientes.id_cliente,

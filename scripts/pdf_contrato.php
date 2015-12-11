@@ -182,6 +182,9 @@ quien señala como su domicilio en Blvd. de los caminos No.135 en la ciudad de T
 Sr(a) <strong><?php echo  $cliente ?></strong> quien tiene su domicilio en <strong><?php echo  $domicilio ?></strong> y a quien en lo sucesivo se le denominará arrendatario, que se sujetan al tenor de las siguientes declaraciones y claúsulas.
 </div>
 <br/>
+<div>
+	Nombre del festejado: <?php echo $nombreEve ?>
+</div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 <strong>CLÁUSULAS</strong>
 </div>
