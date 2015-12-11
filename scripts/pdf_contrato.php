@@ -253,7 +253,11 @@ p {
 				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
 			</td>
 		</tr>
-
+		<tr>
+			<td style="padding-bottom:20px; padding-top:10px; text-aling:center;" colspan="2">
+				<strong>Datos del Evento</strong>
+			</td>
+		</tr>
 	</table>
 	<p></p>
 	<p></p>
