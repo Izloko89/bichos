@@ -254,7 +254,7 @@ p {
 			</td>
 		</tr>
 	</table>
-	<table cellspacing="0" cellpadding="0" border="1">
+	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:20px; padding-top:10px;" colspan="3" align="center">
 				<strong>Datos del Evento</strong>
@@ -269,6 +269,21 @@ p {
 			</td>
 			<td style="padding-bottom:10px; width:185px;">
 				<strong>Adultos:</strong> <?php echo $no_adultos ?>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" border="">
+		<tr>
+			<td style="padding-bottom:20px; padding-top:10px;" colspan="2" align="center">
+				<strong>Men&uacute;</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Tel&eacute;fono:</strong> <?php echo $telCliente ?>
+			</td>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Celular:</strong> <?php echo $celular ?>
 			</td>
 		</tr>
 	</table>
