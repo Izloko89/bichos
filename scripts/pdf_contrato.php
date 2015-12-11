@@ -211,7 +211,7 @@ p {
     </tr>
 </table>
 <div style="width:100%; padding:5 20px; font-size:12px;">
-	<table cellspacing="0" cellpadding="0" border="1">
+	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
@@ -253,9 +253,22 @@ p {
 				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
 			</td>
 		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
-			<td style="padding-bottom:20px; padding-top:10px;" colspan="2" align="center">
+			<td style="padding-bottom:20px; padding-top:10px;" colspan="3" align="center">
 				<strong>Datos del Evento</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:93px;">
+				<strong>Num. de personas:</strong> <?php echo $no_invitados ?>
+			</td>
+			<td style="padding-bottom:10px; width:93px;">
+				<strong>Niños:</strong> <?php echo $no_ninos ?>
+			</td style="padding-bottom:10px; width:93px;">
+			<td>
+				<strong>Adultos:</strong> <?php echo $no_adultos ?>
 			</td>
 		</tr>
 	</table>
