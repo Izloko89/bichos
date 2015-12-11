@@ -200,7 +200,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img src="../img/salon_caracol.png" s> 
+      <td valign="top"><img src="../img/salon_caracol.png" style="width:65%;" /> 
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
