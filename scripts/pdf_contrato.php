@@ -307,7 +307,7 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-top:25px; width:280px;" rowspan="5">
+			<td style="padding-top:30px; width:280px;" rowspan="5">
 				<strong>Hora de cena:</strong> <?php echo varHoraAbr($hora_cena) ?>
 			</td>
 		</tr>
@@ -362,6 +362,9 @@ p {
 			</td>
 		</tr>
 	</table>
+	<div style="width:95%; padding 20px; font-size:12px; ">
+<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
+</DIV>
 	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
 <table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
                 <tr align="center">
