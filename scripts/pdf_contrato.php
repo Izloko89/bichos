@@ -254,7 +254,7 @@ p {
 			</td>
 		</tr>
 	</table>
-	<table cellspacing="0" cellpadding="0" border="">
+	<table cellspacing="0" cellpadding="0" border="1">
 		<tr>
 			<td style="padding-bottom:20px; padding-top:10px;" colspan="3" align="center">
 				<strong>Datos del Evento</strong>
