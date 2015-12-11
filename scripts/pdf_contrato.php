@@ -211,7 +211,7 @@ p {
     </tr>
 </table>
 <div style="width:100%; padding:5 20px; font-size:12px;">
-	<table width="100%" border="1">
+	<table width="500" border="1" cellspacing="0" cellpadding="0">
 		<tr>
 			<td>
 				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
