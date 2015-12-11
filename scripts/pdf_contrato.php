@@ -187,9 +187,9 @@ Sr(a) <strong><?php echo  $cliente ?></strong> quien tiene su domicilio en <stro
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;">
-	<p>Nombre del festejado: <?php echo $nombreEve ?></p>
-	<p style="float:left;">Edad que cumple: <?php echo $edad ?></p>
-	<p style="float:right;">Personaje de la fiesta: <?php echo $personaje ?></p>
+	<div>Nombre del festejado: <?php echo $nombreEve ?></div>
+	<div style="float:left;">Edad que cumple: <?php echo $edad ?></div>
+	<div style="float:right;">Personaje de la fiesta: <?php echo $personaje ?></div>
 	<div style="clear:both;"></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
