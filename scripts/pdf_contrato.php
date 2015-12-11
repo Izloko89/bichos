@@ -79,6 +79,7 @@ if(isset($_GET["id_evento"])){
 			t1.fechadesmont,
 			t1.id_cliente,
 			t1.nombre As nombreEvento,
+			t1.edad,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -100,6 +101,7 @@ if(isset($_GET["id_evento"])){
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
 		$nombreEve=$evento["nombreEvento"];
+		$edad=$evento["edad"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -200,7 +202,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img src="<?php echo $varpath ?>" /> 
+      <td valign="top"><img src="<?php echo $varpath; ?>" /> 
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
