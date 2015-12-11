@@ -266,8 +266,8 @@ p {
 			</td>
 			<td style="padding-bottom:10px; width:193px;">
 				<strong>Niños:</strong> <?php echo $no_ninos ?>
-			</td style="padding-bottom:10px; width:193px;">
-			<td>
+			</td>
+			<td style="padding-bottom:10px; width:193px;">
 				<strong>Adultos:</strong> <?php echo $no_adultos ?>
 			</td>
 		</tr>
