@@ -280,10 +280,55 @@ p {
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Tel&eacute;fono:</strong> <?php echo $telCliente ?>
+				<strong>Niños:</strong> <?php echo $no_ninos_menu ?>
 			</td>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Celular:</strong> <?php echo $celular ?>
+				<strong>Adultos:</strong> <?php echo $no_adultos_menu ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Guarnici&oacute;n:</strong> <?php echo $guarnicion ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Botana:</strong> <?php echo $botana ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px;" colspan="2" align="center">
+				<strong>Itinerario</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Hora del Evento:</strong> <?php echo varHoraAbr($fechaEve) ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" rowspan="4">
+				<strong>Hora de cena:</strong> <?php echo varHoraAbr($hora_cena) ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
 			</td>
 		</tr>
 	</table>
