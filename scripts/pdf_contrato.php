@@ -74,20 +74,41 @@ if(isset($_GET["id_evento"])){
 		// para saber los datos del cliente
 		$sql="SELECT
 			t1.id_evento,
-			t1.fechaevento,
-			t1.fechamontaje,
-			t1.fechadesmont,
-			t1.id_cliente,
 			t1.nombre As nombreEvento,
-			t1.edad,
-			t1.personaje,
+		t1.fecha,
+		t1.personaje,
+		t1.medio,
+		t1.fechaevento,
+		t1.edad,
+		t1.no_personas,
+		t1.no_ninos,
+		t1.no_adultos,
+		t1.fechamontaje,
+		t1.fechadesmont,
+		t1.id_cliente,
+		t1.no_ninos_menu,
+		t1.no_adultos_menu,
+		t1.guarnicion,
+		t1.botana,
+		t1.hora_cena,
+		t1.pastel,
+		t1.pinata,
+		t1.centro_mesa,
+		t1.invitaciones,
+		t1.refrescos,
+		t1.aguas,
+		t1.promocion,
+		t1.color_mantel,
+		t1.servicios_extra,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
 			t3.ciudad,
 			t3.estado,
 			t3.cp,
-			t3.telefono
+			t3.telefono,
+			t3.celular,
+			t3.email
 		FROM eventos t1
 		LEFT JOIN clientes t2 ON t1.id_cliente=t2.id_cliente
 		LEFT JOIN clientes_contacto t3 ON t1.id_cliente=t3.id_cliente
@@ -95,15 +116,37 @@ if(isset($_GET["id_evento"])){
 		$res=$bd->query($sql);
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
 		$evento=$res[0];
-		$id_evento = $evento["id_evento"];
-		$cliente=$evento["nombre"];
-		$telCliente=$evento["telefono"];
-		$domicilio=$evento["direccion"]." ".$evento["colonia"]." ".$evento["ciudad"]." ".$evento["estado"]." ".$evento["cp"];
-		$fechaEve=$evento["fechaevento"];
-		$fechaDesmont=$evento["fechadesmont"];
-		$nombreEve=$evento["nombreEvento"];
-		$edad=$evento["edad"];
-		$personaje=$evento["personaje"];
+		$no_invitados=$evento["no_personas"];
+	$no_ninos=$evento["no_ninos"];
+	$no_adultos=$evento["no_adultos"];
+	$edad=$evento["edad"];
+	$cliente=$evento["nombre"];
+	$personaje=$evento["personaje"];
+	$telCliente=$evento["telefono"];
+	$nombreEve=$evento["nombreEvento"];
+	$domicilio=$evento["direccion"]." ".$evento["colonia"]." ".$evento["ciudad"]." ".$evento["estado"]." ".$evento["cp"];
+	$fecha=$evento["fecha"];
+	$fechaEve=$evento["fechaevento"];
+	$dirEve = $evento["dirEvento"];
+	$no_ninos_menu = $evento["no_ninos_menu"];
+	$no_adultos_menu = $evento["no_adultos_menu"];
+	$guarnicion = $evento["guarnicion"];
+	$botana = $evento["botana"];
+	$hora_cena = $evento["hora_cena"];
+	$pastel = $evento["pastel"];
+	$pinata = $evento["pinata"];
+	$centro_mesa = $evento["centro_mesa"];
+	$invitaciones = $evento["invitaciones"];
+	$refrescos = $evento["refrescos"];
+	$aguas = $evento["aguas"];
+	$promocion = $evento["promocion"];
+	$color_mantel = $evento["color_mantel"];
+	$servicios_extra = $evento["servicios_extra"];
+	
+	$medio= $evento["medio"];
+	
+	$celular= $evento["celular"];
+	$email= $evento["email"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -362,7 +405,7 @@ p {
 			</td>
 		</tr>
 	</table>
-	<div><br><br><br></div>
+	<div><br><br><br><br></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
