@@ -219,7 +219,7 @@ p {
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Edad que cumple:</strong> <?php echo $edad ?>
+				<strong>Edad que cumple:</strong> <?php echo $edad ?> años
 			</td>
 			<td style="padding-bottom:10px; width:280px;">
 				<strong>Personaje de la fiesta:</strong> <?php echo $personaje ?>
@@ -230,6 +230,30 @@ p {
 				<strong>Nombre de papa o mama:</strong> <?php echo $cliente ?>
 			</td>
 		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Tel&eacute;fono:</strong> <?php echo $telCliente ?>
+			</td>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Celular:</strong> <?php echo $celular ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Direcci&oacute;n:</strong> <?php echo $direccion ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>E-mail:</strong> <?php echo $email ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
+			</td>
+		</tr>
+
 	</table>
 	<p></p>
 	<p></p>
