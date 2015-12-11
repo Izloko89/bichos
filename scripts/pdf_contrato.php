@@ -54,6 +54,7 @@ if(isset($_GET["id_evento"])){
 			t1.fechamontaje,
 			t1.fechadesmont,
 			t1.id_cliente,
+			t1.nombre As nombreEvento,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -74,6 +75,7 @@ if(isset($_GET["id_evento"])){
 		$domicilio=$evento["direccion"]." ".$evento["colonia"]." ".$evento["ciudad"]." ".$evento["estado"]." ".$evento["cp"];
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
+		$nombreEve=$evento["nombreEvento"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -180,18 +182,18 @@ p {
       </td>
     </tr>
 </table>
+<div style="width:100%; padding:5 20px; font-size:12px;">
+	<p>Nombre del festejado: <?php echo $nombreEve ?></p>
+	<p>Edad que cumple: <?php echo $edad ?></p>
+	<p>Personaje de la fiesta: <?php echo $personaje ?></p>
+	<div style="clear:both;"></div>
+</div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
 quien señala como su domicilio en Blvd. de los caminos No.135 en la ciudad de Torreón,Coahuila y por la parte de la
 Sr(a) <strong><?php echo  $cliente ?></strong> quien tiene su domicilio en <strong><?php echo  $domicilio ?></strong> y a quien en lo sucesivo se le denominará arrendatario, que se sujetan al tenor de las siguientes declaraciones y claúsulas.
 </div>
 <br/>
-<div style="width:100%; padding:5 20px; font-size:12px;">
-	<div>Nombre del festejado: <?php echo $nombreEve ?></div>
-	<div style="width:50px; float:left;">Edad que cumple: <?php echo $edad ?></div>
-	<div style="width:50px; float:right;">Personaje de la fiesta: <?php echo $personaje ?></div>
-	<div style="clear:both;"></div>
-</div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 <strong>CLÁUSULAS</strong>
 </div>
