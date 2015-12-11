@@ -100,6 +100,8 @@ if(isset($_GET["id_evento"])){
 		$id_evento = $evento["id_evento"];
 		$cliente=$evento["nombre"];
 		$telCliente=$evento["telefono"];
+		$celular=$evento["celular"];
+		$email=$evento["email"];
 		$domicilio=$evento["direccion"]." ".$evento["colonia"]." ".$evento["ciudad"]." ".$evento["estado"]." ".$evento["cp"];
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
@@ -364,7 +366,7 @@ p {
 			</td>
 		</tr>
 	</table>
-	<div><br><br><br><br></div>
+	<div><br><br><br><br><br><br></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
