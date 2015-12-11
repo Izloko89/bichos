@@ -362,7 +362,7 @@ p {
 			</td>
 		</tr>
 	</table>
-	<div style="clear:both;"></div>
+	<div><br><br><br></div>
 </div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
