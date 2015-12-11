@@ -313,22 +313,52 @@ p {
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+				<strong>Pastel:</strong> <?php echo $pastel ?>
 			</td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+				<strong>Piñanta:</strong> <?php echo $pinata ?>
 			</td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
-				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+				<strong>Centro de mesa:</strong> <?php echo $centro_mesa ?>
 			</td>
 		</tr>
 		<tr>
 			<td style="padding-bottom:10px; width:280px;">
+				<strong>Invitaciones:</strong> <?php echo $invitaciones ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px;" colspan="2" align="center">
+				<strong>Bebidas</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Refrescos:</strong> <?php echo $refrescos ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
 				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Promoci&oacute;n:</strong> <?php echo $promocion ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Color del mantel:</strong> <?php echo $color_mantel ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Servicios extras:</strong> <?php echo $servicios_extra ?>
 			</td>
 		</tr>
 	</table>
