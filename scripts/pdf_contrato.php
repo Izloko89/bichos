@@ -307,7 +307,7 @@ p {
 			</td>
 		</tr>
 		<tr>
-			<td style="padding-bottom:10px; width:280px;" rowspan="4">
+			<td style="padding-bottom:10px; width:280px;" rowspan="5">
 				<strong>Hora de cena:</strong> <?php echo varHoraAbr($hora_cena) ?>
 			</td>
 		</tr>
