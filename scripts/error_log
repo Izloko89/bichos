@@ -671,3 +671,5 @@ RESTANTE:
 	&lt;tr&gt;
 		&lt;td style=&quot; text-al...
   thrown in /home/inter/public_html/mifiestaenbichos/clases/_class/parsingHtml.class.php on line 119
+[10-Dec-2015 02:15:55 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[10-Dec-2015 16:12:53 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
