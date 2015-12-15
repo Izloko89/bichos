@@ -445,6 +445,14 @@ table{
     </div>
   </div>
   <script>
+  function tomavalor()
+  {
+  var valor = document.getElementById("clave").value;
+  var salon = document.getElementById("salon").value;
+  
+  document.getElementById('url').href= "scripts/pdf_contrato.php?id_evento="+valor+"&salon="+salon;
+  }
+  </script>
 <!-- //sección de las eventos por empresa y or usuario --> 
   <div id="mias">
   <style>
