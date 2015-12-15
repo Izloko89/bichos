@@ -406,7 +406,7 @@ table{
 
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form action="scripts/nota_venta_pdf.php" target="_blank">
+      <form action="scripts/pdf_contrato.php" target="_blank">
     <table align="left" class="">
       <tr>
         <td>
