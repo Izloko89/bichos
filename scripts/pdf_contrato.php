@@ -75,6 +75,7 @@ if(isset($_GET["id_evento"])){
 			t1.promocion,
 			t1.color_mantel,
 			t1.servicios_extra,
+			t1.salon,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
@@ -119,6 +120,7 @@ if(isset($_GET["id_evento"])){
 		$promocion=$evento["promocion"];
 		$color_mantel=$evento["color_mantel"];
 		$servicios_extra=$evento["servicios_extra"];
+		$salon=$evento["salon"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -235,7 +237,7 @@ p {
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
+				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?> <?php echo $salon; ?>
 			</td>
 		</tr>
 		<tr>
