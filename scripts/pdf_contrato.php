@@ -31,29 +31,6 @@ function folio($digitos,$folio){
 	$salida.=$folio;
 	return $salida;
 }
-//if(isset($_GET["id_evento"])){
-//	$id=$_GET["id_evento"];
-//	$salon=$_GET["salon"];
-	
-	
-//	$varpath = "../img/logo.png";
-	
-	
-//	 if($salon=="CARACOL")
-//		{ 
-//		$varpath = "../img/caracol.png";
-//		} 
-//		 if($salon=="HORMIGA") { 
-//		$varpath = "../img/hormiga.png";
-//		}
-		
-	
-	
-	
-//}else
-//{
-//echo "no trae datos" . $id;
-//}
 
 //tamaño carta alto:279.4 ancho:215.9
 $heightCarta=960;
@@ -248,7 +225,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img <?php if ($salon='HORMIGA'){} else if ($salon='CARACOL'){} else if ($salon='BICHOS TO GO'){} else {} ?> style="width:65%;" /> 
+      <td valign="top"><img src="../img/salon_caracol.png" style="width:65%;" />
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
