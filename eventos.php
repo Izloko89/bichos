@@ -439,20 +439,11 @@ table{
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
       <!--<input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  />-->
-      <input type="submit" href="scripts/pdf_contrato.php" value="Contrato" onmouseover="tomavalor();"  />
+      <input type="submit" href="scripts/pdf_contrato.php" value="Contrato"  />
       </div>
       </form>
     </div>
   </div>
-  <script>
-  function tomavalor()
-  {
-  var valor = document.getElementById("clave").value;
-  var salon = document.getElementById("salon").value;
-  
-  document.getElementById('url').href= "scripts/pdf_contrato.php?id_evento="+valor+"&salon="+salon;
-  }
-  </script>
 <!-- //sección de las eventos por empresa y or usuario --> 
   <div id="mias">
   <style>
