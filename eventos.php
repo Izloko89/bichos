@@ -438,8 +438,8 @@ table{
         <input type="hidden" name="id_evento" class="id_evento" value="" />
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
-      <!-- <input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  /> -->
-      <input type="submit" href="scripts/pdf_contrato.php" value="Contrato" onmouseover="tomavalor();"  />
+      <input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  />
+      <!-- <input type="submit" href="scripts/pdf_contrato.php" value="Contrato" onmouseover="tomavalor();"  /> -->
       </div>
       </form>
     </div>
