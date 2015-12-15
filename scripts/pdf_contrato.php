@@ -50,6 +50,7 @@ if(isset($_GET["id_evento"])){
 		$bd=new PDO($dsnw,$userw,$passw,$optPDO);
 		// para saber los datos del cliente
 		$sql="SELECT
+			t1.salon,
 			t1.id_evento,
 			t1.fechaevento,
 			t1.fechamontaje,
@@ -92,6 +93,7 @@ if(isset($_GET["id_evento"])){
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
 		$evento=$res[0];
 		$id_evento = $evento["id_evento"];
+		$salon=$evento["salon"];
 		$cliente=$evento["nombre"];
 		$telCliente=$evento["telefono"];
 		$celular=$evento["celular"];
@@ -231,6 +233,7 @@ p {
       </td>
     </tr>
 </table>
+<?php echo $salon ?>
 <div style="width:100%; padding:5 20px; font-size:12px;">
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
