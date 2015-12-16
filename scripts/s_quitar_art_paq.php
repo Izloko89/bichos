@@ -2,11 +2,11 @@
 header("content-type: application/json");
 include("datos.php");
 
-$id=$_POST["id"];
-
+$paq=$_POST["paq"];
+$art=$_POST["art"];
 try{
 	$bd=new PDO($dsnw,$userw,$passw,$optPDO);
-	$sql="DELETE FROM paquetes_articulos WHERE id_articulos=$id;";
+	$sql="DELETE FROM paquetes_articulos WHERE id_articulo=$art AND id_paquete=$paq;";
 	
 	$bd->query($sql);
 	$r["continuar"]=true;

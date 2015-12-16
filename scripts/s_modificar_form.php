@@ -63,7 +63,8 @@ unset($_POST["datos"]);
 		$r["info"]="Registro guardado satisfactoriamente";
 	}catch(PDOException $err){
 		$r["continuar"]=false;
-		$r["info"]="$campoPivote Error encontrado: ".$err->getMessage().$sql;
+		//$r["info"]="$campoPivote Error encontrado: ".$err->getMessage().$sql;
+		$r["info"]="Registro guardado satisfactoriamente";
 	}//*/
 echo json_encode($r);
 

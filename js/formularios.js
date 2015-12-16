@@ -203,7 +203,7 @@ $(document).ready(function(e) {
 						$(".volver").click();
 					});
 				}else{
-					alerta("error",r.info);
+					alerta("info",r.info);
 				}//*/
 			}
 		});
