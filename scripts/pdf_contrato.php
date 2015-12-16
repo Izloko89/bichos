@@ -491,7 +491,7 @@ ________________________________________________________________________________
 </div>
 <br>
 <div class="float">Hola mundo</div>
-<div style="float:left;">Hola mundo</div>
+<div class="float">Hola mundo</div>
 <?php }else{
 	echo $error;
 }?>
