@@ -230,7 +230,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img src="../img/salon_caracol.png" style="width:65%;" />
+      <td valign="top"><?php if ($salon="HORMIGA"){ echo "<img src='../img/salon_hormiga' style='width:65%;' />"; } else if ($salon="CARACOL"){ echo "<img src='../img/salon_caracol' style='width:65%;' />"; } ?>
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
@@ -240,7 +240,7 @@ p {
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Nombre del festejado Prueba de cambio:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
+				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
 			</td>
 		</tr>
 		<tr>
@@ -493,8 +493,6 @@ ________________________________________________________________________________
 <strong>9.-</strong>El evento debe de estar cubierto en su totalidad 15 dias antes del evento.
 </div>
 <br>
-<div class="float">Hola mundo</div>
-<div class="float">Hola mundo</div>
 <?php }else{
 	echo $error;
 }?>
