@@ -110,16 +110,18 @@ if($id_cot!=""){
 			if($v["id_articulo"]!=""){
 				//paso previo, checar si es perecedero, si no lo es entonces se debe omitir el paso 1
 				$id_art=$v["id_articulo"];
-				$resDos=$bd->query("SELECT perece FROM articulos WHERE id_empresa=$id_emp AND id_articulo=$id_art;");
-				$resDos=$resDos->fetchAll(PDO::FETCH_ASSOC);
-				$perece=$resDos[0]["perece"];
-				if($perece==0){
+				
+				//valida si es perecedero
+				//$resDos=$bd->query("SELECT perece FROM articulos WHERE id_empresa=$id_emp AND id_articulo=$id_art;");
+				//$resDos=$resDos->fetchAll(PDO::FETCH_ASSOC);
+				//$perece=$resDos[0]["perece"];
+				//if($perece==0){
 					//no es perecedero
 					$sql="INSERT INTO almacen_entradas (id_empresa,id_evento,id_articulo,fechadesmont) VALUES ($id_empresa,$id_eve,$id_art,'$desmontaje');";
 					$bd->query($sql);
-				}else{
+				//}else{
 					//si es perecedero no vuelve a entrar
-				}
+			//	}
 				
 			}else{
 				//no es perecedero
@@ -128,7 +130,7 @@ if($id_cot!=""){
 				SELECT $id_empresa,$id_eve,articulos.id_articulo,'$desmontaje' 
 				FROM paquetes_articulos
 				INNER JOIN articulos ON paquetes_articulos.id_articulo=articulos.id_articulo
-				WHERE id_paquete=".$v["id_paquete"]." AND articulos.perece=0;";
+				WHERE id_paquete=".$v["id_paquete"].";";
 				$bd->query($sql);
 			}
 		}//*/
