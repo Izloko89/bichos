@@ -406,7 +406,7 @@ table{
 
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form action="scripts/nota_venta_pdf.php" target="_blank">
+      <form action="scripts/pdf_contrato.php" target="_blank">
     <table align="left" class="">
       <tr>
         <td>
@@ -438,7 +438,8 @@ table{
         <input type="hidden" name="id_evento" class="id_evento" value="" />
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
-      <input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato"  />
+      <!--<input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  />-->
+      <input type="submit" href="scripts/pdf_contrato.php" value="Contrato"  />
       </div>
       </form>
     </div>

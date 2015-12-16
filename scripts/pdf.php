@@ -103,12 +103,14 @@ try{
 		t3.cp,
 		t3.telefono,
 		t3.celular,
-		t3.email
+		t3.email,
+		t4.nombre AS nombreUser
 		
 		
 	FROM cotizaciones t1
 	LEFT JOIN clientes t2 ON t1.id_cliente=t2.id_cliente
 	LEFT JOIN clientes_contacto t3 ON t1.id_cliente=t3.id_cliente
+	LEFT JOIN usuarios t4 ON t4.id_usuario=t1.id_usuario
 	WHERE t1.clave=$id;";
 	$res=$bd->query($sql);
 	$res1=$res->fetchAll(PDO::FETCH_ASSOC);
@@ -147,6 +149,7 @@ try{
 	$email= $evento["email"];
 	
 	$id_coti= $evento["id_cotizacion"];
+	$usuario= $evento["nombreUser"];
 	
 	//print_r($fecha);
 	
@@ -309,10 +312,6 @@ FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
-PAQUETE:  </TD>
-</TR>
-<TR>
-<TD>
 <STRONG>MENU</STRONG></TD>
 </TR>
 <TR>
@@ -383,10 +382,6 @@ PAQUETE:  </TD>
 <TD>
   SERVICIOS EXTRA: '. $servicios_extra.'</TD>
 </TR>
-<TR>
-<TD>
-   FORMA DE PAGO:</TD>
-</TR>
 
 </TABLE>
 
@@ -444,7 +439,7 @@ PAQUETE:  </TD>
 	</tr>
 	<tr>
 		<td style="width:100%; text-align:left;">
-			ATENDIO:
+			ATENDIO: '. $usuario.'
 		</td>
 	</tr>
 </table>

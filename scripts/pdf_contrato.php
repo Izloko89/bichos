@@ -31,6 +31,7 @@ function folio($digitos,$folio){
 	$salida.=$folio;
 	return $salida;
 }
+
 //tamaño carta alto:279.4 ancho:215.9
 $heightCarta=960;
 $widthCarta=660;
@@ -54,26 +55,72 @@ if(isset($_GET["id_evento"])){
 			t1.fechamontaje,
 			t1.fechadesmont,
 			t1.id_cliente,
+			t1.nombre As nombreEvento,
+			t1.edad,
+			t1.personaje,
+			t1.medio,
+			t1.no_personas,
+			t1.no_ninos,
+			t1.no_adultos,
+			t1.no_ninos_menu,
+			t1.no_adultos_menu,
+			t1.guarnicion,
+			t1.botana,
+			t1.pastel,
+			t1.pinata,
+			t1.centro_mesa,
+			t1.invitaciones,
+			t1.refrescos,
+			t1.aguas,
+			t1.promocion,
+			t1.color_mantel,
+			t1.servicios_extra,
+			t1.salon,
 			t2.nombre,
 			t3.direccion,
 			t3.colonia,
 			t3.ciudad,
 			t3.estado,
 			t3.cp,
-			t3.telefono
+			t3.telefono,
+			t3.celular,
+			t3.email
 		FROM eventos t1
 		LEFT JOIN clientes t2 ON t1.id_cliente=t2.id_cliente
 		LEFT JOIN clientes_contacto t3 ON t1.id_cliente=t3.id_cliente
-		WHERE t1.clave=$eve;";
+		WHERE t1.id_evento=$eve;";
 		$res=$bd->query($sql);
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
 		$evento=$res[0];
 		$id_evento = $evento["id_evento"];
 		$cliente=$evento["nombre"];
 		$telCliente=$evento["telefono"];
+		$celular=$evento["celular"];
+		$email=$evento["email"];
 		$domicilio=$evento["direccion"]." ".$evento["colonia"]." ".$evento["ciudad"]." ".$evento["estado"]." ".$evento["cp"];
 		$fechaEve=$evento["fechaevento"];
 		$fechaDesmont=$evento["fechadesmont"];
+		$nombreEve=$evento["nombreEvento"];
+		$edad=$evento["edad"];
+		$personaje=$evento["personaje"];
+		$medio=$evento["medio"];
+		$no_invitados=$evento["no_personas"];
+		$no_ninos=$evento["no_ninos"];
+		$no_adultos=$evento["no_adultos"];
+		$no_ninos_menu=$evento["no_ninos_menu"];
+		$no_adultos_menu=$evento["no_adultos_menu"];
+		$guarnicion=$evento["guarnicion"];
+		$botana=$evento["botana"];
+		$pastel=$evento["pastel"];
+		$pinata=$evento["pinata"];
+		$centro_mesa=$evento["centro_mesa"];
+		$invitaciones=$evento["invitaciones"];
+		$refrescos=$evento["refrescos"];
+		$aguas=$evento["aguas"];
+		$promocion=$evento["promocion"];
+		$color_mantel=$evento["color_mantel"];
+		$servicios_extra=$evento["servicios_extra"];
+		$salon=$evento["salon"];
 		
 		$ano = substr($fechaEve,0,4);
 		$mes= substr($fechaEve,5,2);
@@ -136,6 +183,12 @@ if(isset($_GET["id_evento"])){
 		$res=$bd->query($sql);
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
 		$porpagar=$res[0]["total"];
+
+		//para los salones
+		$sql="SELECT salon FROM eventos;";
+		$res=$bd->query($sql);
+		$res=$res->fetchAll(PDO::FETCH_ASSOC);
+		$salon=$res[0]["salon"];
 		
 		
 	}catch(PDOException $err){
@@ -164,18 +217,214 @@ th{
 	color:#FFF;
 	text-align:center;
 }
+p {
+	margin: 0;
+	padding: 0;
+}
+.float {
+	float: left;
+}
 </style>
 <table style="width:70%;border-bottom:<?php echo pxtomm(2); ?> solid #000;" cellpadding="0" cellspacing="0" border="">
     <tr>
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><img src="../img/salon_caracol.png" style="width:65%;" /> 
+      <td valign="top"><img src="../img/salon_caracol.png" style="width:65%;" />
       </td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
     </tr>
 </table>
+<div style="width:100%; padding:5 20px; font-size:12px;">
+	<table cellspacing="0" cellpadding="0" border="">
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Nombre del festejado Prueba de cambio:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Edad que cumple:</strong> <?php echo $edad ?> años
+			</td>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Personaje de la fiesta:</strong> <?php echo $personaje ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Nombre de papa o mama:</strong> <?php echo $cliente ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Tel&eacute;fono:</strong> <?php echo $telCliente ?>
+			</td>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Celular:</strong> <?php echo $celular ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Direcci&oacute;n:</strong> <?php echo $domicilio ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>E-mail:</strong> <?php echo $email ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Medio de publicidad:</strong> <?php echo $medio ?>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" border="">
+		<tr>
+			<td style="padding-bottom:20px; padding-top:10px;" colspan="3" align="center">
+				<strong>Datos del Evento</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:185px;">
+				<strong>Num. de personas:</strong> <?php echo $no_invitados ?>
+			</td>
+			<td style="padding-bottom:10px; width:185px;">
+				<strong>Niños:</strong> <?php echo $no_ninos ?>
+			</td>
+			<td style="padding-bottom:10px; width:185px;">
+				<strong>Adultos:</strong> <?php echo $no_adultos ?>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" border="">
+		<tr>
+			<td style="padding-bottom:10px;" colspan="2" align="center">
+				<strong>Men&uacute;</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Niños:</strong> <?php echo $no_ninos_menu ?>
+			</td>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Adultos:</strong> <?php echo $no_adultos_menu ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Guarnici&oacute;n:</strong> <?php echo $guarnicion ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Botana:</strong> <?php echo $botana ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px;" colspan="2" align="center">
+				<strong>Itinerario</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Hora del Evento:</strong> <?php echo varHoraAbr($fechaEve) ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-top:30px; width:280px;" rowspan="5">
+				<strong>Hora de cena:</strong> <?php echo varHoraAbr($hora_cena) ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:5px; width:280px;">
+				<strong>Pastel:</strong> <?php echo $pastel ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:5px; width:280px;">
+				<strong>Piñanta:</strong> <?php echo $pinata ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:5px; width:280px;">
+				<strong>Centro de mesa:</strong> <?php echo $centro_mesa ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;">
+				<strong>Invitaciones:</strong> <?php echo $invitaciones ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px;" colspan="2" align="center">
+				<strong>Bebidas</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Refrescos:</strong> <?php echo $refrescos ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Aguas frescas:</strong> <?php echo $aguas ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Promoci&oacute;n:</strong> <?php echo $promocion ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Color del mantel:</strong> <?php echo $color_mantel ?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-bottom:10px; width:280px;" colspan="2">
+				<strong>Servicios extras:</strong> <?php echo $servicios_extra ?>
+			</td>
+		</tr>
+	</table>
+	<br>
+<div style="width:95%; padding 20px; font-size:12px; ">
+	<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
+	</DIV>
+	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
+			<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
+                <tr align="center">
+                    <td style="width:15%;"><strong>CANT.</strong></td>
+                    <td style="width:55%;"><strong>CONCEPTO</strong></td>
+                    <td style="width:15%;"><strong>P.U.</strong></td>
+                    <td style="width:15%;"><strong>IMPORTE</strong></td>
+                </tr><?php //;
+            $total=0;
+            foreach($articulos as $id=>$d){ 
+            $total+=$d["total"];
+            //$html.= ?>
+                <tr>
+                    <td style="width:15%;text-align:center;"><?php echo $d["cantidad"] ?></td>
+                    <td style="width:55%;"><?php echo $d["nombre"] ?></td>
+                    <td style="width:15%;text-align:center;"><?php echo number_format($d["precio"],2) ?></td>
+                    <td style="width:15%;text-align:right;"><?php echo number_format($d["total"],2) ?></td>
+                </tr><?php //;
+            } 
+            //$html.= ?>
+                <tr>
+                    <td style="width:15%;text-align:center;"></td>
+                    <td style="width:55%;"></td>
+                    <td style="width:15%;text-align:right;">
+                        <strong>Total:</strong>
+                    </td>
+                    <td style="width:15%;text-align:right;">
+                        <strong><? echo number_format($total,2) ?></strong>
+                    </td>
+                </tr>
+            </table>
+	</div><br><br><br><br>
+</div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
 quien señala como su domicilio en Blvd. de los caminos No.135 en la ciudad de Torreón,Coahuila y por la parte de la
@@ -197,12 +446,12 @@ equipo y/o al inmueble en su mención.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
-<strong>3.- </strong>El término del presente contrato será de 4 (cuatro) horas, a partir de : <strong><?php echo  $fechaEve?></strong> a <strong><?php echo  $fechaDesmont ?></strong> mismas que si se prorrogan
+<strong>3.- </strong>El término del presente contrato será de 4 (cuatro) horas, a partir de : <strong><?php echo varHoraAbr($fechaEve) ?></strong> a <strong><?php echo varHoraAbr($fechaDesmont) ?></strong> mismas que si se prorrogan
 tendrán un costo de ________ cada hora o fracción.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
-<strong>4.- </strong>La fecha de realización del evento es para el día ___ del mes ___ del ___.
+<strong>4.- </strong>La fecha de realización del evento es para el <?php echo varFechaAbr($fechaEve) ?>.
 </div>
 <br/>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
@@ -243,6 +492,9 @@ ________________________________________________________________________________
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify; align:center;">
 <strong>9.-</strong>El evento debe de estar cubierto en su totalidad 15 dias antes del evento.
 </div>
+<br>
+<div class="float">Hola mundo</div>
+<div class="float">Hola mundo</div>
 <?php }else{
 	echo $error;
 }?>

@@ -99,7 +99,7 @@ function nuevaClaveCotizar(){
 		$sql="SELECT
 			clave
 		FROM cotizaciones
-		WHERE id_empresa=$id_empresa AND id_usuario=$id_usuario ORDER BY id_cotizacion DESC;";
+		WHERE id_empresa=$id_empresa ORDER BY id_cotizacion DESC;";
 		
 		$res=$bd->query($sql);
 		if($res->rowCount()>0){

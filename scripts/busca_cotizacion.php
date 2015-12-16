@@ -67,7 +67,7 @@ try{
 	FROM cotizaciones
 	INNER JOIN tipo_evento ON tipo_evento.id_tipo=cotizaciones.id_tipo
 	INNER JOIN clientes ON cotizaciones.id_cliente=clientes.id_cliente 
-	WHERE cotizaciones.clave='$term' AND id_usuario=$id_user;";
+	WHERE cotizaciones.clave='$term';";
 	
 	$res=$bd->query($sql);
 	$filas=$res->rowCount();
