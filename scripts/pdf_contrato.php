@@ -490,7 +490,7 @@ ________________________________________________________________________________
 <strong>9.-</strong>El evento debe de estar cubierto en su totalidad 15 dias antes del evento.
 </div>
 <br>
-<div style="float:left;">Hola mundo</div>
+<div class="float">Hola mundo</div>
 <div style="float:left;">Hola mundo</div>
 <?php }else{
 	echo $error;
