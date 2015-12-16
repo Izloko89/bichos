@@ -221,6 +221,9 @@ p {
 	margin: 0;
 	padding: 0;
 }
+.float {
+	float: left;
+}
 </style>
 <table style="width:70%;border-bottom:<?php echo pxtomm(2); ?> solid #000;" cellpadding="0" cellspacing="0" border="">
     <tr>
