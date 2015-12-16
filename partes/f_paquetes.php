@@ -222,9 +222,12 @@ $(document).ready(function(e) {
 		}
 	});
 	$(".agregar_articulo").click(function(e) {
-		paq=$("#articulos .id_paquete").val();
+		paq=$(".clave").val();
 		art=$(".id_articulo").val();
 		cant=$(".cantidad").val();
+		console.log('paq:'+paq);
+		console.log('art:'+art);
+		console.log('cant:'+cant);
 		if( (art!="null" || art!="") && cant!="" && paq!="" ){
 			$.ajax({
 				url:'scripts/s_agregar_art_paq.php',
@@ -313,19 +316,22 @@ function buscaArtPaq(paq){
 }
 function eliminar(e){
 	e=$(e);
-	id=e.attr("data-row");
-	mouseLoad(true);
+	paq=e.attr("data-paq");
+	art=e.attr("data-art");
+	console.log(paq);
+	console.log(art);
 	$.ajax({
 		url:'scripts/s_quitar_art_paq.php',
 		cache:false,
 		type:'POST',
 		data:{
-			id:id
+			'paq':paq,
+			'art':art,
 		},
 		success: function(r){
 			mouseLoad(false);
 			if(r.continuar){
-				alerta("info","Articulo removido exitosamente");
+				alerta("info","Se elimino correctamente el articulo");
 				e.parent().parent().remove();
 			}else{
 				alerta("error",r.info);
@@ -333,4 +339,5 @@ function eliminar(e){
 		}
 	});
 }
+
 </script>
