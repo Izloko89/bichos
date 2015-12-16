@@ -188,7 +188,7 @@ try{
 				t2.nombre
 			FROM paquetes_articulos t1
 			INNER JOIN articulos t2 ON t1.id_articulo=t2.id_articulo
-			WHERE id_paquete=$paq AND t2.perece=0;";
+			WHERE id_paquete=$paq";
 			$res2=$bd->query($sql);
 			
 			foreach($res2->fetchAll(PDO::FETCH_ASSOC) as $dd){
