@@ -41,6 +41,11 @@ $("#clave").on("change keyup paste", function(){
 })
 
 $(document).ready(function(e) {
+    $('.boton_dentro').click(function(){
+        $('.guardar').show();
+        $('.modificar').hide();
+        $('#histpago').empty();
+    });
     //para ver el formulario de pago
     $(".agregarpago").click(function(e) {
         $("#nuevopago").slideToggle(200);
@@ -170,13 +175,12 @@ $(document).ready(function(e) {
     });
     $( ".nombre" ).autocomplete({
       source: "scripts/busca_proveedores1.php",
-      minLength: 1,
+      minLength: 2,
       select: function( event, ui ) {
         //da el nombre del formulario para buscarlo en el DOM
         form="cotizaciones";
-        
         //asignacion individual alos campos
-        $(".clave").val(ui.item.id_cliente);
+        $(".clave").val(ui.item.clave);
         $( ".proveedor_clave" ).keyup();
 
       }
@@ -451,8 +455,16 @@ function ClaveProveedor(){
         //asigna el id de cotización
         input.removeClass("ui-autocomplete-loading");
         document.getElementById("histpago").innerHTML = r.tabla;
-      }
+      },
+    error: function(r) { 
+        resetform();
+        $('.guardar').show();
+        $('.modificar').hide();
+        $('#histpago').empty();
+    }       
     });
-    realizaProceso($('#clave').val());return false;
+    //realizaProceso($('#clave').val());
+    input.removeClass("ui-autocomplete-loading");
+    return false;
 }
 </script>
