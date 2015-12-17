@@ -236,11 +236,11 @@ p {
       </td>
     </tr>
 </table>
-<div style="width:100%; padding:5 20px; font-size:12px;">
+<div style="width:100%; padding:5 20px; font-size:12px;"></div>
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
+				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
 			</td>
 		</tr>
 		<tr>
