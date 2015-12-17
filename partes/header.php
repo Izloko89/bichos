@@ -125,6 +125,7 @@ $bd=NULL;
               <span class="celda link" data-url="almacen.php">ALMACEN</span>
               <span class="celda link" data-url="compras.php">COMPRAS</span>
               <span class="celda link" data-url="bancos.php">BANCOS</span>
+              <span class="celda link" data-url="presupuesto.php">PRESUPUESTO</span>
               <span class="celda link" data-url="modulos.php">MÓDULOS</span>
             </div>
 	<?php } else { ?>

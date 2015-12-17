@@ -328,7 +328,7 @@ FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
-   INTINERARIO</TD>
+   ITINERARIO</TD>
 </TR>
 <TR>
 <TD>
@@ -336,7 +336,7 @@ FECHA DE EVENTO: '. varFechaAbr($fechaEve).' </TD>
 </TR>
 <TR>
 <TD>
-   HORA DE CENA: '. varHoraAbr($hora_cena).'</TD> <td><table><tr><td>
+   HORA DE COMIDA: '. varHoraAbr($hora_cena).'</TD> <td><table><tr><td>
    
    PASTEL: '. $pastel.'
    </td></tr>

@@ -258,10 +258,10 @@ table{
           </fieldset>
           
             <fieldset>
-<legend align="center">INTINERARIO</legend>
+<legend align="center">ITINERARIO</legend>
            <div class="campo_form" align="left">
            
-        <label class="">Hora de cena</label>
+        <label class="">Hora de comida</label>
         
       <input type="time" name="hora_cena" class="hora_cena">
 
