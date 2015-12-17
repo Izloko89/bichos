@@ -236,7 +236,6 @@ p {
       </td>
     </tr>
 </table>
-<div style="width:100%; padding:5 20px; font-size:12px;"></div>
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
@@ -389,9 +388,10 @@ p {
 		</tr>
 	</table>
 	<br>
-<div style="width:95%; padding 20px; font-size:12px; ">
+	<div style="width:95%; padding 20px; font-size:12px; ">
 	<P STYLE="margin-left: 1cm;"> TOTAL DEL EVENTO:</P>
 	</DIV>
+
 	<div style="width:95%; padding 20px; font-size:12px;  margin-left: 1cm;">
 			<table align="center" border="0.3" cellspacing="0" cellpadding="0" style="width:100%;font-size:10px;margin-top:5px; padding:5 30px; text-align:center">
                 <tr align="center">
@@ -424,7 +424,6 @@ p {
                 </tr>
             </table>
 	</div><br><br><br><br>
-</div>
 <div style="width:100%; padding:5 20px; font-size:12px;text-align:justify;">
 Contrato de arrendamiento que celebran por una parte <strong>BICHOS FIESTA S.A. DE CV.</strong> quien en lo sucesivo se le denominará arrendador,
 quien señala como su domicilio en Blvd. de los caminos No.135 en la ciudad de Torreón,Coahuila y por la parte de la
