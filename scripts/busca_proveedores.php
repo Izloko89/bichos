@@ -85,8 +85,8 @@ $res=$bd->query("SELECT * FROM proveedores_fiscal WHERE  id_proveedor = '$CLAVE'
 		<td style="padding-left: 20px;padding-right: 20px;">Fecha</td>
 		<td style="padding-left: 20px;padding-right: 50px;">Evento</td>
 		<td style="padding-left: 20px;padding-right: 20px;">Movimiento</td>
-		<td style="padding-left: 20px;padding-right: 20px;">Egreso</td>
-		<td style="padding-left: 20px;padding-right: 50px;">Pago a Proveedor</td>
+		<td style="padding-left: 20px;padding-right: 20px;">Pago</td>
+		<td style="padding-left: 20px;padding-right: 50px;">Total</td>
 
 	</tr>';
 	$id=1;

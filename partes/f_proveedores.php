@@ -301,8 +301,10 @@ $(document).ready(function(e) {
         <input type="button" class="modificar" value="MODIFICAR" style="display:none;" />
         <input type="button" class="volver" value="VOLVER">
     </div>
+
+<!--     
 <div class="formularios">
-    <h3 class="titulo_form">Estado de Cuenta</h3>
+<h3 class="titulo_form">Estado de Cuenta</h3>
     <table>
         <tr class="campo_form">
             <td>
@@ -323,6 +325,7 @@ $(document).ready(function(e) {
         <div align="right">
             <input type="button" class="agregarpago" value="Agregar Pago" />
         </div>
+         -->
         <div id="historial" class="formularios" >
             <h3 class='titulo_form'>Historial de pagos</h3>
     <div id="histpago">
