@@ -191,6 +191,16 @@ try{
 
 <script>
 $(document).ready(function(e) {
+	$('.guardar').click(function(){
+		console.log('Obteniendo valores');
+		paq=$(".clave").val();
+		name=$('.nombre').val();
+		console.log('entrando a la validacion add tabla');
+		if(name!="" && paq!="" ){
+			console.log('agregando elemento a la tabla');
+			$('#tableEve tr:last').after('<tr><td class="dbc" data-action="clave">'+paq+'</td><td>'+name+'</td><td class="eliminar_tevento" style="text-align:center;" onclick="eliminar_art('+<?php echo $cont; ?>+','+paq+')"></td> </tr>');
+		}
+	});
 	$(".numerico").numeric();
     $( ".clave" ).keyup(function(e){
 		_this=$(this);
