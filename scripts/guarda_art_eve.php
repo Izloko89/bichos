@@ -165,7 +165,7 @@ try{
 	
 	//se actualiza el inventario ys e genera l orden de compra
 	actInv($dsnw, $userw, $passw, $optPDO);
-	ordenCompra($eve);
+	//ordenCompra($eve);
 	
 	//también se debe actualizar el total del evento en las tablas
 	//1.- primero busca el reg del evento
