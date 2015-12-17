@@ -37,7 +37,7 @@ try{
 		$nombre_evento=$result[0]["nombre"];
 		
 		$tabla="<center><table class=table><tr><th>$nombre_evento</th></tr>";
-		$tabla.="<td><tr><th>No Pago</th><th>Fecha</th><th>Cantidad</th></tr>";
+		$tabla.="<td><tr><th>Fecha</th><th>Evento</th><th>Pago</th><th>Total</th></tr>";
 		$id=1;
 		$total=0;
 		foreach($res->fetchAll(PDO::FETCH_ASSOC) as $d){
