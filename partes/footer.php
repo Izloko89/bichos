@@ -13,6 +13,7 @@
             <span class="link" data-url="almacen.php">Almacén</span>/
             <span class="link" data-url="compras.php">Compras</span>/
             <span class="link" data-url="bancos.php">Bancos</span>/
+            <span class="link" data-url="presupuesto.php">Presupuesto</span>/
             <span class="link" data-url="modulos.php">Módulos</span>/
             <span class="link" data-url="scripts/logout.php">Cerrar Sesión</span>
           </div>
