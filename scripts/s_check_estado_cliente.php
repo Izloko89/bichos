@@ -37,14 +37,14 @@ try{
 		$nombre_evento=$result[0]["nombre"];
 		
 		$tabla="<center><table class=table><tr><th>$nombre_evento</th></tr>";
-		$tabla.="<td><tr><th>No Pago</th><th>Fecha</th><th>Cantidad</th></tr>";
+		$tabla.="<td><tr><th>Fecha</th><th>Evento</th><th>Pago</th><th>Total</th></tr>";
 		$id=1;
 		$total=0;
 		foreach($res->fetchAll(PDO::FETCH_ASSOC) as $d){
 			$rId = $d["id_pago"];
 			$tabla.='<tr>';
-			$tabla.="<td>".$id.'</td>';
-			$tabla.="<td>".varFechaExtensa($d["fecha"]).'</td>';
+			$tabla.="<td>".$d["fecha"].'</td>';
+			$tabla.="<td>".$d["nombre"].'</td>';
 			$tabla.='<td>'.$d["cantidad"] .'</td>';
 			$tabla.="<td><form action=scripts/pago_pdf.php target=_blank> <!-- <input type=submit  value=Imprimir /> --> <input type=hidden name=idPagoPdf id=idPagoPdf value=$rId><input type=hidden name=idEve id=idEve value=$eve></form></td>";
 			$tabla.='</tr>';
