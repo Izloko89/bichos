@@ -164,7 +164,7 @@ if($id_cot!=""){
 		 	($id_empresa,$id_usuario,'$id_emp_eve','$anticipo');";
 		 $bd->query($sqlComision);
 		 
-		 $r["info"]=ordenCompra($id_eve);
+		 $r["info"]="listo";
 		
 		$r["continuar"]=true;
 	}catch(PDOException $err){

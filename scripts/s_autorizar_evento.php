@@ -74,8 +74,15 @@ try{
 			$final *= -1;
 			$precio1 = $final * $costo;
 			if(!$final==0){
-			$sql = "insert into compras(id_empresa, id_evento)
-					values(1, $id_eve)";
+			$sql="SELECT (MAX(folio) + 1) as folio FROM compras ;";
+			$res=$bd->query($sql);
+			$res=$res->fetchAll(PDO::FETCH_ASSOC);
+			$folio=$res[0]["folio"];
+			if($folio==""){
+				$folio=1;
+			}
+			$sql = "insert into compras(id_empresa, id_evento,folio)
+					values(1, $id_eve, $folio)";
 			$bd->query($sql);
 			$sql = "select MAX(id_compra) as id from compras ";
 			$res1 = $bd->query($sql);
