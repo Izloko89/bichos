@@ -225,8 +225,9 @@ li{
     <table id="articulos" class="table">
       <tr>
       	<th class="agregar_articulo"><img src="img/mas.png" height="25" /></th>
+        <th width="100">Proveedor.</th>
         <th width="100">Cant.</th>
-        <th width="250">Concepto</th>
+        <th width="250">Articulo</th>
         <th width="100">precio unitario</th>
         <th width="100">total</th>
         <th width="150">Acciones</th>
