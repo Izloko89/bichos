@@ -119,28 +119,21 @@ li{
   </ul>
   <div id="hacer">
     <form id='eventos' class='formularios'>
-	<h3 class='titulo_form'>Gasto</h3>
+	<h3 class='titulo_form'>Presupuesto</h3>
       <div class="tabla">
-      
-    <?php /*
-	  if(isset($_GET["cve"])){?>
-        <input type="hidden" name="id_evento" class="id_evento" value="<?php echo $_GET["cve"]; ?>" />
-    <?php }else{ ?>
-        <input type="hidden" name="id_evento" class="id_evento" value="" />
-    <?php } */?>
     
         <input type="text" name="id_usuario" class="id_usuario" value="<?php echo $_SESSION["id_usuario"]; ?>" style="display:none;" />
         <input type="hidden" name="id_cliente" class="id_cliente" value="" />
         <input type="hidden" name="id_eve" class="id_eve" value="" />
         <?php
 			$bd=new PDO($dsnw, $userw, $passw, $optPDO);
-			$sql = "select MAX(id) as id from gastos_eventos";
+			$sql = "select MAX(folio) as id from presupuesto";
 			$res = $bd->query($sql);
 			$res = $res->fetchAll(PDO::FETCH_ASSOC);
 		?>
         <div class="campo_form celda">
 			<label class="">FOLIO</label>
-				 <input type="text" name="clave" class="clave label clave_cotizacion requerido mayuscula text_corto" id="clave_cotizacion" data-nueva="" value="<?php echo $res[0]["id"] + 1;?>" />
+				 <input type="text" name="clave" class="label folio requerido mayuscula text_corto" id="folio" data-nueva="" value="<?php echo $res[0]["id"] + 1;?>" />
 
           </div>
 		  <!--
@@ -363,33 +356,22 @@ li{
   <tr>
   	<th>Clave<br />Folio</th>
     <th style="width:200px;">Nombre del evento</th>
-    <th style="width:200px;">Cliente</th>
-    <th>Estatus</th>
     <th>Fecha<br />evento</th>
-    <th>Montaje</th>
-    <th>Desmontaje</th>
     <th>acciones</th>
   </tr>
   <tr class="barra_accion">
     <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td>
     <td><input class="filtro" data-c="bnombre" /></td>
-    <td><input class="filtro" data-c="btipo_evento" /></td>
-    <td><input class="filtro" data-c="bcliente" /></td>
-    <td style="width:34px;"><input class="filtro" data-c="bestatus" /></td>
     <td><input class="filtro filtrofecha" data-c="bfechaevento" /></td>
-    <td><input class="filtro filtrofecha" data-c="bfechamontaje" /></td>
-    <td><input class="filtro filtrofecha" data-c="bfechadesmont" /></td>
     <td><a href="#" class="pdf" onclick="return false;" data-nombre="evento" data-orientar="L">generar pdf</a></td>
   </tr>
   	<?php 
 	try{
 		$bd=new PDO($dsnw,$userw, $passw, $optPDO);
 			
-		$sql="SELECT DISTINCT gastos_eventos.id, gastos_eventos.empleado,
-		gastos_eventos.fecha1, gastos_eventos.fecha2, gastos_eventos.fecha3,
-		eventos.nombre, eventos.id_evento
-		FROM gastos_eventos
-		INNER JOIN eventos ON gastos_eventos.id_evento = eventos.id_evento;";
+		$sql="SELECT * 
+		FROM presupuesto
+		INNER JOIN eventos ON presupuesto.id_evento = eventos.id_evento;";
 		
 		$res=$bd->query($sql);
 		
@@ -400,15 +382,11 @@ li{
 		$cont = 2;
 		//escribimos la tabla
 		foreach($cot as $folio=>$d){
-			echo '<tr class="cot'.$d["id"].'">';
-			echo '<td class="bfolio">'.$d["id"]. '</td>';
+			echo '<tr class="cot'.$d["id_presupuesto"].'">';
+			echo '<td class="bfolio">'.$d["id_presupuesto"]. '</td>';
 			echo '<td class="bnombre">'.$d["nombre"].'</td>';
-			echo '<td class="bcliente">'.$d["empleado"].'</td>';
-			echo '<td class="bestatus">1</td>';
-			echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fecha1"]).'</td>';
-			echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fecha2"]).'</td>';
-			echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fecha3"]).'</td>';
-			echo '<td><img src="img/check.png" data-cve="'.$d["id"].'" height="20" onclick="autorizarEve('.$folio.','.$d["id"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id"].'" onclick="editar(' . $d["id_evento"] . ', ' . $d["id"] . ');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id"].'" height="20" onclick="eliminar_eve(' . $d["id"] . ',' . $cont . ')"/></td>';
+			echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fecha_solicitud"]).'</td>';
+			echo '<td><img src="img/check.png" data-cve="'.$d["id_presupuesto"].'" height="20" onclick="autorizarEve('.$folio.','.$d["id_presupuesto"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_presupuesto"].'" onclick="editar(\''.$d["nombre"].'\');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_presupuesto"].'" height="20" onclick="eliminar_eve(' . $d["id_presupuesto"] . ',' . $cont . ')"/></td>';
 			echo '</tr>';
 			$cont++;
 		}
