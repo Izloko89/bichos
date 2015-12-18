@@ -1,5 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e) {
+
 	//alerta("info","Vista de gastos NO DISPONIBLE todavía");
 	$("#tabs").tabs({
 		heightstyle:"content"
@@ -185,9 +186,8 @@ $(document).ready(function(e) {
 
 	$(".agregar_articulo").click(function(){
 		id_evento=$(".id_evento").get(0).value;
-		console.log(id_evento);
 		id=$(".lista_articulos").length+1;
-		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" onkeyup="darprecio(this)" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
+		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td> <input class="proveedor" type="text" size="10" onkeyup="prov_completar()"></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" onkeyup="darprecio(this)" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
 		$.each($(".lista_articulos"),function(i,v){
 			$(this).find(".id_evento").val(id_evento);
 		});
@@ -379,6 +379,18 @@ function darprecio(e){
 	total=(precio*1)*(cant*1);
 	$(e).parent().parent().find(".total").html(total);
 }
+
+function prov_completar(){
+	console.log('test');
+		//busca de proveedores
+	$(".proveedor").autocomplete({
+      source: "scripts/busca_proveedores1.php",
+      minLength: 2,
+      select: function( event, ui ) {
+		console.log(ui);        
+      }
+    });
+}
 function art_autocompletar(id){
 	padre=$("#"+id);
 	cantidad=padre.find(".cantidad").val()*1;
@@ -387,7 +399,7 @@ function art_autocompletar(id){
 	precio=padre.find(".precio").parent();
 	total=padre.find(".total");
 	$( "#"+id+" .articulo_nombre").autocomplete({
-	  source: "scripts/busca_gastos.php",
+	  source: "scripts/busca_articulos.php",
 	  minLength: 1,
 	  select: function( event, ui ) {
 		  total.parent().parent().removeClass("verde_ok");
