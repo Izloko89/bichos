@@ -82,7 +82,7 @@ $(document).ready(function(e) {
 
     //busca cliente
 	$( ".nombre" ).autocomplete({
-      source: "scripts/busca_usuarios.php",
+      source: "scripts/busca_evento.php",
       minLength: 1,
       select: function( event, ui ) {
 		//asignacion individual alos campos
@@ -413,10 +413,14 @@ function art_autocompletar(id){
 }
 function eve_autocompletar(){
 	$( "#evento").autocomplete({
-	  source: "scripts/busca_eventos.php",
-	  minLength: 1,
+	  source: "scripts/busca_evento_nombre.php",
+	  minLength: 2,
 	  select: function( event, ui ) {
-		  $("#id_eve").val(ui.item.id_evento);
+	  	$('#salon').val(ui.item.salon);
+	  	$('#festejado').val(ui.item.nombre);
+	  	$('#ninos').val(ui.item.no_ninos);
+	  	$('#adultos').val(ui.item.no_adultos);
+	  	$('.fechaevento').val(ui.item.fechaevento);
 	  }
 	});
 }

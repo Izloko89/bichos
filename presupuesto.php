@@ -166,26 +166,27 @@ li{
       </div>
       <div class="tabla">
         <div class="celda" style=" width:600px;">
-          <div class="campo_form">
-          	<label>Solicitado por</label>
-            <input class="cliente_evento text_largo" id="empleado" type="text" />
-          </div>
-          <div class="campo_form">
+		<div class="campo_form">
           	<label>Nombre de Evento</label>
 			<input type="hidden" id="id_eve" value=""/>
             <input class="cliente_evento text_largo" id="evento" type="text" onkeyup="eve_autocompletar();"/>
           </div>
+		<div class="campo_form">
+          	<label>Nombre del Salon:</label>
+            <input class="cliente_evento text_largo" id="salon" type="text" />
+		</div>
+          
           <div class="campo_form">
-          	<label>Direccion</label>
-            <input class="cliente_evento text_largo" id="direccion" type="text" value=""/>
+          	<label>Niños</label>
+            <input class="cliente_evento text_largo" id="ninos" type="text" value=""/>
           </div>
           <div class="campo_form">
-          	<label>Nombre</label>
-            <input class="cliente_evento text_largo" id="nombre" type="text" value=""/>
+          	<label>Adultos</label>
+            <input class="cliente_evento text_largo" id="adultos" type="text" value=""/>
           </div>
           <div class="campo_form">
-          	<label>Telefono de Contacto</label>
-            <input class="cliente_evento text_largo" id="telefono" type="text" value=""/>
+          	<label>Paquete Basico</label>
+            <input class="cliente_evento text_largo" id="paquete" type="text" value=""/>
           </div>
 		  
 		  <!--
@@ -199,19 +200,15 @@ li{
         <div class="celda" style="">
           <div class="campo_form">
             <label class="align_right" style="width:120px;">Fecha Solicitud</label>
-        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechaevento" type="text" name="fechaevento"  readonly/></abbr><!--
+        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechapresupuesto" type="text" name="fechaevento"  readonly/></abbr><!--
             --><img class="borrar_fecha" data-class="fechaevento" src="img/cruz.png" width="15" />
           </div>
           <div class="campo_form">
-            <label class="align_right" style="width:120px;">Fecha Requerido</label>
-        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechamontaje" type="text" name="fechamontaje" readonly/></abbr><!--
+            <label class="align_right" style="width:120px;">Fecha Evento</label>
+        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechaevento" type="text" name="fechamontaje" readonly/></abbr><!--
             --><img class="borrar_fecha" data-class="fechamontaje" src="img/cruz.png" width="15" />
           </div>
-          <div class="campo_form">
-            <label class="align_right" style="width:120px;">Fecha Entrega</label>
-        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechadesmont" type="text" name="fechadesmont"  readonly/></abbr><!--
-            --><img class="borrar_fecha" data-class="fechadesmont" src="img/cruz.png" width="15" />
-          </div>
+          
 		</div>
       </div>
         <div align="right">
@@ -322,45 +319,14 @@ li{
 	  <table class="">
 		  <tr>
 			  <td>
-					<label class="">Proveedor:</label>
-			  </td>
-			  <td>
-					<input type="text" name="encargado" id="encargado"/>
-			  </td>
-			  <td rowspan="5"><textarea name="obs" id="obs" placeholder="Notas" cols="70" rows="5" style="resize:none;"></textarea></td>
-		  </tr>
-		  <tr>
-			  <td>
-					<label class="">Clave Proveedor:</label>
-			  </td>
-			  <td>
-					<input type="text" name="unidad" id="unidad"/>
-			  </td>
-		  </tr>
-		  <tr>
-			  <td>
-					<label class="">Cheque:</label>
-			  </td>
-			  <td>
-					<input type="text" name="cheque" id="cheque"/>
-			  </td>
-		  </tr>
-		  <tr>
-			  <td>
-					<label class="">Elaborado:</label>
+					<label class="">Elaborado por:</label>
 			  </td>
 			  <td>
 					<input type="text" name="elaborado" id="elaborado"/>
 			  </td>
+			  <td rowspan="5"><textarea name="obs" id="obs" placeholder="Notas" cols="70" rows="5" style="resize:none;"></textarea></td>
 		  </tr>
-		  <tr>
-			  <td>
-					<label class="">Seleccionado por:</label>
-			  </td>
-			  <td>
-					<input type="text" name="selec" id="selec"/>
-			  </td>
-		  </tr>
+		  
 	  </table>
         
 
