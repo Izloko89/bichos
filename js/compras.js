@@ -57,7 +57,6 @@ $(document).ready(function(e) {
 				success: function(r){
 					if(r.continuar){
 					alerta("info",r.info);
-					//remueve el formulario
 					$(f).parent().remove();
 					//cambiamos el estatus
 					$(tr).find(".estatus").html('terminada');
@@ -67,6 +66,10 @@ $(document).ready(function(e) {
 					}else{
 						alerta("error",r.info);
 					}
+				},
+				error: function(r){
+						console.log(r);
+						alerta("error", "Un error");
 				}
 			});//*/
 		}else{

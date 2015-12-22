@@ -1,5 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e) {
+
 	//alerta("info","Vista de gastos NO DISPONIBLE todavía");
 	$("#tabs").tabs({
 		heightstyle:"content"
@@ -81,7 +82,7 @@ $(document).ready(function(e) {
 
     //busca cliente
 	$( ".nombre" ).autocomplete({
-      source: "scripts/busca_usuarios.php",
+      source: "scripts/busca_evento.php",
       minLength: 1,
       select: function( event, ui ) {
 		//asignacion individual alos campos
@@ -100,36 +101,33 @@ $(document).ready(function(e) {
 		}
     });
 	$(".guardar").click(function (){
-		empleado = document.getElementById("empleado").value;
 		evento = document.getElementById("id_eve").value;
-		direccion = document.getElementById("direccion").value;
-		nombre = document.getElementById("nombre").value;
-		telefono = document.getElementById("telefono").value;
-		fecha1 = $(".fechaevento").val();
-		fecha2 = $(".fechamontaje").val();
-		fecha3 = $(".fechadesmont").val();
+		paq = document.getElementById("paquete").value;
+		fechasol = $(".fechapresupuesto").val();
+		folio = $('.folio').val();
+		if(!evento){
+			alerta("error","Seleccione un evento");
+			return false;
+		}
 		$.ajax({
-			url:'scripts/guardar_presupuesto.php',
+			url:'scripts/s_guardar_presupuesto.php',
 			cache:false,
 			async:false,
 			type:'POST',
 			data:{ 
-				'empleado':empleado,
 				'evento':evento,
-				'direccion':direccion,
-				'nombre':nombre,
-				'telefono':telefono,
-				'fecha1':fecha1,
-				'fecha2':fecha2,
-				'fecha3':fecha3
+				'fechasol':fechasol,
+				'paq':paq,
+				'folio':folio
 			},
 			success: function(r){
-				if(r){
-					alerta("info","Gasto agregado");
-			$(".nueva").hide();
-			$(".modificar").show();
+				if(r.continuar){
+					alerta("info","Presupuesto agregado");
+					console.log(r.fecha);
+				$(".nueva").hide();
+				$(".modificar").show();
 				}else{
-					alerta("error","Ocurrio un error al editar");
+					alerta("error","Ocurrio un error al guardar");
 				}//
 			}
 		});
@@ -185,42 +183,13 @@ $(document).ready(function(e) {
 
 	$(".agregar_articulo").click(function(){
 		id_evento=$(".id_evento").get(0).value;
-		console.log(id_evento);
 		id=$(".lista_articulos").length+1;
-		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" onkeyup="darprecio(this)" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
+		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td> <input class="proveedor" type="text" size="10" onkeyup="prov_completar()"></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" onkeyup="darprecio(this)" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
 		$.each($(".lista_articulos"),function(i,v){
 			$(this).find(".id_evento").val(id_evento);
 		});
 		$(".cantidad").numeric();
 	});
-
-	$(".guardar").click(function(e) {
-	  if(requerido()){
-		term = document.getElementById("nombre").value;
-		//datos de los formularios
-		//procesamiento de datos
-		$.ajax({
-			url:'scripts/s_guardar_gastos.php',
-			cache:false,
-			async:false,
-			type:'POST',
-			data:{
-				'term':term
-			},
-			success: function(r){
-				if(r){
-					alerta("info","Registro añadido satisfactoriamente");
-					ingresar=true;
-					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
-						$("#botones_modulo").fadeIn(rapidez);
-					});
-				}else{
-					alerta("error","ocurrio un error al agregar el registro");
-				}
-			}
-		});
-	  }//if del requerido
-    });
     $(".volver").click(function(e) {
 		ingresar=true;
     	$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
@@ -228,54 +197,7 @@ $(document).ready(function(e) {
 		});
     });
 });
-function buscarClaveGet(){
-	$(".totalevento").val('');
-	$(".restante").val('');
-	$(".eventosalon").prop("checked",false);
-	dato=$(".clave_cotizacion").val();
-	cotizacion = dato;
-	input=$(".clave_cotizacion");
-	input.addClass("ui-autocomplete-loading-left");
-	$.ajax({
-	  url:"scripts/busca_gasto.php",
-	  cache:false,
-	  data:{
-		term:dato
-	  },
-	  success: function(r){
-		form="cotizaciones";
-		if(r.bool){
-			document.getElementById("empleado").value = r.empleado;
-			document.getElementById("evento").value = r.nombre;
-			document.getElementById("direccion").value = r.direccion;
-			document.getElementById("nombre").value = r.np;
-			document.getElementById("telefono").value = r.telefono;
-			$(".id_Folio").val($("#clave_cotizacion").val());
-			$(".fechaevento").val(r.fecha1);
-			$(".fechamontaje").val(r.fecha2);
-			$(".fechadesmont").val(r.fecha3);
-			$("#id_eve").val(r.id_evento);
-			$(".id_evento").val(r.id_evento);
-			historial(r.id_evento);
-			$(".id_cliente").val(r.id_cliente);
-			get_items_cot(cotizacion);
-			checarTotal('cotizaciones',cotizacion);
-			$(".guardar").hide();
-			$(".modificar").show();
-			checarTotalGas(r.id_evento);
-		}else{
-			$.each($("#hacer form"),function(i,v){
-				$(this).get(i).reset();
-			});
-			alerta("info","Cotización no existe o ya es un evento");
-			//le da el nombre al boton
-			$(".guardar").show();
-			$(".modificar").hide();
-		}
-		input.removeClass("ui-autocomplete-loading-left");
-	  }
-	});
-}
+
 function historial(eve){
 	$.ajax({
 		url:'scripts/s_historial_gastos_pagos.php',
@@ -379,6 +301,18 @@ function darprecio(e){
 	total=(precio*1)*(cant*1);
 	$(e).parent().parent().find(".total").html(total);
 }
+
+function prov_completar(){
+	console.log('test');
+		//busca de proveedores
+	$(".proveedor").autocomplete({
+      source: "scripts/busca_proveedores1.php",
+      minLength: 2,
+      select: function( event, ui ) {
+		console.log(ui);        
+      }
+    });
+}
 function art_autocompletar(id){
 	padre=$("#"+id);
 	cantidad=padre.find(".cantidad").val()*1;
@@ -387,7 +321,7 @@ function art_autocompletar(id){
 	precio=padre.find(".precio").parent();
 	total=padre.find(".total");
 	$( "#"+id+" .articulo_nombre").autocomplete({
-	  source: "scripts/busca_gastos.php",
+	  source: "scripts/busca_articulos.php",
 	  minLength: 1,
 	  select: function( event, ui ) {
 		  total.parent().parent().removeClass("verde_ok");
@@ -401,10 +335,16 @@ function art_autocompletar(id){
 }
 function eve_autocompletar(){
 	$( "#evento").autocomplete({
-	  source: "scripts/busca_eventos.php",
-	  minLength: 1,
+	  source: "scripts/busca_evento_nombre.php",
+	  minLength: 2,
 	  select: function( event, ui ) {
-		  $("#id_eve").val(ui.item.id_evento);
+	  	console.log(ui);
+	  	$('#salon').val(ui.item.salon);
+	  	$('#festejado').val(ui.item.nombre);
+	  	$('#ninos').val(ui.item.no_ninos);
+	  	$('#adultos').val(ui.item.no_adultos);
+	  	$('.fechaevento').val(ui.item.fechaevento);
+	  	$('#id_eve').val(ui.item.id_evento);
 	  }
 	});
 }
@@ -430,11 +370,24 @@ function eve_autocompletar(){
 			}
 		});
 	}
-	function editar(e, id)
+	function editar(nombre)
 	{
-		$(".clave_cotizacion").val(id);
-		$(".id_eve").val(e);
-		buscarClaveGet();
+		$.get('scripts/busca_evento_nombre.php',
+		{
+			'term':nombre
+		}
+		).done(function(data){
+			$.each(data, function (index, ui) {
+   				$('#salon').val(ui.salon);
+		  		$('#festejado').val(ui.nombre);
+		  		$('#ninos').val(ui.no_ninos);
+		  		$('#adultos').val(ui.no_adultos);
+		  		$('.fechaevento').val(ui.fechaevento);
+		  		$('#id_eve').val(ui.id_evento);
+			});
+			
+		});
+		
 	}
 function guardar_art(elemento){
 	row=$("#"+elemento);

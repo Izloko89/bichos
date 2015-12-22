@@ -14,6 +14,7 @@ try{
 		precio2 as p2,
 		precio3 as p3,
 		precio4 as p4,
+		compra as compra,
 		areas.nombre,
 		familias.nombre,
 		subfamilias.nombre
@@ -30,7 +31,8 @@ try{
 		precio1 as p1,
 		precio2 as p2,
 		precio3 as p3,
-		precio4 as p4
+		precio4 as p4,
+		compra as compra
 	FROM paquetes
 	INNER JOIN listado_precios ON paquetes.id_paquete=listado_precios.id_paquete
 	WHERE paquetes.id_empresa=$empresaid AND paquetes.nombre LIKE '%$term%';";
@@ -44,6 +46,7 @@ try{
 			<option value="'.$v["p2"].'">$'.$v["p2"].'</option>
 			<option value="'.$v["p3"].'">$'.$v["p3"].'</option>
 			<option value="'.$v["p4"].'">$'.$v["p4"].'</option>
+			<option value="'.$v["compra"].'">$'.$v["compra"].'</option>
 		</select><span class="precio"></span>';
 		unset($v["p1"],$v["p2"],$v["p3"],$v["p4"]);
 		$v["precio"]=$precios;
@@ -59,6 +62,7 @@ try{
 			<option value="'.$v["p2"].'">$'.$v["p2"].'</option>
 			<option value="'.$v["p3"].'">$'.$v["p3"].'</option>
 			<option value="'.$v["p4"].'">$'.$v["p4"].'</option>
+			<option value="'.$v["compra"].'">$'.$v["compra"].'</option>
 		</select><span class="precio"></span>';
 		unset($v["p1"],$v["p2"],$v["p3"],$v["p4"]);
 		$v["precio"]=$precios;
