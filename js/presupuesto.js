@@ -80,27 +80,7 @@ $(document).ready(function(e) {
     });
 	
 
-    //busca cliente
-	$( ".nombre" ).autocomplete({
-      source: "scripts/busca_evento.php",
-      minLength: 1,
-      select: function( event, ui ) {
-		//asignacion individual alos campos
-		//alert(ui);
-		$("#f_tipo_evento .id_tipo").val(ui.item.id_gasto);
-		$(".modificar").show();
-		$(".guardar_individual").hide();
-	  }
-    });
-	$(".nombre").keyup(function(e) {
-        if(e.keyCode==8){
-			if($(this).val()==""){
-				$(".modificar").hide();
-				$(".guardar_individual").show();
-			}
-		}
-    });
-	$(".guardar").click(function (){
+	$(".guardar_pres").click(function (){
 		evento = document.getElementById("id_eve").value;
 		paq = document.getElementById("paquete").value;
 		fechasol = $(".fechapresupuesto").val();
@@ -125,7 +105,8 @@ $(document).ready(function(e) {
 					alerta("info","Presupuesto agregado");
 					console.log(r.fecha);
 				$(".nueva").hide();
-				$(".modificar").show();
+				$(".guardar").hide();
+				$(".modificar_pres").show();
 				}else{
 					alerta("error","Ocurrio un error al guardar");
 				}//
@@ -145,30 +126,30 @@ $(document).ready(function(e) {
 			},300);
 		}
     }); //termina buscador de cotizacion
-	$(".modificar").click(function(e) {
-	  if(requerido()){
-				term = document.getElementById("id_tipo").value;
-				name = document.getElementById("nombre").value;
+	$(".modificar_pres").click(function(e) {
 		//procesamiento de datos
+		folio = $('.folio').val();
+		paq_basico = $('#paquete').val();
+		fechapresupuesto = $('.fechapresupuesto').val();
 		$.ajax({
-			url:'scripts/s_modificar_gastos.php',
+			url:'scripts/modificar_presupuesto.php',
 			cache:false,
 			async:false,
 			type:'POST',
 			data:{ 
-				'term':term,
-				'name':name
+				'folio':folio,
+				'paq_basico':paq_basico,
+				'fechapresupuesto':fechapresupuesto,
 			},
 			success: function(r){
+				console.log(r);
 				if(r){
-					alerta("info","Articulo editado");
-						$(".volver").click();
+					alerta("info","Presupuesto Modificado Correctamente");
 				}else{
-					alerta("error","Ocurrio un error al editar");
+					alerta("error","Ocurrio un error al modificar");
 				}//
 			}
 		});
-	  }//if del requerido
     });
 
 	//$(".agregar_proveedor").click(function(){
@@ -234,48 +215,29 @@ function checarTotal(tabla,id){
 		}
 	});
 }
-function checarTotalGas(id){
+function checarTotalPres(id){
 	var total;
 	$.ajax({
-		url:'scripts/s_check_total_gastos.php',
+		url:'scripts/s_check_total_pres.php',
 		cache:false,
 		async:false,
 		type:'POST',
 		data:{
-			'tabla':"gastos_art",
-			'id':id
+			'folio':id
 		},
 		success: function(r){
-			var res = JSON.parse(r);
-			$("#totalGas").val(res.total);
-			$(".totalcot").val(res.total);
-			total = res.total;
-		}
-	});
-	
-	$.ajax({
-		url:'scripts/s_check_total_gastos_pagos.php',
-		cache:false,
-		async:false,
-		type:'POST',
-		data:{
-			'tabla':"gastos_art",
-			'id':id
-		},
-		success: function(r){
-			var res = JSON.parse(r);
-			$(".restante").val(total - res.pagado);
+			$("#totalGas").val(r.total);
 		}
 	});
 }
-function get_items_cot(id){
+function get_items_pres(id){
 	$(".lista_articulos").remove();
 	$.ajax({
-		url:'scripts/get_items_gastos.php',
+		url:'scripts/get_items_pres.php',
 		cache:false,
 		async:false,
 		data:{
-			'id_cotizacion':id
+			'id_presupuesto':id
 		},
 		success: function(r){
 			$("#articulos").append(r);
@@ -308,8 +270,7 @@ function prov_completar(){
 	$(".proveedor").autocomplete({
       source: "scripts/busca_proveedores1.php",
       minLength: 2,
-      select: function( event, ui ) {
-		console.log(ui);        
+      select: function( event, ui ){        
       }
     });
 }
@@ -339,97 +300,150 @@ function eve_autocompletar(){
 	  minLength: 2,
 	  select: function( event, ui ) {
 	  	console.log(ui);
-	  	$('#salon').val(ui.item.salon);
-	  	$('#festejado').val(ui.item.nombre);
-	  	$('#ninos').val(ui.item.no_ninos);
-	  	$('#adultos').val(ui.item.no_adultos);
-	  	$('.fechaevento').val(ui.item.fechaevento);
-	  	$('#id_eve').val(ui.item.id_evento);
+	  	
+		$('#salon').val(ui.item.salon);
+  		$('#ninos').val(ui.item.no_ninos);
+  		$('#adultos').val(ui.item.no_adultos);
+  		$('.fechaevento').val(ui.item.fechaevento);
+  		$('.fechapresupuesto').val(ui.item.fecha_sol);
+  		$('#id_eve').val(ui.item.id_evento);
+
 	  }
 	});
 }
-	function eliminar_gasto(elemento, id_item){
+	function eliminar_presupuesto(elemento, id_item){
 		$.ajax({
-			url:'scripts/eGasto.php',
+			url:'scripts/eliminar_presupuesto.php',
 			cache:false,
 			type:'POST',
 			data:{
-				'id_item':id_item
+				'id':elemento
 			},
 			success: function(r){
 			  if(r){
 				document.getElementById("tableEve").deleteRow(elemento);
-					alerta("info","<strong>Tipo de Evento</strong> Eliminado");
-					ingresar=true;
-					$("#formularios_modulo").hide("slide",{direction:'right'},rapidez,function(){
-						$("#botones_modulo").fadeIn(rapidez);
-					});
+					alerta("info","<strong>Presupuesto</strong> Eliminado");
 			  }else{
 				alerta("error", r);
 			  }
 			}
 		});
 	}
-	function editar(nombre)
+	function editar(id)
 	{
-		$.get('scripts/busca_evento_nombre.php',
+		$.get('scripts/busca_presupuesto.php',
 		{
-			'term':nombre
+			'id':id
 		}
 		).done(function(data){
 			$.each(data, function (index, ui) {
+   				$('.folio').val(ui.folio);
    				$('#salon').val(ui.salon);
+   				$('#evento').val(ui.nombre);
 		  		$('#festejado').val(ui.nombre);
 		  		$('#ninos').val(ui.no_ninos);
 		  		$('#adultos').val(ui.no_adultos);
 		  		$('.fechaevento').val(ui.fechaevento);
+		  		$('.fechapresupuesto').val(ui.fecha_sol);
 		  		$('#id_eve').val(ui.id_evento);
+		  		$('#paquete').val(ui.paq_basico);
+		  		$('.guardar_pres').hide();
+		  		$('.modificar_pres').show();
+		  		$(".hacer a")[0].click();
+		  		get_items_pres(ui.folio);
+		  		checarTotalPres(ui.folio);
 			});
 			
 		});
 		
 	}
-function guardar_art(elemento){
-	row=$("#"+elemento);
-	padre=$("#"+elemento).parent();
+
+function cambiar_cant(id){
+	padre=$("#"+id);
+	cantidad=padre.find(".cantidad").val()*1;
+	precio=padre.find(".precio").val()*1;
+	total=cantidad*precio;
+	padre.find(".total").html(total);
+	padre.removeClass("verde_ok");
+}
+
+function eliminar_art(elemento){
 	
-	id_cotizacion=$(".id_cotizacion").first().val();
-	eve = $(".id_eve").val();
-	
-	if(id_cotizacion!=""){
-		id_item=$("#"+elemento+" .id_item").val();
-		id_articulo=$("#"+elemento+" .id_articulo").val();
-		id_paquete=$("#"+elemento+" .id_paquete").val();
-		cantidad=$("#"+elemento+" .cantidad").val();
-		precio=$("#"+elemento+" .precio").val();
-		total=$("#"+elemento+" .total").html();
+	folio=$(".folio").val();
+	id_item=$("#"+elemento+" .id_item").val();
+
+	if(id_item!=0){
 		$.ajax({
-			url:'scripts/guarda_articulo_gasto.php',
+			url:'scripts/quita_art_pres.php',
 			cache:false,
 			type:'POST',
 			data:{
 				'id_item':id_item,
-				'id_paquete':id_paquete,
-				'id_articulo':id_articulo,
-				'id_gasto':id_cotizacion,
-				'cantidad':cantidad,
-				'precio':precio,
-				'total':total,
-				'id_eve':eve
 			},
 			success: function(r){
-				if(r.continuar){
-					$("#"+elemento+" .id_item").val(r.id_item);
-					padre.find(".id_cotizacion").val(id_cotizacion);
-				//	alerta("info",r.info);
-					row.addClass("verde_ok");
-					setTimeout(function(){checarTotal('cotizaciones',id_cotizacion);},500);
-				  }else{
-					alerta("error",r.info);
-				  }
+			  if(r.continuar){
+				alerta("info","Se elimino correctamente el articulo ");
+				$("#"+elemento).remove();
+				checarTotalPres(folio);
+			  }else{
+				alerta("error",r.info);
+			  }
 			}
 		});
 	}else{
-		alert("Debes guardar la cotización primero");
+		$("#"+elemento).remove();
 	}
+}
+
+
+function guardar_art(elemento){
+	row=$("#"+elemento);
+	padre=$("#"+elemento).parent();
+	
+	//mostrar que se esta procesando
+	//procesando("mostrar",0);
+	
+	//checa si se modificó el total
+	actTotal=true;
+	if(row.hasClass("verde_ok")){
+		actTotal=false;
+	}
+	
+	id_item=$("#"+elemento+" .id_item").val();
+	id_articulo=$("#"+elemento+" .id_articulo").val();
+	id_paquete=$("#"+elemento+" .id_paquete").val();
+	folio=$(".folio").val();
+	cantidad=$("#"+elemento+" .cantidad").val();
+	precio=$("#"+elemento+" .precios").val();
+	proveedor = $('.proveedor').val();
+	total=$("#"+elemento+" .total").html();
+	$.ajax({
+		url:'scripts/guarda_art_pres.php',
+		cache:false,
+		type:'POST',
+		data:{
+			'id_item':id_item,
+			'id_paquete':id_paquete,
+			'id_articulo':id_articulo,
+			'folio':folio,
+			'cantidad':cantidad,
+			'precio':precio,
+			'proveedor':proveedor,
+			'total':total,
+			boolTotal:actTotal
+		},
+		success: function(r){
+			if(r.continuar){
+				$("#"+elemento+" .id_item").val(r.id_item);
+				//padre.find(".id_evento").val(id_evento);
+				alerta("info","Fue agregado exitosamente");
+				row.addClass("verde_ok");
+				checarTotalPres(folio);
+				//setTimeout(function(){checarTotal('eventos',id_evento);},500);
+			  }else{
+			  	console.log('error');
+				alerta("error",r.info);
+			  }
+		}
+	});
 }
