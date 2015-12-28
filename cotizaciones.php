@@ -424,8 +424,7 @@ table{
   </style>
   <table cellpadding="0" cellspacing="2" border="0" width="100%" class="listado">
   <tr>
-  	<th>#</th>
-    <!-- <th>Clave<br />Folio</th> -->
+    <th>Clave<br />Folio</th>
     <th style="width:200px;">Nombre del evento</th>
     <th>Tipo de evento</th>
     <th style="width:200px;">Cliente</th>
@@ -435,9 +434,8 @@ table{
     <th>Desmontaje</th>
     <th>acciones</th>
   </tr>
-  <tr class="barra_accion">
-    <td></td>
-    <!-- <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td> -->
+<tr class="barra_accion">
+    <td style="width:34px;"><input class="filtro" data-c="bfolio" /></td>
     <td><input class="filtro" data-c="bnombre" /></td>
     <td><input class="filtro" data-c="btipo_evento" /></td>
     <td><input class="filtro" data-c="bcliente" /></td>
@@ -446,8 +444,7 @@ table{
     <td><input class="filtro filtrofecha" data-c="bfechamontaje" /></td>
     <td><input class="filtro filtrofecha" data-c="bfechadesmont" /></td>
     <td><a href="#" class="pdf" onclick="return false;" data-nombre="evento" data-orientar="L">generar pdf</a></td>
-  </tr>
-  	<?php 
+  </tr>  	<?php 
 	try{
 		$bd=new PDO($dsnw,$userw, $passw, $optPDO);
 		$sqlCot="SELECT
@@ -497,8 +494,7 @@ table{
     $num=1;
 		foreach($cot as $folio=>$d){
       echo '<tr class="cot'.$d["clave"].'">';
-      echo '<td >'.$num.' </td>';
-     // echo '<td class="bfolio">'.$d["clave"].'</td>';
+      echo '<td class="bfolio">'.$d["clave"].'</td>';
       echo '<td class="bnombre">'.$d["nombre"].'</td>';
       echo '<td class="btipo_evento">'.$d["tipo_evento"].'</td>';
       echo '<td class="bcliente">'.$d["cliente"].'</td>';

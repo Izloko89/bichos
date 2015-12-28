@@ -129,7 +129,7 @@ table{
         <input type="hidden" name="id_cliente" class="id_cliente" value="" />
         
         <div class="campo_form celda">
-			<label class="">CLAVE</label>
+			<label class=""></label>
             <?php //si viene con una clave dedde otra pagina
 				if(isset($_GET["cve"])){?>
 				<script>
@@ -137,9 +137,9 @@ table{
 					buscarClaveGet();
 				});
 				</script>
-					<input type="text" id="clave"  name="clave" class="clave label clave_evento requerido mayuscula text_corto" data-nueva="<?php nuevaClaveCotizar(); ?>" value="<?php echo $_GET["cve"]; ?>" />
+					<input type="hidden" id="clave"  name="clave" class="clave label clave_evento requerido mayuscula text_corto" data-nueva="<?php nuevaClaveCotizar(); ?>" value="<?php echo $_GET["cve"]; ?>" />
 			<?php }else{ ?>
-				 <input type="text" id="clave" name="clave" class="clave label clave_evento requerido mayuscula text_corto" data-nueva="<?php nuevaClaveCotizar(); ?>" value="" />
+				 <input type="hidden" id="clave" name="clave" class="clave label clave_evento requerido mayuscula text_corto" data-nueva="<?php nuevaClaveCotizar(); ?>" value="" />
 			<?php } ?>
           </div>
         <div class="campo_form celda fondo_azul" align="center">
@@ -503,7 +503,7 @@ table{
       fechadesmont
     FROM eventos
     INNER JOIN tipo_evento ON eventos.id_tipo=tipo_evento.id_tipo
-    WHERE eventos.id_empresa=$empresaid";
+    WHERE eventos.id_empresa=$empresaid ORDER BY eventos.id_cotizacion asc;";
     $sqlClie="SELECT
       id_evento,
       clientes.id_cliente,
