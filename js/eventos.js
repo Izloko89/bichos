@@ -4,6 +4,13 @@ $(document).ready(function(e) {
 	$("#tabs").tabs({
 		heightstyle:"content"
 	});
+
+    $('#btn-nuevacot').click(function(){
+    	id = $(this).attr('class');
+    	$('.conceptos[id='+(id)+']').show();
+    	$(this).hide();
+    });
+
 	$( ".clave_evento" ).keyup(function(){
 		_this=$(this);
 		if(typeof timer=="undefined"){
@@ -17,9 +24,19 @@ $(document).ready(function(e) {
 			},300);
 		}
     }); //termina buscador de evento
+    //busca cliente
+	$( ".nombre" ).autocomplete({
+      source: "scripts/busca_evento_nombre.php",
+      minLength: 1,
+      select: function( event, ui ) {
+      	$('.clave').val(ui.item.id_cotizacion);
+		buscarClaveGet();
+		$(".modificar").show();
+	  }
+    });
 	
 	//para añadir más articulos al evento
-	$(".agregar_articulo").click(function(){
+$(".agregar_articulo").click(function(){
 		id_evento=$(".id_evento").get(0).value;
 		id=$(".lista_articulos").length+1;
 		$("#articulos").append('<tr id="'+id+'" class="lista_articulos"><td style="background-color:#FFF;"><input type="hidden" class="id_item" value="" /><input type="hidden" class="id_evento" value="" /><input type="hidden" class="id_articulo" /><input type="hidden" class="id_paquete" /></td><td><input class="cantidad" type="text" size="7" onkeyup="cambiar_cant('+id+')" /></td><td><input class="articulo_nombre text_full_width" onkeyup="art_autocompletar('+id+');" /></td><td>$<input type="text" class="precio" /></td><td>$<span class="total"></span></td><td><span class="guardar_articulo" onclick="guardar_art('+id+')"></span><span class="eliminar_articulo" onclick="eliminar_art('+id+')"></span></td></tr>');
@@ -28,6 +45,8 @@ $(document).ready(function(e) {
 		});
 		$(".cantidad").numeric();
 	});
+	
+
 	
 	//para ver el formulario de pago
 	$(".agregarpago").click(function(e) {
@@ -202,29 +221,10 @@ function get_items_eve(id){
 		}
 	});
 }
-function checarTotalEve(id){
-	var total;
-	$.ajax({
-		url:'scripts/s_check_total_eve.php',
-		cache:false,
-		async:false,
-		type:'POST',
-		data:{
-			'id':id
-		},
-		success: function(r){
-			if(r.continuar){
-				$(".totalevento").val(r.total);
-				$(".restante").val(r.total - r.pagado);
-			}else{
-				alerta("error",r.info);
-			}
-		}
-	});
-}
+
 function editar(e, id){
 	s=$(e);
-	$(".clave").val(s.attr("data-cve"));
+	$(".clave").val(id);
 	buscarClaveGet(id);
 	$(".hacer a")[0].click();
 }
@@ -255,6 +255,7 @@ function guardar_art(elemento){
 	$.ajax({
 		url:'scripts/guarda_art_eve.php',
 		cache:false,
+		type:'POST',
 		data:{
 			'id_item':id_item,
 			'id_paquete':id_paquete,
@@ -266,35 +267,43 @@ function guardar_art(elemento){
 			boolTotal:actTotal
 		},
 		success: function(r){
-			//procesando("ocultar",0); //0 lo dispara automaticamente
+			console.log('success');
+			console.log(r.sql);
 			if(r.continuar){
 				$("#"+elemento+" .id_item").val(r.id_item);
 				padre.find(".id_evento").val(id_evento);
 				alerta("info","Fue agregado exitosamente");
 				row.addClass("verde_ok");
-				setTimeout(function(){checarTotal('eventos',id_evento);},500);
+				checarTotalEve(id_evento);
+				
 			  }else{
+			  	console.log('error');
 				alerta("error",r.info);
 			  }
 		}
 	});
 }
 function eliminar_art(elemento){
+	
 	id_evento=$(".id_evento").first().val();
 	id_item=$("#"+elemento+" .id_item").val();
+	precio=$("#"+elemento+" .total").html();
+
 	if(id_item!=0){
 		$.ajax({
 			url:'scripts/quita_art_eve.php',
 			cache:false,
 			type:'POST',
 			data:{
-				'id_item':id_item
+				'id_item':id_item,
+				'id_evento':id_evento,
+				'precio':precio
 			},
 			success: function(r){
 			  if(r.continuar){
 				alerta("info",r.info);
 				$("#"+elemento).remove();
-				checarTotal('eventos',id_evento);
+				checarTotalEve(id_evento);
 			  }else{
 				alerta("error",r.info);
 			  }
@@ -423,7 +432,12 @@ function checarTotalEve(id){
 		success: function(r){
 			if(r.continuar){
 				$(".totalevento").val(r.total);
-				$(".restante").val(r.restante);
+				if(r.restante > 0){
+					$(".restante").val(r.restante);
+				}else{
+					$(".restante").val(0);
+				}
+
 			}else{
 				alerta("error",r.info);
 			}
