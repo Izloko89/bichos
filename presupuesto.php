@@ -205,13 +205,13 @@ li{
 		</div>
       </div>
         <div align="right">
-            <input type="button" class="modificar" value="MODIFICAR" data-wrap="#hacer" style="display:none;" />
-            <input type="button" class="guardar" value="CREAR" data-wrap="#hacer" data-accion="guardar" data-m="pivote" />
+            <input type="button" class="modificar_pres" value="MODIFICAR" data-wrap="#hacer" style="display:none;" />
+            <input type="button" class="guardar_pres" value="CREAR" data-wrap="#hacer" data-accion="guardar" data-m="pivote" />
             <input type="button" class="nueva" value="NUEVA"  />
         </div>
 	</form>
     <div class='formularios'>
-	<h3 class='titulo_form'>Gastos</h3>
+	<h3 class='titulo_form'>Presupuesto</h3>
     <table id="articulos" class="table">
       <tr>
       	<th class="agregar_articulo"><img src="img/mas.png" height="25" /></th>
@@ -382,11 +382,11 @@ li{
 		$cont = 2;
 		//escribimos la tabla
 		foreach($cot as $folio=>$d){
-			echo '<tr class="cot'.$d["id_presupuesto"].'">';
-			echo '<td class="bfolio">'.$d["id_presupuesto"]. '</td>';
+			echo '<tr class="cot'.$d["folio"].'">';
+			echo '<td class="bfolio">'.$d["folio"]. '</td>';
 			echo '<td class="bnombre">'.$d["nombre"].'</td>';
 			echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fecha_solicitud"]).'</td>';
-			echo '<td><img src="img/check.png" data-cve="'.$d["id_presupuesto"].'" height="20" onclick="autorizarEve('.$folio.','.$d["id_presupuesto"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_presupuesto"].'" onclick="editar(\''.$d["nombre"].'\');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_presupuesto"].'" height="20" onclick="eliminar_eve(' . $d["id_presupuesto"] . ',' . $cont . ')"/></td>';
+			echo '<td><img class="accion" src="img/edit.png" data-cve="'.$d["id_presupuesto"].'" onclick="editar('.$d["id_presupuesto"].');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_presupuesto"].'" height="20" onclick="eliminar_presupuesto(' . $d["id_presupuesto"] . ',' . $cont . ')"/></td>';
 			echo '</tr>';
 			$cont++;
 		}

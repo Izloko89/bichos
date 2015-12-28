@@ -11,22 +11,12 @@ try{
 	foreach($res->fetchAll(PDO::FETCH_ASSOC) as $a=>$c){
 		$campos[$a]=$c["Field"];
 	}
-		$res=$bd->query("SELECT * FROM eventos WHERE  nombre LIKE '%$term%';");
-	
-
+		$res=$bd->query("SELECT * FROM presupuesto 
+				INNER JOIN eventos e on e.id_evento = presupuesto.id_evento WHERE  nombre like '%$term%';");
 	foreach($res->fetchAll(PDO::FETCH_ASSOC) as $i=>$v){
-		$CLAVE=$v["clave"];
 		$r[$i]["label"]=$v["nombre"];
-		foreach($campos as $campo){
-			$r[$i][$campo]=$v[$campo];
-		}
-		$r[$i]["fechaevento"]=date("d/m/Y h:i a",strtotime($v["fechaevento"]));
-		
+		$r[$i]["id_presupuesto"] = $v["id_presupuesto"];
 	}
-
-
-
-
 	
 	
 }catch(PDOException $err){

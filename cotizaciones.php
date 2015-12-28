@@ -327,6 +327,11 @@ table{
         </table>
     </div>
     -->
+
+       <div class='formularios'>
+  <h3 class='titulo_form'>Conceptos</h3>
+  </div>
+
     <div id="cuenta" class="formularios" align="left">
     <h3 class='titulo_form'>Cuenta</h3>
         <div class="campo_form">
