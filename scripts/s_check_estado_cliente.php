@@ -20,15 +20,15 @@ try{
 	$res=$bd->query($sql);
 
 	$tabla="<center><table class=table width='70%'><tr><th></th></tr>";
-	$tabla.="<td><tr><th>Fecha</th><th>Evento</th><th>Pago anticipo</th><th>Total de evento</th><th>Restante</th></tr>";
+	$tabla.="<td><tr><th>Fecha</th><th>Evento</th><th>Total Evento</th><th>Pago</th><th>Restante</th></tr>";
 	$id=1;
 	$total=0;
 	foreach($res->fetchAll(PDO::FETCH_ASSOC) as $d){
 		$tabla.='<tr>';
 		$tabla.="<td>".$d["fecha"].'</td>';
 		$tabla.="<td>".$d["nombre"].'</td>';
-		$tabla.='<td>'.$d["cantidad"] .'</td>';
 		($d["plazo"]=="anticipo") ? $tabla.='<td>'.$d["total"] .'</td>' :  $tabla.='<td>'.$restante-$d["cantidad"] .'</td>' ;
+		$tabla.='<td>'.$d["cantidad"] .'</td>';
 		$restante=$d["total"]-$d["cantidad"];
 		$tabla.='<td>'.$restante .'</td>';
 	}
