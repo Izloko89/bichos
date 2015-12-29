@@ -225,11 +225,13 @@ p {
 	float: left;
 }
 </style>
-<table style="width:100%;" cellpadding="0" cellspacing="0" border="">
-    <tr>	 
-      <td valign="top" style="width:20%; text-align:left;">&nbsp;</td>
-      <td valign="top" style="width:60%; text-align:center; font-size:30px;"><img src="../img/salon_caracol.png" style="width:100%;" /></td>
-      <td valign="top" style="width:20%; text-align:right;"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
+<table style="width:70%;" cellpadding="0" cellspacing="0" border="">
+    <tr>
+	  <td valign="top" style=" text-align:left;">.</td>
+      <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
+      </td>
+      <td valign="top"><?php if (isset($salon="HORMIGA")){ echo "<img src='../img/salon_hormiga.png' style='width:65%;' />"; } else if isset(($salon="CARACOL")){ echo "<img src='../img/salon_caracol.png' style='width:65%;' />"; } ?></td>
+      <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
     </tr>
 </table>
