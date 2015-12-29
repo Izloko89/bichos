@@ -228,17 +228,16 @@ p {
 <table style="width:70%;" cellpadding="0" cellspacing="0" border="">
     <tr>
 	  <td valign="top" style=" text-align:left;">.</td>
-      
-	      
+      <td valign="top" ></td>
       <td valign="top"><?php 
       if ($salon=="HORMIGA"){ 
-      	echo " <center> <img src='../img/salon_hormiga.png' style='width:80%;' /> </center>"; 
+      	echo "<img src='../img/salon_hormiga.png' style='width:85%;' />"; 
       }
       if($salon=="CARACOL"){ 
-      	echo "<center> <img src='../img/salon_caracol.png' style='width:80%;' /> </center>"; 
+      	echo "<img src='../img/salon_caracol.png' style='width:85%;' />"; 
       } 
       if($salon == "BICHOS TO GO"){
-      	echo "<center> <img src='../img/logo.png' style='width:80%;' /> </center>"; 
+      	echo "<img src='../img/logo.png' style='width:85%;' />"; 
       }
     ?>
   </td>
