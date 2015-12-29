@@ -229,16 +229,16 @@ p {
     <tr>
 	  <td valign="top" style=" text-align:left;">.</td>
       
-      
+	      
       <td valign="top"><?php 
       if ($salon=="HORMIGA"){ 
-      	echo "<img src='../img/salon_hormiga.png' style='width:80%;' />"; 
+      	echo " <center> <img src='../img/salon_hormiga.png' style='width:80%;' /> </center>"; 
       }
       if($salon=="CARACOL"){ 
-      	echo "<img src='../img/salon_caracol.png' style='width:80%;' />"; 
+      	echo "<center> <img src='../img/salon_caracol.png' style='width:80%;' /> </center>"; 
       } 
       if($salon == "BICHOS TO GO"){
-      	echo "<img src='../img/logo.png' style='width:80%;' />"; 
+      	echo "<center> <img src='../img/logo.png' style='width:80%;' /> </center>"; 
       }
     ?>
   </td>
