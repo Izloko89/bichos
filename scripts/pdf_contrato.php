@@ -238,7 +238,7 @@ p {
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
+				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
 			</td>
 		</tr>
 		<tr>
