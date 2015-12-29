@@ -193,7 +193,7 @@ $(document).ready(function(e) {
     <input type="hidden" name="id_proveedor" class="id_proveedor" />
     <div class="campo_form">
     <label class="label_width">CLAVE</label>
-    <input type="text" name="clave" class="clave proveedor_clave text_corto requerido mayuscula" value="<?php nCveProv(); ?>">
+    <input type="number" name="clave" class="clave proveedor_clave text_corto requerido mayuscula" value="<?php nCveProv(); ?>">
     </div>
     <div class="campo_form">
     <label class="label_width">Nombre</label>
