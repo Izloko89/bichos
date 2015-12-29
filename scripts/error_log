@@ -673,3 +673,28 @@ RESTANTE:
   thrown in /home/inter/public_html/mifiestaenbichos/clases/_class/parsingHtml.class.php on line 119
 [10-Dec-2015 02:15:55 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
 [10-Dec-2015 16:12:53 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[15-Dec-2015 22:06:40 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[15-Dec-2015 22:14:23 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[15-Dec-2015 22:16:48 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[15-Dec-2015 22:16:53 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[15-Dec-2015 22:17:27 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[16-Dec-2015 16:22:28 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[16-Dec-2015 23:33:01 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>../img/salon_hormiga</b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[17-Dec-2015 00:01:28 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°3</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 117<br><br>Código HTML no válido, una etiqueta tiene un cierre de más : <b>&lt;div&gt;</b><br><br>HTML : ...able&gt;
+	&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:100%; padding:5...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 117
+[17-Dec-2015 05:43:45 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[17-Dec-2015 21:23:25 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[17-Dec-2015 21:24:39 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[17-Dec-2015 21:34:08 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[17-Dec-2015 22:04:51 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
+[29-Dec-2015 01:25:25 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>.../img/salon_caracol.png</b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
