@@ -439,9 +439,29 @@ table{
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
       <!--<input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  />-->
-      <input type="submit" href="scripts/pdf_contrato.php" value="Contrato"  />
+      <input type="submit" href="tomavalor()" value="Contrato"  />
       </div>
       </form>
+      <script>
+        function tomavalor()
+          {
+          var salon= document.getElementById("salon").value;
+          var id= document.getElementById("clave").value;
+          var obs= document.getElementById("observaciones").value;
+          if(salon=="CARACOL")
+          {
+           window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');       
+          } 
+          if (salon=="HORMIGA")
+          {
+             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
+          } 
+          if(salon=="BICHOS TO GO")
+          {
+             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
+          }
+      }  
+      </script>
     </div>
   </div>
 <!-- //sección de las eventos por empresa y or usuario --> 

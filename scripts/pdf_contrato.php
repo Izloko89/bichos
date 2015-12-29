@@ -230,8 +230,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><?php if ($salon="HORMIGA"){ echo "<img src='../img/salon_hormiga.png' style='width:65%;' />"; } else if ($salon="CARACOL"){ echo "<img src='../img/salon_caracol.png' style='width:65%;' />"; } ?>
-      </td>
+      <td valign="top"><?php if ($salon="HORMIGA"){ echo "<img src='../img/salon_hormiga.png' style='width:65%;' />"; } else if ($salon="CARACOL"){ echo "<img src='../img/salon_caracol.png' style='width:65%;' />"; } ?></td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
     </tr>
@@ -239,7 +238,7 @@ p {
 	<table cellspacing="0" cellpadding="0" border="">
 		<tr>
 			<td style="padding-bottom:10px; width:280px;" colspan="2">
-				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?>
+				<strong>Nombre del festejado:</strong> <?php echo $nombreEve ?> <?php echo $salon ?>
 			</td>
 		</tr>
 		<tr>
