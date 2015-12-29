@@ -230,8 +230,7 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
       </td>
-      <td valign="top"><?php if ($salon="HORMIGA"){ echo "<img src='../img/salon_hormiga.png' style='width:65%;' />"; } else if ($salon="CARACOL"){ echo "<img src='../img/salon_caracol.png' style='width:65%;' />"; } ?>
-      </td>
+      <td valign="top"><?php if (isset($salon="HORMIGA")){ echo "<img src='../img/salon_hormiga.png' style='width:65%;' />"; } else if isset(($salon="CARACOL")){ echo "<img src='../img/salon_caracol.png' style='width:65%;' />"; } ?></td>
       <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
     </tr>
