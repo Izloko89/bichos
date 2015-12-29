@@ -496,6 +496,7 @@ table{
       id_evento,
       eventos.clave,
       eventos.nombre,
+      eventos.id_cotizacion,
       tipo_evento.nombre as tipo_evento,
       estatus,
       fechaevento,
@@ -545,7 +546,7 @@ table{
       echo '<td class="bfechaevento">'.varFechaAbrNorm($d["fechaevento"]).'</td>';
       echo '<td class="bfechamontaje">'.varFechaAbrNorm($d["fechamontaje"]).'</td>';
       echo '<td class="bfechadesmont">'.varFechaAbrNorm($d["fechadesmont"]).'</td>';
-      echo '<td><img src="img/check.png" data-cve="'.$d["id_evento"].'" height="20" onclick="autorizarEve('.$folio.','.$d["clave"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_evento"].'" onclick="editar(this, ' . $d["id_evento"] . ');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_evento"].'" height="20" onclick="eliminar_eve(' . $d["id_evento"] . ',' . $cont . ')"/></td>';
+      echo '<td><img src="img/check.png" data-cve="'.$d["id_evento"].'" height="20" onclick="autorizarEve('.$folio.','.$d["clave"].')" /><img class="accion" src="img/edit.png" data-cve="'.$d["id_evento"].'" onclick="editar(this, ' . $d["id_cotizacion"] . ');" height="20" /><img class="accion eliminar" src="img/cruz.png" data-cve="'.$d["id_evento"].'" height="20" onclick="eliminar_eve(' . $d["id_evento"] . ',' . $cont . ')"/></td>';
       echo '</tr>';
       $cont++;
       $num++;
