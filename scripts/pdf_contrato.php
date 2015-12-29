@@ -229,7 +229,7 @@ p {
     <tr>
 	  <td valign="top" style=" text-align:left;">.</td>
       
-      </td>
+      
       <td valign="top"><?php 
       if ($salon=="HORMIGA"){ 
       	echo "<img src='../img/salon_hormiga.png' style='width:80%;' />"; 
