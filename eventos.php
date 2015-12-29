@@ -406,7 +406,7 @@ table{
 
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form id="observaciones_eventos" action="" target="_blank">
+      <form id="observaciones_eventos" action="scripts/pdf_contrato.php" target="_blank">
     <table align="left" class="">
       <tr>
         <td>
@@ -443,23 +443,23 @@ table{
       </div>
       </form>
       <script>
-	      function tomavalor()
-      		{
-		      var salon= document.getElementById("salon").value;
-		      var id= document.getElementById("clave").value;
-		      var obs= document.getElementById("observaciones").value;
-		      if(salon=="CARACOL")
-		      {
-		     	 window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');		    
-		      } 
-		      if (salon=="HORMIGA")
-		      {
-		      	 window.open("scripts/pdf_contrato_hormigas.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
-		      } 
-		      if(salon=="BICHOS TO GO")
-		      {
-		      	 window.open("scripts/pdf_contrato_hormigas.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
-		      }
+        function tomavalor()
+          {
+          var salon= document.getElementById("salon").value;
+          var id= document.getElementById("clave").value;
+          var obs= document.getElementById("observaciones").value;
+          if(salon=="CARACOL")
+          {
+           window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');       
+          } 
+          if (salon=="HORMIGA")
+          {
+             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
+          } 
+          if(salon=="BICHOS TO GO")
+          {
+             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
+          }
       }  
       </script>
     </div>
