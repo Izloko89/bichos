@@ -308,7 +308,7 @@ li{
 	
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form action="scripts/pdf_gastos.php" method="get" target="_blank">
+      <form action="scripts/pdf_presupuesto.php" method="get" target="_blank">
 	  <table class="">
 		  <tr>
 			  <td>
