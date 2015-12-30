@@ -188,7 +188,7 @@ if(isset($_GET["id_evento"])){
 		$sql="SELECT salon FROM eventos;";
 		$res=$bd->query($sql);
 		$res=$res->fetchAll(PDO::FETCH_ASSOC);
-		$salon=$res[0]["salon"];
+		//$salon=$res[0]["salon"];
 		
 		
 	}catch(PDOException $err){
@@ -237,7 +237,7 @@ p {
       	echo "<img src='../img/salon_caracol.png' style='width:85%; margin-right:50px;' />"; 
       } 
       if($salon === "BICHOS TO GO"){
-      	echo "<img src='../img/logo.png' style='width:85%; margin-right:50px;' />"; 
+      	echo "<img src='../img/logo.png' style='width:60%; margin-right:50px;' />"; 
       }
     ?>
   </td>
