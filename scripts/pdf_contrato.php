@@ -230,13 +230,13 @@ p {
 	  <td valign="top" style=" text-align:left;">.</td>
       <td valign="top" ></td>
       <td valign="top"><?php 
-      if ($salon=="HORMIGA"){ 
+      if ($salon==="HORMIGA"){ 
       	echo "<img src='../img/salon_hormiga.png' style='width:85%; margin-right:50px;' />"; 
       }
-      if($salon=="CARACOL"){ 
+      if($salon==="CARACOL"){ 
       	echo "<img src='../img/salon_caracol.png' style='width:85%; margin-right:50px;' />"; 
       } 
-      if($salon == "BICHOS TO GO"){
+      if($salon === "BICHOS TO GO"){
       	echo "<img src='../img/logo.png' style='width:85%; margin-right:50px;' />"; 
       }
     ?>
