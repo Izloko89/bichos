@@ -39,7 +39,7 @@ try{
 		exit;
 	}
 	
-	$bd->query("INSERT INTO usuarios (nombre,usuario,password,clave,id_empresa,categoria,activo) VALUES ('$nombre','$usuario','$password','$clave',1,'Administrador',1);");
+	$bd->query("INSERT INTO usuarios (nombre,usuario,password,clave,id_empresa,categoria,activo) VALUES ('$nombre','$usuario','$password','$clave',1,'administrador',1);");
 	
 	//$aidi = $bd->query(mysql_insert_id());
 	
