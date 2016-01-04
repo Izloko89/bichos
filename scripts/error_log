@@ -698,3 +698,352 @@ RESTANTE:
 [17-Dec-2015 22:04:51 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/s_proc_compra.php on line 102
 [29-Dec-2015 01:25:25 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>.../img/salon_caracol.png</b>
   thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[31-Dec-2015 20:31:20 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b></b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[31-Dec-2015 21:11:17 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+)
+</pre><br><br>HTML : ...;&quot;&gt; 0010&lt;/div&gt;&lt;/td&gt;
+		
+		
+		
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td style=&quot;width:20%; text...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[31-Dec-2015 21:12:54 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>. $varpath.</b>
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1319
+[01-Jan-2016 19:54:36 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[01-Jan-2016 19:56:57 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[01-Jan-2016 20:04:51 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[01-Jan-2016 20:10:18 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[01-Jan-2016 20:12:36 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 01:55:58 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 01:57:45 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 01:59:45 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:00:26 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:07:38 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:09:53 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:28:33 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:35:49 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:36:36 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:37:05 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:43:07 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:44:46 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:48:17 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:48:36 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 02:49:21 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 03:01:53 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:02:25 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:02:28 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:02:39 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:03:22 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:35:21 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:35:39 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:35:56 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 03:41:21 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 03:41:39 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°1</span><br>Fichero : /home/inter/public_html/bichos/clases/html2pdf.class.php<br>Línea : 1251<br><br>La etiqueta <b>&lt;BR&gt;</b> todavía no existe.<br><br>Si quiere añadirla, debe crear los métodos <b>o_BR</b> (para la apertura) y <b>c_BR</b> (para el cierre) siguiendo el modelo de las etiquetas existentes.<br><br>Si crea nuevos métodos, envíelos a webmaster@html2pdf.fr para añadirlos a las siguientes versiones de HTML2PDF, y que todo el mundo se pueda beneficiar.
+  thrown in /home/inter/public_html/bichos/clases/html2pdf.class.php on line 1251
+[02-Jan-2016 04:00:16 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 04:01:59 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 04:02:19 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => tr
+    [1] => td
+    [2] => td
+)
+</pre><br><br>HTML : ...p; text-align:center;&quot;&gt;&lt;td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width:25%;ve...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:16:09 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:16:18 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:16:28 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:16:38 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:17:14 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:17:19 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...; font-size:10px;&quot;&gt;&bull; Total: &lt;/td&gt;
+		&lt;td style=&quot;width:50%&quot;&gt;&lt;div style...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:17:39 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:19:56 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:20:44 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:21:49 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:27:35 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:30:21 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:31:05 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:31:26 UTC] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°4</span><br>Fichero : /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php<br>Línea : 119<br><br>Código HTML no válido, las etiquetas no estan cerradas en el orden correcto.<br>Estado : <pre>Array
+(
+    [0] => table
+    [1] => tr
+    [2] => td
+    [3] => div
+)
+</pre><br><br>HTML : ...-bottom:5px; font-size:10px;&quot;&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+    &lt;tr&gt;&lt;td height=&quot;120&quot; st...
+  thrown in /home/inter/public_html/bichos/clases/_class/parsingHtml.class.php on line 119
+[02-Jan-2016 19:39:12 UTC] PHP Fatal error:  Unsupported operand types in /home/inter/public_html/bichos/scripts/pago_pdf.php on line 83
+[02-Jan-2016 19:41:19 UTC] PHP Fatal error:  Unsupported operand types in /home/inter/public_html/bichos/scripts/pago_pdf.php on line 83
+[02-Jan-2016 19:42:29 UTC] PHP Fatal error:  Unsupported operand types in /home/inter/public_html/bichos/scripts/pago_pdf.php on line 83
+[02-Jan-2016 19:52:18 UTC] PHP Fatal error:  Unsupported operand types in /home/inter/public_html/bichos/scripts/pago_pdf.php on line 83
+[03-Jan-2016 18:34:20 UTC] PHP Fatal error:  Call to undefined function number_formta() in /home/inter/public_html/bichos/scripts/pdf_presupuesto1.php on line 143
+[03-Jan-2016 20:51:58 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/inter/public_html/bichos/scripts/pdf_presupuesto1.php on line 73
+[03-Jan-2016 20:52:04 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/inter/public_html/bichos/scripts/pdf_presupuesto1.php on line 73
+[03-Jan-2016 21:35:45 UTC] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/inter/public_html/bichos/scripts/pdf_presupuesto1.php on line 74

@@ -1,4 +1,4 @@
-<?php include("partes/header.php");
+  <?php include("partes/header.php");
 //include("scripts/permisos.php");
 setlocale(LC_ALL,"");
 setlocale(LC_TIME,"es_MX");
@@ -121,10 +121,10 @@ li{
     <form id='eventos' class='formularios'>
 	<h3 class='titulo_form'>Presupuesto</h3>
       <div class="tabla">
-    
+    	
         <input type="text" name="id_usuario" class="id_usuario" value="<?php echo $_SESSION["id_usuario"]; ?>" style="display:none;" />
         <input type="hidden" name="id_cliente" class="id_cliente" value="" />
-        <input type="hidden" name="id_eve" class="id_eve" value="" />
+        <input type="hidden" name="id_evento" class="id_evento" value="" />
         <?php
 			$bd=new PDO($dsnw, $userw, $passw, $optPDO);
 			$sql = "select MAX(folio) as id from presupuesto";
@@ -134,7 +134,7 @@ li{
         <div class="campo_form celda">
 			<label class="">FOLIO</label>
 				 <input type="text" name="clave" class="label folio requerido mayuscula text_corto" id="folio" data-nueva="" value="<?php echo $res[0]["id"] + 1;?>" />
-
+	
           </div>
 		  <!--
         <div class="campo_form celda fondo_azul" align="center">
@@ -171,7 +171,7 @@ li{
           
           <div class="campo_form">
           	<label>Niños</label>
-            <input class="cliente_evento text_largo" id="ninos" type="text" value=""/>
+            <input class="cliente_evento text_largo"  name="ninos" id="ninos" type="text" value=""/>
           </div>
           <div class="campo_form">
           	<label>Adultos</label>
@@ -187,13 +187,13 @@ li{
 		  
           <div class="campo_form">
             <label class="">Nombre del evento</label>
-			<input type="text" name="nombre" class="nombre text_largo requerido" />
+			<input type="text" id="txt_eve" name="nombre" class="nombre text_largo requerido" />
           </div>-->
 		</div>
         <div class="celda" style="">
           <div class="campo_form">
             <label class="align_right" style="width:120px;">Fecha Solicitud</label>
-        	<abbr title=""><input placeholder="Click para elegir" class="fecha alejar_izq requerido fechapresupuesto" type="text" name="fechaevento"  readonly/></abbr><!--
+        	<abbr title=""><input placeholder="Click para elegir" id="fechaevento" class="fecha alejar_izq requerido fechapresupuesto" type="text" name="fechaevento"  readonly/></abbr><!--
             --><img class="borrar_fecha" data-class="fechaevento" src="img/cruz.png" width="15" />
           </div>
           <div class="campo_form">
@@ -308,7 +308,7 @@ li{
 	
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form action="scripts/pdf_presupuesto.php" method="get" target="_blank">
+      <form action="scripts/pdf_presupuesto1.php"  target="_blank">
 	  <table class="">
 		  <tr>
 			  <td>
@@ -319,16 +319,14 @@ li{
 			  </td>
 			  <td rowspan="5"><textarea name="obs" id="obs" placeholder="Notas" cols="70" rows="5" style="resize:none;"></textarea></td>
 		  </tr>
-		  
-	  </table>
-        
-
-        <input type="hidden" name="id_evento" class="id_evento" value="" />
-        <input type="hidden" name="total_cot" class="total_cot" value="" />
-        <input type="hidden" name="id_Folio" class="id_Folio" value="" />	  <!--
-        <input type="submit" onclick="this.form.action='scripts/nota_venta_pdf.php'" value="Hoja de bulto" class="flota_der2" />-->
-		  <input type="submit" value="Imprimir" class="flota_der" />
-      </form>
+	  </table>  
+	  	<input type="hidden" name="id_evento" class="id_evento" value="" />
+	        <input type="hidden" name="paquete" class="paquete" value="" /> 
+	        <input type="hidden" name="folio" class="folio" value="" /> 
+                  <input type="submit" value="Imprimir" class="flota_der" /> 
+		<!-- <input type="submit" value="Imprimir" onclick="tomavalor()" class="flota_der"/> -->
+      </form>  
+      
     </div>
   </div>
   <div id="mias">

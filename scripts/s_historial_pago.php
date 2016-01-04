@@ -15,11 +15,12 @@ try{
 	$cant = 0;
 	foreach($res->fetchAll(PDO::FETCH_ASSOC) as $d){
 		$rId = $d["id_pago"];
+		$cant == 0?"Anticipo":"Pago $cant";
 		$tabla.='<tr>';
 		$tabla.="<td>".($cant == 0?"Anticipo":"Pago $cant").'</td>';
 		$tabla.="<td>".varFechaExtensa($d["fecha"]).'</td>';
 		$tabla.='<td>'.$d["cantidad"] .'</td>';
-		$tabla.="<td><form action=scripts/pago_pdf.php target=_blank> <input type=submit  value=Imprimir /><input type=hidden name=idPagoPdf id=idPagoPdf value=$rId><input type=hidden name=idEve id=idEve value=$eve></form></td>";
+		$tabla.="<td><form action=scripts/pago_pdf.php target=_blank> <input type=submit  value=Imprimir /><input type=hidden name=idPagoPdf id=idPagoPdf value=$rId><input type=hidden name=idEve id=idEve value=$eve><input type=hidden name=pago id=pago value=$cant></form></td>";
 		$tabla.='</tr>';
 		$id++;
 		$total+=$d["cantidad"];

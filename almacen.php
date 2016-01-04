@@ -494,7 +494,7 @@ td{
 							$tabla.='<td>'.$d["articulo"].'</td>';
 							$tabla.='<td>'.$dispo.'</td>';
 							if($d["cantidad"] > $dispo){
-								$tabla.= '<td>'.$dispo.'</td>';
+								$tabla.='<td>'.$d["cantidad"].'</td>';	
 								$entradas = $dispo;
 							}else{
 								$tabla.='<td>'.$d["cantidad"].'</td>';	

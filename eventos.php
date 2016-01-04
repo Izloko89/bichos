@@ -188,9 +188,9 @@ table{
             <label class="">No. de personas</label>
 			<input type="text" name="no_personas" class="no_personas text_corto requerido" />
 			  <label class="">Niños</label>
-			<input type="text" name="no_ninos" class="no_ninos text_corto requerido" />
+			<input type="text" id="ninos" name="no_ninos" class="no_ninos text_corto requerido" />
 			  <label class="">Adultos</label>
-			<input type="text" name="no_adultos" class="no_adultos text_corto requerido" />
+			<input type="text" id="adultos" name="no_adultos" class="no_adultos text_corto requerido" />
           </div>
           
           
@@ -239,10 +239,23 @@ table{
 <legend align="center">MENU</legend>
            <div class="campo_form" align="left">
             <label class="">Niños</label>
-      <input type="text" name="no_ninos_menu" class="no_ninos_menu text_corto requerido">
+      <input type="text" id="ninos2" name="no_ninos_menu" class="no_ninos_menu text_corto requerido">
         <label class="">Adultos</label>
-      <input type="text" name="no_adultos_menu" class="no_adultos_menu text_corto requerido">
+      <input type="text"  id="adultos2" name="no_adultos_menu" class="no_adultos_menu text_corto requerido">
       </div>
+      
+      <script> <!-- script para duplicar valores en los campos niños y adultos -->
+      	$(document).ready(function () {
+          $("#ninos").keyup(function () {
+              var value = $(this).val();
+              $("#ninos2").val(value);
+          });
+          $("#adultos").keyup(function () {
+              var value = $(this).val();
+              $("#adultos2").val(value);
+          });
+      });
+      </script>
       
         <div class="campo_form">
             <label class="">Guarnicion</label>
@@ -406,7 +419,7 @@ table{
 
     <div align="left" class="formularios">
     <h3 class='titulo_form'>Observaciones</h3>
-      <form id="observaciones_eventos" action="scripts/pdf_contrato.php" target="_blank">
+      <form id="observaciones_eventos" action="" target="_blank">
     <table align="left" class="">
       <tr>
         <td>
@@ -439,7 +452,7 @@ table{
         <textarea name="obs" id="observaciones" placeholder="Anota aquí las observaciones de la nota"></textarea><br />
     <div align="right">
       <!--<input type="submit" onclick="this.form.action='scripts/pdf_contrato.php'" value="Contrato" onmouseover="tomavalor();"  />-->
-      <input type="submit" href="tomavalor()" value="Contrato"  />
+      <input type="submit" onclick="tomavalor()" value="Contrato"  />
       </div>
       </form>
       <script>
@@ -448,18 +461,7 @@ table{
           var salon= document.getElementById("salon").value;
           var id= document.getElementById("clave").value;
           var obs= document.getElementById("observaciones").value;
-          if(salon=="CARACOL")
-          {
-           window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');       
-          } 
-          if (salon=="HORMIGA")
-          {
-             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
-          } 
-          if(salon=="BICHOS TO GO")
-          {
-             window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank');
-          }
+          window.open("scripts/pdf_contrato.php?id_evento="+id+"&obs="+obs+"&salon="+salon+"",'_blank'); 
       }  
       </script>
     </div>

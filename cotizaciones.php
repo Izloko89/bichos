@@ -180,9 +180,9 @@ table{
             <label class="">No. de personas</label>
       <input type="text" name="no_personas" class="no_personas text_corto requerido">
         <label class="">Niños</label>
-      <input type="text" name="no_ninos" class="no_ninos text_corto requerido">
+      <input type="text" id="ninos" name="no_ninos" class="no_ninos text_corto requerido">
         <label class="">Adultos</label>
-      <input type="text" name="no_adultos" class="no_adultos text_corto requerido">
+      <input type="text" id="adultos" name="no_adultos" class="no_adultos text_corto requerido">
           </div>
           
           <div class="campo_form">
@@ -230,11 +230,23 @@ table{
 <legend align="center">MENU</legend>
            <div class="campo_form" align="left">
             <label class="">Niños</label>
-      <input type="text" name="no_ninos_menu" class="no_ninos_menu text_corto requerido">
+      <input type="text" id="ninos2" name="no_ninos_menu" class="no_ninos_menu text_corto requerido">
         <label class="">Adultos</label>
-      <input type="text" name="no_adultos_menu" class="no_adultos_menu text_corto requerido">
+      <input type="text" id="adultos2" name="no_adultos_menu" class="no_adultos_menu text_corto requerido">
       </div>
       
+      <script>
+      	$(document).ready(function () {
+          $("#ninos").keyup(function () {
+              var value = $(this).val();
+              $("#ninos2").val(value);
+          });
+           $("#adultos").keyup(function () {
+              var value = $(this).val();
+              $("#adultos2").val(value);
+          });
+      });
+      </script>
         <div class="campo_form">
             <label class="">Guarnicion</label>
       <input type="text" name="guarnicion" class="guarnicion text_largo ">
