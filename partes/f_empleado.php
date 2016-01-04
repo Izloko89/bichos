@@ -528,11 +528,11 @@ $sql="SELECT
         <input type="text" name="email" id="email" class="email">
     </div>
      <div class="campo_form">
-        <label class="label_width">Precio de compra</label>
+        <label class="label_width">Honorarios 1</label>
         <input type="number" name="pcompra" id="pcompra" class="pcompra">
     </div>
      <div class="campo_form">
-        <label class="label_width">Precio de venta</label>
+        <label class="label_width">Honorarios 2</label>
         <input type="number" name="pventa" id="pventa" class="pventa">
     </div>
 </form>

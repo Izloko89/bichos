@@ -162,15 +162,11 @@ th{
 	text-align:center;
 }
 </style>
-<table style="width:70%;border-bottom:<?php echo pxtomm(2); ?> solid #000;" cellpadding="0" cellspacing="0" border="">
+<table style="width:100%;border-bottom:<?php echo pxtomm(2); ?> solid #000;" cellpadding="0" cellspacing="0" border="">
     <tr>
-	  <td valign="top" style=" text-align:left;">.</td>
-      <td valign="top" style=";"><img src="../img/logo.png" style="width:60%;" />
-      
-      </td>
-       <td valign="top"><img src="../img/salon_hormiga.png" style="width:65%;" />
-      </td>
-      <td valign="top"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
+    	<td valign="top" style="width:20%; text-align:left;">&nbsp;</td>
+       <td valign="top" style="width:60%; text-align:center; font-size:30px;"><img src="../img/salon_hormiga.png" style="width:65%;" /></td>
+      <td valign="top" style="width:20%; text-align:right;"><p>FOLIO NO. </p><p style="text-align:right; color:red;"><?php echo $eve; ?></p>
       </td>
     </tr>
 </table>
