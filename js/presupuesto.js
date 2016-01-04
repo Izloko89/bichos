@@ -346,6 +346,7 @@ function eve_autocompletar(){
 		  		$('.fechaevento').val(ui.fechaevento);
 		  		$('.fechapresupuesto').val(ui.fecha_sol);
 		  		$('#id_eve').val(ui.id_evento);
+		  		$('#id_eve_impr').val(ui.id_evento);
 		  		$('#paquete').val(ui.paq_basico);
 		  		$('.guardar_pres').hide();
 		  		$('.modificar_pres').show();

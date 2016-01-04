@@ -320,7 +320,7 @@ li{
 			  <td rowspan="5"><textarea name="obs" id="obs" placeholder="Notas" cols="70" rows="5" style="resize:none;"></textarea></td>
 		  </tr>
 	  </table>  
-	  	<input type="hidden" name="id_evento" class="id_evento" value="" />
+	  	<input type="hidden" name="id_evento" class="id_evento" id="id_eve_impr" value="" />
 	        <input type="hidden" name="paquete" class="paquete" value="" /> 
 	        <input type="hidden" name="folio" class="folio" value="" /> 
                   <input type="submit" value="Imprimir" class="flota_der" /> 
